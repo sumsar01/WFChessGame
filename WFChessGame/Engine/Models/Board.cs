@@ -26,8 +26,6 @@ namespace WFChessGame.Models
         static Board()
         {
             _square = new int[64];
-
-            // Readies fresh game
             NewGame();
 
         }
@@ -94,7 +92,7 @@ namespace WFChessGame.Models
             return EmptySquare;
         }
 
-        static void NewGame()
+        public static void NewGame()
         {
             // Black side first
             _square[0] = Piece.Black | Piece.Rook;

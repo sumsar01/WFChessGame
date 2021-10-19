@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using WFChessGame.Models;
 using System;
-using System.Diagnostics;
 
 namespace WFChessGame
 {

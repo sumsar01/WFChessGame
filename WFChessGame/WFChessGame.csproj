@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\Models\Move.cs" />
+    <Compile Include="Engine\viewModels\GameSession.cs" />
     <Compile Include="WFUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
