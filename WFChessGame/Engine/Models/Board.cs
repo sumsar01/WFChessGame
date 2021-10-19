@@ -7,26 +7,25 @@ namespace WFChessGame.Models
 {
     public static class Board
     {
-        public static int[] Square;
+        private static int[] _square;
         static int intRep;
 
         public static int getSquare(int index)
         {
-            return Square[index];
+            return _square[index];
         }
-
         public static void setSquare(int index, int value)
         {
-            if (value != Square[index])
+            if (value != _square[index])
             {
-                Square[index] = value;
+                _square[index] = value;
                 OnValueChanged(null);
             }
         }
 
         static Board()
         {
-            Square = new int[64];
+            _square = new int[64];
 
             // Readies fresh game
             NewGame();
@@ -40,13 +39,13 @@ namespace WFChessGame.Models
         {
             if(ValueChanged != null)
             {
-                ValueChanged(Board.Square, e);
+                ValueChanged(Board._square, e);
             }
         }
 
         public static string GetPieceImg(int piecePosition)
         {
-            intRep = Square[piecePosition];
+            intRep = _square[piecePosition];
 
             switch(intRep)
             {
@@ -98,42 +97,42 @@ namespace WFChessGame.Models
         static void NewGame()
         {
             // Black side first
-            Square[0] = Piece.Black | Piece.Rook;
-            Square[1] = Piece.Black | Piece.Knight;
-            Square[2] = Piece.Black | Piece.Bishop;
-            Square[3] = Piece.Black | Piece.King;
-            Square[4] = Piece.Black | Piece.Queen;
-            Square[5] = Piece.Black | Piece.Bishop;
-            Square[6] = Piece.Black | Piece.Knight;
-            Square[7] = Piece.Black | Piece.Rook;
+            _square[0] = Piece.Black | Piece.Rook;
+            _square[1] = Piece.Black | Piece.Knight;
+            _square[2] = Piece.Black | Piece.Bishop;
+            _square[3] = Piece.Black | Piece.King;
+            _square[4] = Piece.Black | Piece.Queen;
+            _square[5] = Piece.Black | Piece.Bishop;
+            _square[6] = Piece.Black | Piece.Knight;
+            _square[7] = Piece.Black | Piece.Rook;
 
-            Square[8] = Piece.Black | Piece.Pawn;
-            Square[9] = Piece.Black | Piece.Pawn;
-            Square[10] = Piece.Black | Piece.Pawn;
-            Square[11] = Piece.Black | Piece.Pawn;
-            Square[12] = Piece.Black | Piece.Pawn;
-            Square[13] = Piece.Black | Piece.Pawn;
-            Square[14] = Piece.Black | Piece.Pawn;
-            Square[15] = Piece.Black | Piece.Pawn;
+            _square[8] = Piece.Black | Piece.Pawn;
+            _square[9] = Piece.Black | Piece.Pawn;
+            _square[10] = Piece.Black | Piece.Pawn;
+            _square[11] = Piece.Black | Piece.Pawn;
+            _square[12] = Piece.Black | Piece.Pawn;
+            _square[13] = Piece.Black | Piece.Pawn;
+            _square[14] = Piece.Black | Piece.Pawn;
+            _square[15] = Piece.Black | Piece.Pawn;
 
             // Readies white side
-            Square[48] = Piece.White | Piece.Pawn;
-            Square[49] = Piece.White | Piece.Pawn;
-            Square[50] = Piece.White | Piece.Pawn;
-            Square[51] = Piece.White | Piece.Pawn;
-            Square[52] = Piece.White | Piece.Pawn;
-            Square[53] = Piece.White | Piece.Pawn;
-            Square[54] = Piece.White | Piece.Pawn;
-            Square[55] = Piece.White | Piece.Pawn;
+            _square[48] = Piece.White | Piece.Pawn;
+            _square[49] = Piece.White | Piece.Pawn;
+            _square[50] = Piece.White | Piece.Pawn;
+            _square[51] = Piece.White | Piece.Pawn;
+            _square[52] = Piece.White | Piece.Pawn;
+            _square[53] = Piece.White | Piece.Pawn;
+            _square[54] = Piece.White | Piece.Pawn;
+            _square[55] = Piece.White | Piece.Pawn;
 
-            Square[56] = Piece.White | Piece.Rook;
-            Square[57] = Piece.White | Piece.Knight;
-            Square[58] = Piece.White | Piece.Bishop;
-            Square[59] = Piece.White | Piece.King;
-            Square[60] = Piece.White | Piece.Queen;
-            Square[61] = Piece.White | Piece.Bishop;
-            Square[62] = Piece.White | Piece.Knight;
-            Square[63] = Piece.White | Piece.Rook;
+            _square[56] = Piece.White | Piece.Rook;
+            _square[57] = Piece.White | Piece.Knight;
+            _square[58] = Piece.White | Piece.Bishop;
+            _square[59] = Piece.White | Piece.King;
+            _square[60] = Piece.White | Piece.Queen;
+            _square[61] = Piece.White | Piece.Bishop;
+            _square[62] = Piece.White | Piece.Knight;
+            _square[63] = Piece.White | Piece.Rook;
 
         }
     }

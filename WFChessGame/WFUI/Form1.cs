@@ -1,6 +1,8 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 using WFChessGame.Models;
+using System;
+using System.Diagnostics;
 
 namespace WFChessGame
 {
@@ -10,10 +12,10 @@ namespace WFChessGame
         {
             InitializeComponent();
             DisplayBoard();
-
+            Board.ValueChanged += UpdateSquare;
         }
 
-        private void tableLayoutPanel1_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
+        private void tableLayoutPanel_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
         {
             if ((e.Column + e.Row) % 2 == 1)
                 e.Graphics.FillRectangle(Brushes.Peru, e.CellBounds);
@@ -37,38 +39,37 @@ namespace WFChessGame
             }
         }
 
-        private void label1_DragEnter(object sender, DragEventArgs e)
+
+        public void UpdateSquare(object sender, EventArgs e)
         {
-            // As we are interested in Image data only
-            // we will check this as follows
-            if (e.Data.GetDataPresent(typeof(int)))
+            // Rendering whole board when one move is made is inefficient. Refactor to something smarter.
+            DisplayBoard();
+        }
+
+        private int _oldLocation = -1;
+        private int _pieceHolder;
+        private int _newLocation;
+        private void label_Click(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            // If no piece is selected select it, if square is empty do nothing
+            // else move the piece and reset click
+            if (_oldLocation == -1)
             {
-                e.Effect = DragDropEffects.Copy;
+                _oldLocation = label.TabIndex;
+                _pieceHolder = Board.getSquare(_oldLocation);
+                if(_pieceHolder == 0)
+                {
+                    _oldLocation = -1;
+                }
             }
             else
             {
-                e.Effect = DragDropEffects.None;
+                _newLocation = label.TabIndex;
+                Board.setSquare(_newLocation, _pieceHolder);
+                Board.setSquare(_oldLocation, 0);
+                _oldLocation = -1;
             }
-        }
-
-        private void label1_MouseDown(object sender, MouseEventArgs e)
-        {
-            //we will pass the data that user wants to drag
-            //DoDragDrop method is used for holding data
-            //DoDragDrop accepts two paramete first paramter 
-            //is data(image,file,text etc) and second paramter 
-            //specify either user wants to copy the data or move data
-
-            Label source = (Label)sender;
-            DoDragDrop(Board.Square[source.TabIndex],
-                       DragDropEffects.Copy);
-        }
-
-        private void label1_DragDrop(object sender, DragEventArgs e)
-        {
-            //target control will accept data here 
-            Label destination = (Label)sender;
-            Board.Square[destination.TabIndex] = (int)e.Data.GetData(typeof(int));
         }
     }
 }

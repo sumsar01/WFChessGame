@@ -191,10 +191,7 @@ namespace WFChessGame
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(535, 511);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.tableLayoutPanel1_CellPaint);
-            this.tableLayoutPanel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.tableLayoutPanel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.tableLayoutPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.tableLayoutPanel1.CellPaint += new System.Windows.Forms.TableLayoutCellPaintEventHandler(this.tableLayoutPanel_CellPaint);
             // 
             // label64
             // 
@@ -205,9 +202,7 @@ namespace WFChessGame
             this.label64.Size = new System.Drawing.Size(67, 70);
             this.label64.TabIndex = 63;
             this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label64.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label64.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label64.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label64.Click += new System.EventHandler(this.label_Click);
             // 
             // label63
             // 
@@ -218,9 +213,7 @@ namespace WFChessGame
             this.label63.Size = new System.Drawing.Size(60, 70);
             this.label63.TabIndex = 62;
             this.label63.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label63.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label63.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label63.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label63.Click += new System.EventHandler(this.label_Click);
             // 
             // label62
             // 
@@ -231,9 +224,7 @@ namespace WFChessGame
             this.label62.Size = new System.Drawing.Size(60, 70);
             this.label62.TabIndex = 61;
             this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label62.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label62.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label62.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label62.Click += new System.EventHandler(this.label_Click);
             // 
             // label61
             // 
@@ -244,9 +235,7 @@ namespace WFChessGame
             this.label61.Size = new System.Drawing.Size(60, 70);
             this.label61.TabIndex = 60;
             this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label61.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label61.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label61.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label61.Click += new System.EventHandler(this.label_Click);
             // 
             // label60
             // 
@@ -257,9 +246,7 @@ namespace WFChessGame
             this.label60.Size = new System.Drawing.Size(60, 70);
             this.label60.TabIndex = 59;
             this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label60.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label60.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label60.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label60.Click += new System.EventHandler(this.label_Click);
             // 
             // label59
             // 
@@ -270,9 +257,7 @@ namespace WFChessGame
             this.label59.Size = new System.Drawing.Size(60, 70);
             this.label59.TabIndex = 58;
             this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label59.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label59.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label59.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label59.Click += new System.EventHandler(this.label_Click);
             // 
             // label58
             // 
@@ -283,9 +268,7 @@ namespace WFChessGame
             this.label58.Size = new System.Drawing.Size(60, 70);
             this.label58.TabIndex = 57;
             this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label58.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label58.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label58.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label58.Click += new System.EventHandler(this.label_Click);
             // 
             // label57
             // 
@@ -296,9 +279,7 @@ namespace WFChessGame
             this.label57.Size = new System.Drawing.Size(60, 70);
             this.label57.TabIndex = 56;
             this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label57.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label57.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label57.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label57.Click += new System.EventHandler(this.label_Click);
             // 
             // label56
             // 
@@ -309,9 +290,7 @@ namespace WFChessGame
             this.label56.Size = new System.Drawing.Size(67, 63);
             this.label56.TabIndex = 55;
             this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label56.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label56.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label56.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label56.Click += new System.EventHandler(this.label_Click);
             // 
             // label55
             // 
@@ -322,9 +301,7 @@ namespace WFChessGame
             this.label55.Size = new System.Drawing.Size(60, 63);
             this.label55.TabIndex = 54;
             this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label55.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label55.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label55.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label55.Click += new System.EventHandler(this.label_Click);
             // 
             // label54
             // 
@@ -335,9 +312,7 @@ namespace WFChessGame
             this.label54.Size = new System.Drawing.Size(60, 63);
             this.label54.TabIndex = 53;
             this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label54.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label54.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label54.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label54.Click += new System.EventHandler(this.label_Click);
             // 
             // label53
             // 
@@ -348,9 +323,7 @@ namespace WFChessGame
             this.label53.Size = new System.Drawing.Size(60, 63);
             this.label53.TabIndex = 52;
             this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label53.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label53.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label53.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label53.Click += new System.EventHandler(this.label_Click);
             // 
             // label52
             // 
@@ -361,9 +334,7 @@ namespace WFChessGame
             this.label52.Size = new System.Drawing.Size(60, 63);
             this.label52.TabIndex = 51;
             this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label52.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label52.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label52.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label52.Click += new System.EventHandler(this.label_Click);
             // 
             // label51
             // 
@@ -374,9 +345,7 @@ namespace WFChessGame
             this.label51.Size = new System.Drawing.Size(60, 63);
             this.label51.TabIndex = 50;
             this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label51.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label51.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label51.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label51.Click += new System.EventHandler(this.label_Click);
             // 
             // label50
             // 
@@ -387,9 +356,7 @@ namespace WFChessGame
             this.label50.Size = new System.Drawing.Size(60, 63);
             this.label50.TabIndex = 49;
             this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label50.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label50.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label50.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label50.Click += new System.EventHandler(this.label_Click);
             // 
             // label49
             // 
@@ -400,9 +367,7 @@ namespace WFChessGame
             this.label49.Size = new System.Drawing.Size(60, 63);
             this.label49.TabIndex = 48;
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label49.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label49.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label49.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label49.Click += new System.EventHandler(this.label_Click);
             // 
             // label48
             // 
@@ -413,9 +378,7 @@ namespace WFChessGame
             this.label48.Size = new System.Drawing.Size(67, 63);
             this.label48.TabIndex = 47;
             this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label48.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label48.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label48.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label48.Click += new System.EventHandler(this.label_Click);
             // 
             // label47
             // 
@@ -426,9 +389,7 @@ namespace WFChessGame
             this.label47.Size = new System.Drawing.Size(60, 63);
             this.label47.TabIndex = 46;
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label47.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label47.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label47.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label47.Click += new System.EventHandler(this.label_Click);
             // 
             // label46
             // 
@@ -439,9 +400,7 @@ namespace WFChessGame
             this.label46.Size = new System.Drawing.Size(60, 63);
             this.label46.TabIndex = 45;
             this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label46.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label46.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label46.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label46.Click += new System.EventHandler(this.label_Click);
             // 
             // label45
             // 
@@ -452,9 +411,7 @@ namespace WFChessGame
             this.label45.Size = new System.Drawing.Size(60, 63);
             this.label45.TabIndex = 44;
             this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label45.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label45.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label45.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label45.Click += new System.EventHandler(this.label_Click);
             // 
             // label44
             // 
@@ -465,9 +422,7 @@ namespace WFChessGame
             this.label44.Size = new System.Drawing.Size(60, 63);
             this.label44.TabIndex = 43;
             this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label44.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label44.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label44.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label44.Click += new System.EventHandler(this.label_Click);
             // 
             // label43
             // 
@@ -478,9 +433,7 @@ namespace WFChessGame
             this.label43.Size = new System.Drawing.Size(60, 63);
             this.label43.TabIndex = 42;
             this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label43.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label43.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label43.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label43.Click += new System.EventHandler(this.label_Click);
             // 
             // label42
             // 
@@ -491,9 +444,7 @@ namespace WFChessGame
             this.label42.Size = new System.Drawing.Size(60, 63);
             this.label42.TabIndex = 41;
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label42.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label42.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label42.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label42.Click += new System.EventHandler(this.label_Click);
             // 
             // label41
             // 
@@ -504,9 +455,7 @@ namespace WFChessGame
             this.label41.Size = new System.Drawing.Size(60, 63);
             this.label41.TabIndex = 40;
             this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label41.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label41.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label41.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label41.Click += new System.EventHandler(this.label_Click);
             // 
             // label40
             // 
@@ -517,9 +466,7 @@ namespace WFChessGame
             this.label40.Size = new System.Drawing.Size(67, 63);
             this.label40.TabIndex = 39;
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label40.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label40.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label40.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label40.Click += new System.EventHandler(this.label_Click);
             // 
             // label39
             // 
@@ -530,9 +477,7 @@ namespace WFChessGame
             this.label39.Size = new System.Drawing.Size(60, 63);
             this.label39.TabIndex = 38;
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label39.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label39.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label39.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label39.Click += new System.EventHandler(this.label_Click);
             // 
             // label38
             // 
@@ -543,9 +488,7 @@ namespace WFChessGame
             this.label38.Size = new System.Drawing.Size(60, 63);
             this.label38.TabIndex = 37;
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label38.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label38.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label38.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label38.Click += new System.EventHandler(this.label_Click);
             // 
             // label37
             // 
@@ -556,9 +499,7 @@ namespace WFChessGame
             this.label37.Size = new System.Drawing.Size(60, 63);
             this.label37.TabIndex = 36;
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label37.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label37.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label37.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label37.Click += new System.EventHandler(this.label_Click);
             // 
             // label36
             // 
@@ -569,9 +510,7 @@ namespace WFChessGame
             this.label36.Size = new System.Drawing.Size(60, 63);
             this.label36.TabIndex = 35;
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label36.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label36.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label36.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label36.Click += new System.EventHandler(this.label_Click);
             // 
             // label35
             // 
@@ -582,9 +521,7 @@ namespace WFChessGame
             this.label35.Size = new System.Drawing.Size(60, 63);
             this.label35.TabIndex = 34;
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label35.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label35.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label35.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label35.Click += new System.EventHandler(this.label_Click);
             // 
             // label34
             // 
@@ -595,9 +532,7 @@ namespace WFChessGame
             this.label34.Size = new System.Drawing.Size(60, 63);
             this.label34.TabIndex = 33;
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label34.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label34.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label34.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label34.Click += new System.EventHandler(this.label_Click);
             // 
             // label33
             // 
@@ -608,9 +543,7 @@ namespace WFChessGame
             this.label33.Size = new System.Drawing.Size(60, 63);
             this.label33.TabIndex = 32;
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label33.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label33.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label33.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label33.Click += new System.EventHandler(this.label_Click);
             // 
             // label32
             // 
@@ -621,9 +554,7 @@ namespace WFChessGame
             this.label32.Size = new System.Drawing.Size(67, 63);
             this.label32.TabIndex = 31;
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label32.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label32.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label32.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label32.Click += new System.EventHandler(this.label_Click);
             // 
             // label31
             // 
@@ -634,9 +565,7 @@ namespace WFChessGame
             this.label31.Size = new System.Drawing.Size(60, 63);
             this.label31.TabIndex = 30;
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label31.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label31.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label31.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label31.Click += new System.EventHandler(this.label_Click);
             // 
             // label30
             // 
@@ -647,9 +576,7 @@ namespace WFChessGame
             this.label30.Size = new System.Drawing.Size(60, 63);
             this.label30.TabIndex = 29;
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label30.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label30.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label30.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label30.Click += new System.EventHandler(this.label_Click);
             // 
             // label29
             // 
@@ -660,9 +587,7 @@ namespace WFChessGame
             this.label29.Size = new System.Drawing.Size(60, 63);
             this.label29.TabIndex = 28;
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label29.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label29.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label29.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label29.Click += new System.EventHandler(this.label_Click);
             // 
             // label28
             // 
@@ -673,9 +598,7 @@ namespace WFChessGame
             this.label28.Size = new System.Drawing.Size(60, 63);
             this.label28.TabIndex = 27;
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label28.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label28.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label28.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label28.Click += new System.EventHandler(this.label_Click);
             // 
             // label27
             // 
@@ -686,9 +609,7 @@ namespace WFChessGame
             this.label27.Size = new System.Drawing.Size(60, 63);
             this.label27.TabIndex = 26;
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label27.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label27.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label27.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label27.Click += new System.EventHandler(this.label_Click);
             // 
             // label26
             // 
@@ -699,9 +620,7 @@ namespace WFChessGame
             this.label26.Size = new System.Drawing.Size(60, 63);
             this.label26.TabIndex = 25;
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label26.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label26.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label26.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label26.Click += new System.EventHandler(this.label_Click);
             // 
             // label25
             // 
@@ -712,9 +631,7 @@ namespace WFChessGame
             this.label25.Size = new System.Drawing.Size(60, 63);
             this.label25.TabIndex = 24;
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label25.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label25.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label25.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label25.Click += new System.EventHandler(this.label_Click);
             // 
             // label24
             // 
@@ -725,9 +642,7 @@ namespace WFChessGame
             this.label24.Size = new System.Drawing.Size(67, 63);
             this.label24.TabIndex = 23;
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label24.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label24.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label24.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label24.Click += new System.EventHandler(this.label_Click);
             // 
             // label23
             // 
@@ -738,9 +653,7 @@ namespace WFChessGame
             this.label23.Size = new System.Drawing.Size(60, 63);
             this.label23.TabIndex = 22;
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label23.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label23.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label23.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label23.Click += new System.EventHandler(this.label_Click);
             // 
             // label22
             // 
@@ -751,9 +664,7 @@ namespace WFChessGame
             this.label22.Size = new System.Drawing.Size(60, 63);
             this.label22.TabIndex = 21;
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label22.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label22.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label22.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label22.Click += new System.EventHandler(this.label_Click);
             // 
             // label21
             // 
@@ -764,9 +675,7 @@ namespace WFChessGame
             this.label21.Size = new System.Drawing.Size(60, 63);
             this.label21.TabIndex = 20;
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label21.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label21.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label21.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label21.Click += new System.EventHandler(this.label_Click);
             // 
             // label20
             // 
@@ -777,9 +686,7 @@ namespace WFChessGame
             this.label20.Size = new System.Drawing.Size(60, 63);
             this.label20.TabIndex = 19;
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label20.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label20.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label20.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label20.Click += new System.EventHandler(this.label_Click);
             // 
             // label19
             // 
@@ -790,9 +697,7 @@ namespace WFChessGame
             this.label19.Size = new System.Drawing.Size(60, 63);
             this.label19.TabIndex = 18;
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label19.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label19.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label19.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label19.Click += new System.EventHandler(this.label_Click);
             // 
             // label18
             // 
@@ -803,9 +708,7 @@ namespace WFChessGame
             this.label18.Size = new System.Drawing.Size(60, 63);
             this.label18.TabIndex = 17;
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label18.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label18.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label18.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label18.Click += new System.EventHandler(this.label_Click);
             // 
             // label17
             // 
@@ -816,9 +719,7 @@ namespace WFChessGame
             this.label17.Size = new System.Drawing.Size(60, 63);
             this.label17.TabIndex = 16;
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label17.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label17.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label17.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label17.Click += new System.EventHandler(this.label_Click);
             // 
             // label16
             // 
@@ -829,9 +730,7 @@ namespace WFChessGame
             this.label16.Size = new System.Drawing.Size(67, 63);
             this.label16.TabIndex = 15;
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label16.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label16.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label16.Click += new System.EventHandler(this.label_Click);
             // 
             // label15
             // 
@@ -842,9 +741,7 @@ namespace WFChessGame
             this.label15.Size = new System.Drawing.Size(60, 63);
             this.label15.TabIndex = 14;
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label15.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label15.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label15.Click += new System.EventHandler(this.label_Click);
             // 
             // label14
             // 
@@ -855,9 +752,7 @@ namespace WFChessGame
             this.label14.Size = new System.Drawing.Size(60, 63);
             this.label14.TabIndex = 13;
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label14.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label14.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label14.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label14.Click += new System.EventHandler(this.label_Click);
             // 
             // label13
             // 
@@ -868,9 +763,7 @@ namespace WFChessGame
             this.label13.Size = new System.Drawing.Size(60, 63);
             this.label13.TabIndex = 12;
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label13.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label13.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label13.Click += new System.EventHandler(this.label_Click);
             // 
             // label12
             // 
@@ -881,9 +774,7 @@ namespace WFChessGame
             this.label12.Size = new System.Drawing.Size(60, 63);
             this.label12.TabIndex = 11;
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label12.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label12.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label12.Click += new System.EventHandler(this.label_Click);
             // 
             // label11
             // 
@@ -894,9 +785,7 @@ namespace WFChessGame
             this.label11.Size = new System.Drawing.Size(60, 63);
             this.label11.TabIndex = 10;
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label11.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label11.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label11.Click += new System.EventHandler(this.label_Click);
             // 
             // label10
             // 
@@ -907,9 +796,7 @@ namespace WFChessGame
             this.label10.Size = new System.Drawing.Size(60, 63);
             this.label10.TabIndex = 9;
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label10.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label10.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label10.Click += new System.EventHandler(this.label_Click);
             // 
             // label9
             // 
@@ -920,9 +807,7 @@ namespace WFChessGame
             this.label9.Size = new System.Drawing.Size(60, 63);
             this.label9.TabIndex = 8;
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label9.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label9.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label9.Click += new System.EventHandler(this.label_Click);
             // 
             // label8
             // 
@@ -933,9 +818,7 @@ namespace WFChessGame
             this.label8.Size = new System.Drawing.Size(67, 63);
             this.label8.TabIndex = 7;
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label8.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label8.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label8.Click += new System.EventHandler(this.label_Click);
             // 
             // label7
             // 
@@ -946,9 +829,7 @@ namespace WFChessGame
             this.label7.Size = new System.Drawing.Size(60, 63);
             this.label7.TabIndex = 6;
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label7.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label7.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label7.Click += new System.EventHandler(this.label_Click);
             // 
             // label6
             // 
@@ -959,9 +840,7 @@ namespace WFChessGame
             this.label6.Size = new System.Drawing.Size(60, 63);
             this.label6.TabIndex = 5;
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label6.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label6.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label6.Click += new System.EventHandler(this.label_Click);
             // 
             // label5
             // 
@@ -972,9 +851,7 @@ namespace WFChessGame
             this.label5.Size = new System.Drawing.Size(60, 63);
             this.label5.TabIndex = 4;
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label5.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label5.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label5.Click += new System.EventHandler(this.label_Click);
             // 
             // label4
             // 
@@ -985,9 +862,7 @@ namespace WFChessGame
             this.label4.Size = new System.Drawing.Size(60, 63);
             this.label4.TabIndex = 3;
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label4.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label4.Click += new System.EventHandler(this.label_Click);
             // 
             // label3
             // 
@@ -998,9 +873,7 @@ namespace WFChessGame
             this.label3.Size = new System.Drawing.Size(60, 63);
             this.label3.TabIndex = 2;
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label3.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label3.Click += new System.EventHandler(this.label_Click);
             // 
             // label2
             // 
@@ -1012,9 +885,7 @@ namespace WFChessGame
             this.label2.Size = new System.Drawing.Size(60, 63);
             this.label2.TabIndex = 1;
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label2.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label2.Click += new System.EventHandler(this.label_Click);
             // 
             // label1
             // 
@@ -1026,9 +897,7 @@ namespace WFChessGame
             this.label1.Size = new System.Drawing.Size(60, 63);
             this.label1.TabIndex = 0;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label1.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
-            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            this.label1.Click += new System.EventHandler(this.label_Click);
             // 
             // Form1
             // 
