@@ -12,11 +12,16 @@ namespace WFChessGame.Engine.Models
 
         public static int GetSquare(int index)
         {
-            return _square[index];
+            if(index >= 0 & 63 >= index)
+            {
+                return _square[index];
+            }
+
+            return -1;
         }
         public static void SetSquare(int index, int value)
         {
-            if (value != _square[index])
+            if (value != _square[index] & index >= 0 & 63 >= index)
             {
                 _square[index] = value;
                 OnValueChanged(null);

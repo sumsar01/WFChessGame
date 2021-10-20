@@ -51,7 +51,11 @@ namespace WFChessGame
                 {
                     if(moves.Contains(label.TabIndex))
                     {
-                        label.BackColor = Color.OrangeRed;
+                        label.BackColor = Color.FromArgb(128, 204, 0, 0);
+                    }
+                    if (location == label.TabIndex)
+                    {
+                        label.BackColor = Color.FromArgb(200, 255, 128, 0);
                     }
                 }
             }
@@ -69,23 +73,38 @@ namespace WFChessGame
         private void label_Click(object sender, EventArgs e)
         {
             Label label = (Label)sender;
+            List<int> moves = Turn.GetLegalMoves(_pieceHolder, _oldLocation);
             // If no piece is selected select it, if square is empty do nothing
             // else move the piece and reset click
             if (_oldLocation == -1)
             {
                 _oldLocation = label.TabIndex;
                 _pieceHolder = Board.GetSquare(_oldLocation);
+                bool isTurn = Turn.CheckTurn(_pieceHolder);
+
+                if (isTurn == false)
+                {
+                    _oldLocation = -1;
+                    return;
+                }
+
                 ShowPossibleMoves(_oldLocation);
                 if (_pieceHolder == 0)
                 {
                     _oldLocation = -1;
+                    DisplayBoard();
                 }
             }
-            else
+            else if(moves.Contains(label.TabIndex))
             {
                 _newLocation = label.TabIndex;
                 Turn.MakeMove(_newLocation, _oldLocation);
                 _oldLocation = -1;
+            }
+            else
+            {
+                _oldLocation = -1;
+                DisplayBoard();
             }
         }
     }

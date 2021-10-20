@@ -107,12 +107,9 @@ namespace WFChessGame.Engine.Models
         public static List<int> GetMoves(int piece, int location, List<int> moves)
         {
             int type = piece % 8;
+            int[] input;
             switch (type)
             {
-                case 1:
-                    int[] input = { location - 9, location - 8, location - 7, location - 1, location + 1, location + 7, location + 8, location + 9 };
-                    moves.AddRange(input);
-                    return moves;
                 case 2:
                     int _isWhitePlayersTurn = 4;
 
@@ -120,7 +117,7 @@ namespace WFChessGame.Engine.Models
                     {
                         // Chicking if white pawn has moved yet
                         // If pawn has not moved allow two forward moves
-                        if(8 <= location & location <= 15)
+                        if(48 <= location & location <= 55)
                         {
                             input = new int[] { location - 8, location - 16 };
                             moves.AddRange(input);
@@ -144,7 +141,7 @@ namespace WFChessGame.Engine.Models
                     {
                         // Chicking if black pawn has moved yet
                         // If pawn has not moved allow two forward moves
-                        if (47 <= location & location <= 55)
+                        if (8 <= location & location <= 15)
                         {
                             input = new int[] { location + 8, location + 16 };
                             moves.AddRange(input);

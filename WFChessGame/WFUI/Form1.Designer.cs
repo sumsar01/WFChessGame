@@ -197,9 +197,10 @@ namespace WFChessGame
             // 
             this.label64.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label64.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label64.Location = new System.Drawing.Point(465, 441);
+            this.label64.Location = new System.Drawing.Point(462, 441);
+            this.label64.Margin = new System.Windows.Forms.Padding(0);
             this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(67, 70);
+            this.label64.Size = new System.Drawing.Size(73, 70);
             this.label64.TabIndex = 63;
             this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label64.Click += new System.EventHandler(this.label_Click);
@@ -208,9 +209,10 @@ namespace WFChessGame
             // 
             this.label63.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label63.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label63.Location = new System.Drawing.Point(399, 441);
+            this.label63.Location = new System.Drawing.Point(396, 441);
+            this.label63.Margin = new System.Windows.Forms.Padding(0);
             this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(60, 70);
+            this.label63.Size = new System.Drawing.Size(66, 70);
             this.label63.TabIndex = 62;
             this.label63.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label63.Click += new System.EventHandler(this.label_Click);
@@ -219,9 +221,10 @@ namespace WFChessGame
             // 
             this.label62.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label62.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label62.Location = new System.Drawing.Point(333, 441);
+            this.label62.Location = new System.Drawing.Point(330, 441);
+            this.label62.Margin = new System.Windows.Forms.Padding(0);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(60, 70);
+            this.label62.Size = new System.Drawing.Size(66, 70);
             this.label62.TabIndex = 61;
             this.label62.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label62.Click += new System.EventHandler(this.label_Click);
@@ -230,9 +233,10 @@ namespace WFChessGame
             // 
             this.label61.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label61.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label61.Location = new System.Drawing.Point(267, 441);
+            this.label61.Location = new System.Drawing.Point(264, 441);
+            this.label61.Margin = new System.Windows.Forms.Padding(0);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(60, 70);
+            this.label61.Size = new System.Drawing.Size(66, 70);
             this.label61.TabIndex = 60;
             this.label61.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label61.Click += new System.EventHandler(this.label_Click);
@@ -241,9 +245,10 @@ namespace WFChessGame
             // 
             this.label60.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label60.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label60.Location = new System.Drawing.Point(201, 441);
+            this.label60.Location = new System.Drawing.Point(198, 441);
+            this.label60.Margin = new System.Windows.Forms.Padding(0);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(60, 70);
+            this.label60.Size = new System.Drawing.Size(66, 70);
             this.label60.TabIndex = 59;
             this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label60.Click += new System.EventHandler(this.label_Click);
@@ -252,9 +257,10 @@ namespace WFChessGame
             // 
             this.label59.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label59.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label59.Location = new System.Drawing.Point(135, 441);
+            this.label59.Location = new System.Drawing.Point(132, 441);
+            this.label59.Margin = new System.Windows.Forms.Padding(0);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(60, 70);
+            this.label59.Size = new System.Drawing.Size(66, 70);
             this.label59.TabIndex = 58;
             this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label59.Click += new System.EventHandler(this.label_Click);
@@ -263,9 +269,10 @@ namespace WFChessGame
             // 
             this.label58.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label58.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label58.Location = new System.Drawing.Point(69, 441);
+            this.label58.Location = new System.Drawing.Point(66, 441);
+            this.label58.Margin = new System.Windows.Forms.Padding(0);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(60, 70);
+            this.label58.Size = new System.Drawing.Size(66, 70);
             this.label58.TabIndex = 57;
             this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label58.Click += new System.EventHandler(this.label_Click);
@@ -274,9 +281,10 @@ namespace WFChessGame
             // 
             this.label57.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label57.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label57.Location = new System.Drawing.Point(3, 441);
+            this.label57.Location = new System.Drawing.Point(0, 441);
+            this.label57.Margin = new System.Windows.Forms.Padding(0);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(60, 70);
+            this.label57.Size = new System.Drawing.Size(66, 70);
             this.label57.TabIndex = 56;
             this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label57.Click += new System.EventHandler(this.label_Click);
@@ -285,9 +293,10 @@ namespace WFChessGame
             // 
             this.label56.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label56.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label56.Location = new System.Drawing.Point(465, 378);
+            this.label56.Location = new System.Drawing.Point(462, 378);
+            this.label56.Margin = new System.Windows.Forms.Padding(0);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(67, 63);
+            this.label56.Size = new System.Drawing.Size(73, 63);
             this.label56.TabIndex = 55;
             this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label56.Click += new System.EventHandler(this.label_Click);
@@ -296,9 +305,10 @@ namespace WFChessGame
             // 
             this.label55.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label55.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label55.Location = new System.Drawing.Point(399, 378);
+            this.label55.Location = new System.Drawing.Point(396, 378);
+            this.label55.Margin = new System.Windows.Forms.Padding(0);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(60, 63);
+            this.label55.Size = new System.Drawing.Size(66, 63);
             this.label55.TabIndex = 54;
             this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label55.Click += new System.EventHandler(this.label_Click);
@@ -307,9 +317,10 @@ namespace WFChessGame
             // 
             this.label54.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label54.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label54.Location = new System.Drawing.Point(333, 378);
+            this.label54.Location = new System.Drawing.Point(330, 378);
+            this.label54.Margin = new System.Windows.Forms.Padding(0);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(60, 63);
+            this.label54.Size = new System.Drawing.Size(66, 63);
             this.label54.TabIndex = 53;
             this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label54.Click += new System.EventHandler(this.label_Click);
@@ -318,9 +329,10 @@ namespace WFChessGame
             // 
             this.label53.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label53.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label53.Location = new System.Drawing.Point(267, 378);
+            this.label53.Location = new System.Drawing.Point(264, 378);
+            this.label53.Margin = new System.Windows.Forms.Padding(0);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(60, 63);
+            this.label53.Size = new System.Drawing.Size(66, 63);
             this.label53.TabIndex = 52;
             this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label53.Click += new System.EventHandler(this.label_Click);
@@ -329,9 +341,10 @@ namespace WFChessGame
             // 
             this.label52.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label52.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label52.Location = new System.Drawing.Point(201, 378);
+            this.label52.Location = new System.Drawing.Point(198, 378);
+            this.label52.Margin = new System.Windows.Forms.Padding(0);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(60, 63);
+            this.label52.Size = new System.Drawing.Size(66, 63);
             this.label52.TabIndex = 51;
             this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label52.Click += new System.EventHandler(this.label_Click);
@@ -340,9 +353,10 @@ namespace WFChessGame
             // 
             this.label51.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label51.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label51.Location = new System.Drawing.Point(135, 378);
+            this.label51.Location = new System.Drawing.Point(132, 378);
+            this.label51.Margin = new System.Windows.Forms.Padding(0);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(60, 63);
+            this.label51.Size = new System.Drawing.Size(66, 63);
             this.label51.TabIndex = 50;
             this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label51.Click += new System.EventHandler(this.label_Click);
@@ -351,9 +365,10 @@ namespace WFChessGame
             // 
             this.label50.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label50.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label50.Location = new System.Drawing.Point(69, 378);
+            this.label50.Location = new System.Drawing.Point(66, 378);
+            this.label50.Margin = new System.Windows.Forms.Padding(0);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(60, 63);
+            this.label50.Size = new System.Drawing.Size(66, 63);
             this.label50.TabIndex = 49;
             this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label50.Click += new System.EventHandler(this.label_Click);
@@ -362,9 +377,10 @@ namespace WFChessGame
             // 
             this.label49.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label49.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label49.Location = new System.Drawing.Point(3, 378);
+            this.label49.Location = new System.Drawing.Point(0, 378);
+            this.label49.Margin = new System.Windows.Forms.Padding(0);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(60, 63);
+            this.label49.Size = new System.Drawing.Size(66, 63);
             this.label49.TabIndex = 48;
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label49.Click += new System.EventHandler(this.label_Click);
@@ -373,9 +389,10 @@ namespace WFChessGame
             // 
             this.label48.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label48.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label48.Location = new System.Drawing.Point(465, 315);
+            this.label48.Location = new System.Drawing.Point(462, 315);
+            this.label48.Margin = new System.Windows.Forms.Padding(0);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(67, 63);
+            this.label48.Size = new System.Drawing.Size(73, 63);
             this.label48.TabIndex = 47;
             this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label48.Click += new System.EventHandler(this.label_Click);
@@ -384,9 +401,10 @@ namespace WFChessGame
             // 
             this.label47.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label47.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label47.Location = new System.Drawing.Point(399, 315);
+            this.label47.Location = new System.Drawing.Point(396, 315);
+            this.label47.Margin = new System.Windows.Forms.Padding(0);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(60, 63);
+            this.label47.Size = new System.Drawing.Size(66, 63);
             this.label47.TabIndex = 46;
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label47.Click += new System.EventHandler(this.label_Click);
@@ -395,9 +413,10 @@ namespace WFChessGame
             // 
             this.label46.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label46.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label46.Location = new System.Drawing.Point(333, 315);
+            this.label46.Location = new System.Drawing.Point(330, 315);
+            this.label46.Margin = new System.Windows.Forms.Padding(0);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(60, 63);
+            this.label46.Size = new System.Drawing.Size(66, 63);
             this.label46.TabIndex = 45;
             this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label46.Click += new System.EventHandler(this.label_Click);
@@ -406,9 +425,10 @@ namespace WFChessGame
             // 
             this.label45.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label45.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label45.Location = new System.Drawing.Point(267, 315);
+            this.label45.Location = new System.Drawing.Point(264, 315);
+            this.label45.Margin = new System.Windows.Forms.Padding(0);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(60, 63);
+            this.label45.Size = new System.Drawing.Size(66, 63);
             this.label45.TabIndex = 44;
             this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label45.Click += new System.EventHandler(this.label_Click);
@@ -417,9 +437,10 @@ namespace WFChessGame
             // 
             this.label44.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label44.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label44.Location = new System.Drawing.Point(201, 315);
+            this.label44.Location = new System.Drawing.Point(198, 315);
+            this.label44.Margin = new System.Windows.Forms.Padding(0);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(60, 63);
+            this.label44.Size = new System.Drawing.Size(66, 63);
             this.label44.TabIndex = 43;
             this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label44.Click += new System.EventHandler(this.label_Click);
@@ -428,9 +449,10 @@ namespace WFChessGame
             // 
             this.label43.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label43.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label43.Location = new System.Drawing.Point(135, 315);
+            this.label43.Location = new System.Drawing.Point(132, 315);
+            this.label43.Margin = new System.Windows.Forms.Padding(0);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(60, 63);
+            this.label43.Size = new System.Drawing.Size(66, 63);
             this.label43.TabIndex = 42;
             this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label43.Click += new System.EventHandler(this.label_Click);
@@ -439,9 +461,10 @@ namespace WFChessGame
             // 
             this.label42.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label42.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label42.Location = new System.Drawing.Point(69, 315);
+            this.label42.Location = new System.Drawing.Point(66, 315);
+            this.label42.Margin = new System.Windows.Forms.Padding(0);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(60, 63);
+            this.label42.Size = new System.Drawing.Size(66, 63);
             this.label42.TabIndex = 41;
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label42.Click += new System.EventHandler(this.label_Click);
@@ -450,9 +473,10 @@ namespace WFChessGame
             // 
             this.label41.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label41.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label41.Location = new System.Drawing.Point(3, 315);
+            this.label41.Location = new System.Drawing.Point(0, 315);
+            this.label41.Margin = new System.Windows.Forms.Padding(0);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(60, 63);
+            this.label41.Size = new System.Drawing.Size(66, 63);
             this.label41.TabIndex = 40;
             this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label41.Click += new System.EventHandler(this.label_Click);
@@ -461,9 +485,10 @@ namespace WFChessGame
             // 
             this.label40.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label40.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label40.Location = new System.Drawing.Point(465, 252);
+            this.label40.Location = new System.Drawing.Point(462, 252);
+            this.label40.Margin = new System.Windows.Forms.Padding(0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(67, 63);
+            this.label40.Size = new System.Drawing.Size(73, 63);
             this.label40.TabIndex = 39;
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label40.Click += new System.EventHandler(this.label_Click);
@@ -472,9 +497,10 @@ namespace WFChessGame
             // 
             this.label39.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label39.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label39.Location = new System.Drawing.Point(399, 252);
+            this.label39.Location = new System.Drawing.Point(396, 252);
+            this.label39.Margin = new System.Windows.Forms.Padding(0);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(60, 63);
+            this.label39.Size = new System.Drawing.Size(66, 63);
             this.label39.TabIndex = 38;
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label39.Click += new System.EventHandler(this.label_Click);
@@ -483,9 +509,10 @@ namespace WFChessGame
             // 
             this.label38.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label38.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label38.Location = new System.Drawing.Point(333, 252);
+            this.label38.Location = new System.Drawing.Point(330, 252);
+            this.label38.Margin = new System.Windows.Forms.Padding(0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(60, 63);
+            this.label38.Size = new System.Drawing.Size(66, 63);
             this.label38.TabIndex = 37;
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label38.Click += new System.EventHandler(this.label_Click);
@@ -494,9 +521,10 @@ namespace WFChessGame
             // 
             this.label37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label37.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label37.Location = new System.Drawing.Point(267, 252);
+            this.label37.Location = new System.Drawing.Point(264, 252);
+            this.label37.Margin = new System.Windows.Forms.Padding(0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(60, 63);
+            this.label37.Size = new System.Drawing.Size(66, 63);
             this.label37.TabIndex = 36;
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label37.Click += new System.EventHandler(this.label_Click);
@@ -505,9 +533,10 @@ namespace WFChessGame
             // 
             this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label36.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label36.Location = new System.Drawing.Point(201, 252);
+            this.label36.Location = new System.Drawing.Point(198, 252);
+            this.label36.Margin = new System.Windows.Forms.Padding(0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(60, 63);
+            this.label36.Size = new System.Drawing.Size(66, 63);
             this.label36.TabIndex = 35;
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label36.Click += new System.EventHandler(this.label_Click);
@@ -516,9 +545,10 @@ namespace WFChessGame
             // 
             this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label35.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label35.Location = new System.Drawing.Point(135, 252);
+            this.label35.Location = new System.Drawing.Point(132, 252);
+            this.label35.Margin = new System.Windows.Forms.Padding(0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(60, 63);
+            this.label35.Size = new System.Drawing.Size(66, 63);
             this.label35.TabIndex = 34;
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label35.Click += new System.EventHandler(this.label_Click);
@@ -527,9 +557,10 @@ namespace WFChessGame
             // 
             this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label34.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label34.Location = new System.Drawing.Point(69, 252);
+            this.label34.Location = new System.Drawing.Point(66, 252);
+            this.label34.Margin = new System.Windows.Forms.Padding(0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(60, 63);
+            this.label34.Size = new System.Drawing.Size(66, 63);
             this.label34.TabIndex = 33;
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label34.Click += new System.EventHandler(this.label_Click);
@@ -538,9 +569,10 @@ namespace WFChessGame
             // 
             this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label33.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label33.Location = new System.Drawing.Point(3, 252);
+            this.label33.Location = new System.Drawing.Point(0, 252);
+            this.label33.Margin = new System.Windows.Forms.Padding(0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(60, 63);
+            this.label33.Size = new System.Drawing.Size(66, 63);
             this.label33.TabIndex = 32;
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label33.Click += new System.EventHandler(this.label_Click);
@@ -549,9 +581,10 @@ namespace WFChessGame
             // 
             this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label32.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label32.Location = new System.Drawing.Point(465, 189);
+            this.label32.Location = new System.Drawing.Point(462, 189);
+            this.label32.Margin = new System.Windows.Forms.Padding(0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(67, 63);
+            this.label32.Size = new System.Drawing.Size(73, 63);
             this.label32.TabIndex = 31;
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label32.Click += new System.EventHandler(this.label_Click);
@@ -560,9 +593,10 @@ namespace WFChessGame
             // 
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label31.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label31.Location = new System.Drawing.Point(399, 189);
+            this.label31.Location = new System.Drawing.Point(396, 189);
+            this.label31.Margin = new System.Windows.Forms.Padding(0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(60, 63);
+            this.label31.Size = new System.Drawing.Size(66, 63);
             this.label31.TabIndex = 30;
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label31.Click += new System.EventHandler(this.label_Click);
@@ -571,9 +605,10 @@ namespace WFChessGame
             // 
             this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label30.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label30.Location = new System.Drawing.Point(333, 189);
+            this.label30.Location = new System.Drawing.Point(330, 189);
+            this.label30.Margin = new System.Windows.Forms.Padding(0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(60, 63);
+            this.label30.Size = new System.Drawing.Size(66, 63);
             this.label30.TabIndex = 29;
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label30.Click += new System.EventHandler(this.label_Click);
@@ -582,9 +617,10 @@ namespace WFChessGame
             // 
             this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label29.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label29.Location = new System.Drawing.Point(267, 189);
+            this.label29.Location = new System.Drawing.Point(264, 189);
+            this.label29.Margin = new System.Windows.Forms.Padding(0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(60, 63);
+            this.label29.Size = new System.Drawing.Size(66, 63);
             this.label29.TabIndex = 28;
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label29.Click += new System.EventHandler(this.label_Click);
@@ -593,9 +629,10 @@ namespace WFChessGame
             // 
             this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label28.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label28.Location = new System.Drawing.Point(201, 189);
+            this.label28.Location = new System.Drawing.Point(198, 189);
+            this.label28.Margin = new System.Windows.Forms.Padding(0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(60, 63);
+            this.label28.Size = new System.Drawing.Size(66, 63);
             this.label28.TabIndex = 27;
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label28.Click += new System.EventHandler(this.label_Click);
@@ -604,9 +641,10 @@ namespace WFChessGame
             // 
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label27.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label27.Location = new System.Drawing.Point(135, 189);
+            this.label27.Location = new System.Drawing.Point(132, 189);
+            this.label27.Margin = new System.Windows.Forms.Padding(0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(60, 63);
+            this.label27.Size = new System.Drawing.Size(66, 63);
             this.label27.TabIndex = 26;
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label27.Click += new System.EventHandler(this.label_Click);
@@ -615,9 +653,10 @@ namespace WFChessGame
             // 
             this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label26.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label26.Location = new System.Drawing.Point(69, 189);
+            this.label26.Location = new System.Drawing.Point(66, 189);
+            this.label26.Margin = new System.Windows.Forms.Padding(0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(60, 63);
+            this.label26.Size = new System.Drawing.Size(66, 63);
             this.label26.TabIndex = 25;
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label26.Click += new System.EventHandler(this.label_Click);
@@ -626,9 +665,10 @@ namespace WFChessGame
             // 
             this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label25.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label25.Location = new System.Drawing.Point(3, 189);
+            this.label25.Location = new System.Drawing.Point(0, 189);
+            this.label25.Margin = new System.Windows.Forms.Padding(0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(60, 63);
+            this.label25.Size = new System.Drawing.Size(66, 63);
             this.label25.TabIndex = 24;
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label25.Click += new System.EventHandler(this.label_Click);
@@ -637,9 +677,10 @@ namespace WFChessGame
             // 
             this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label24.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label24.Location = new System.Drawing.Point(465, 126);
+            this.label24.Location = new System.Drawing.Point(462, 126);
+            this.label24.Margin = new System.Windows.Forms.Padding(0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(67, 63);
+            this.label24.Size = new System.Drawing.Size(73, 63);
             this.label24.TabIndex = 23;
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label24.Click += new System.EventHandler(this.label_Click);
@@ -648,9 +689,10 @@ namespace WFChessGame
             // 
             this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label23.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label23.Location = new System.Drawing.Point(399, 126);
+            this.label23.Location = new System.Drawing.Point(396, 126);
+            this.label23.Margin = new System.Windows.Forms.Padding(0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(60, 63);
+            this.label23.Size = new System.Drawing.Size(66, 63);
             this.label23.TabIndex = 22;
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label23.Click += new System.EventHandler(this.label_Click);
@@ -659,9 +701,10 @@ namespace WFChessGame
             // 
             this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label22.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label22.Location = new System.Drawing.Point(333, 126);
+            this.label22.Location = new System.Drawing.Point(330, 126);
+            this.label22.Margin = new System.Windows.Forms.Padding(0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(60, 63);
+            this.label22.Size = new System.Drawing.Size(66, 63);
             this.label22.TabIndex = 21;
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label22.Click += new System.EventHandler(this.label_Click);
@@ -670,9 +713,10 @@ namespace WFChessGame
             // 
             this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label21.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label21.Location = new System.Drawing.Point(267, 126);
+            this.label21.Location = new System.Drawing.Point(264, 126);
+            this.label21.Margin = new System.Windows.Forms.Padding(0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(60, 63);
+            this.label21.Size = new System.Drawing.Size(66, 63);
             this.label21.TabIndex = 20;
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label21.Click += new System.EventHandler(this.label_Click);
@@ -681,9 +725,10 @@ namespace WFChessGame
             // 
             this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label20.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label20.Location = new System.Drawing.Point(201, 126);
+            this.label20.Location = new System.Drawing.Point(198, 126);
+            this.label20.Margin = new System.Windows.Forms.Padding(0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(60, 63);
+            this.label20.Size = new System.Drawing.Size(66, 63);
             this.label20.TabIndex = 19;
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label20.Click += new System.EventHandler(this.label_Click);
@@ -692,9 +737,10 @@ namespace WFChessGame
             // 
             this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label19.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label19.Location = new System.Drawing.Point(135, 126);
+            this.label19.Location = new System.Drawing.Point(132, 126);
+            this.label19.Margin = new System.Windows.Forms.Padding(0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(60, 63);
+            this.label19.Size = new System.Drawing.Size(66, 63);
             this.label19.TabIndex = 18;
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label19.Click += new System.EventHandler(this.label_Click);
@@ -703,9 +749,10 @@ namespace WFChessGame
             // 
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label18.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label18.Location = new System.Drawing.Point(69, 126);
+            this.label18.Location = new System.Drawing.Point(66, 126);
+            this.label18.Margin = new System.Windows.Forms.Padding(0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(60, 63);
+            this.label18.Size = new System.Drawing.Size(66, 63);
             this.label18.TabIndex = 17;
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label18.Click += new System.EventHandler(this.label_Click);
@@ -714,9 +761,10 @@ namespace WFChessGame
             // 
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label17.Location = new System.Drawing.Point(3, 126);
+            this.label17.Location = new System.Drawing.Point(0, 126);
+            this.label17.Margin = new System.Windows.Forms.Padding(0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(60, 63);
+            this.label17.Size = new System.Drawing.Size(66, 63);
             this.label17.TabIndex = 16;
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label17.Click += new System.EventHandler(this.label_Click);
@@ -725,9 +773,10 @@ namespace WFChessGame
             // 
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label16.Location = new System.Drawing.Point(465, 63);
+            this.label16.Location = new System.Drawing.Point(462, 63);
+            this.label16.Margin = new System.Windows.Forms.Padding(0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(67, 63);
+            this.label16.Size = new System.Drawing.Size(73, 63);
             this.label16.TabIndex = 15;
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label16.Click += new System.EventHandler(this.label_Click);
@@ -736,9 +785,10 @@ namespace WFChessGame
             // 
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label15.Location = new System.Drawing.Point(399, 63);
+            this.label15.Location = new System.Drawing.Point(396, 63);
+            this.label15.Margin = new System.Windows.Forms.Padding(0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(60, 63);
+            this.label15.Size = new System.Drawing.Size(66, 63);
             this.label15.TabIndex = 14;
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label15.Click += new System.EventHandler(this.label_Click);
@@ -747,9 +797,10 @@ namespace WFChessGame
             // 
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label14.Location = new System.Drawing.Point(333, 63);
+            this.label14.Location = new System.Drawing.Point(330, 63);
+            this.label14.Margin = new System.Windows.Forms.Padding(0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(60, 63);
+            this.label14.Size = new System.Drawing.Size(66, 63);
             this.label14.TabIndex = 13;
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label14.Click += new System.EventHandler(this.label_Click);
@@ -758,9 +809,10 @@ namespace WFChessGame
             // 
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label13.Location = new System.Drawing.Point(267, 63);
+            this.label13.Location = new System.Drawing.Point(264, 63);
+            this.label13.Margin = new System.Windows.Forms.Padding(0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(60, 63);
+            this.label13.Size = new System.Drawing.Size(66, 63);
             this.label13.TabIndex = 12;
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label13.Click += new System.EventHandler(this.label_Click);
@@ -769,9 +821,10 @@ namespace WFChessGame
             // 
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label12.Location = new System.Drawing.Point(201, 63);
+            this.label12.Location = new System.Drawing.Point(198, 63);
+            this.label12.Margin = new System.Windows.Forms.Padding(0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(60, 63);
+            this.label12.Size = new System.Drawing.Size(66, 63);
             this.label12.TabIndex = 11;
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label12.Click += new System.EventHandler(this.label_Click);
@@ -780,9 +833,10 @@ namespace WFChessGame
             // 
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label11.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label11.Location = new System.Drawing.Point(135, 63);
+            this.label11.Location = new System.Drawing.Point(132, 63);
+            this.label11.Margin = new System.Windows.Forms.Padding(0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 63);
+            this.label11.Size = new System.Drawing.Size(66, 63);
             this.label11.TabIndex = 10;
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label11.Click += new System.EventHandler(this.label_Click);
@@ -791,9 +845,10 @@ namespace WFChessGame
             // 
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label10.Location = new System.Drawing.Point(69, 63);
+            this.label10.Location = new System.Drawing.Point(66, 63);
+            this.label10.Margin = new System.Windows.Forms.Padding(0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 63);
+            this.label10.Size = new System.Drawing.Size(66, 63);
             this.label10.TabIndex = 9;
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label10.Click += new System.EventHandler(this.label_Click);
@@ -802,9 +857,10 @@ namespace WFChessGame
             // 
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label9.Location = new System.Drawing.Point(3, 63);
+            this.label9.Location = new System.Drawing.Point(0, 63);
+            this.label9.Margin = new System.Windows.Forms.Padding(0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 63);
+            this.label9.Size = new System.Drawing.Size(66, 63);
             this.label9.TabIndex = 8;
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label9.Click += new System.EventHandler(this.label_Click);
@@ -813,9 +869,10 @@ namespace WFChessGame
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label8.Location = new System.Drawing.Point(465, 0);
+            this.label8.Location = new System.Drawing.Point(462, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 63);
+            this.label8.Size = new System.Drawing.Size(73, 63);
             this.label8.TabIndex = 7;
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label8.Click += new System.EventHandler(this.label_Click);
@@ -824,9 +881,10 @@ namespace WFChessGame
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label7.Location = new System.Drawing.Point(399, 0);
+            this.label7.Location = new System.Drawing.Point(396, 0);
+            this.label7.Margin = new System.Windows.Forms.Padding(0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 63);
+            this.label7.Size = new System.Drawing.Size(66, 63);
             this.label7.TabIndex = 6;
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Click += new System.EventHandler(this.label_Click);
@@ -835,9 +893,10 @@ namespace WFChessGame
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label6.Location = new System.Drawing.Point(333, 0);
+            this.label6.Location = new System.Drawing.Point(330, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 63);
+            this.label6.Size = new System.Drawing.Size(66, 63);
             this.label6.TabIndex = 5;
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label6.Click += new System.EventHandler(this.label_Click);
@@ -846,9 +905,10 @@ namespace WFChessGame
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label5.Location = new System.Drawing.Point(267, 0);
+            this.label5.Location = new System.Drawing.Point(264, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 63);
+            this.label5.Size = new System.Drawing.Size(66, 63);
             this.label5.TabIndex = 4;
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label5.Click += new System.EventHandler(this.label_Click);
@@ -857,9 +917,10 @@ namespace WFChessGame
             // 
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label4.Location = new System.Drawing.Point(201, 0);
+            this.label4.Location = new System.Drawing.Point(198, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 63);
+            this.label4.Size = new System.Drawing.Size(66, 63);
             this.label4.TabIndex = 3;
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label4.Click += new System.EventHandler(this.label_Click);
@@ -868,9 +929,10 @@ namespace WFChessGame
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label3.Location = new System.Drawing.Point(135, 0);
+            this.label3.Location = new System.Drawing.Point(132, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 63);
+            this.label3.Size = new System.Drawing.Size(66, 63);
             this.label3.TabIndex = 2;
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label3.Click += new System.EventHandler(this.label_Click);
@@ -880,9 +942,10 @@ namespace WFChessGame
             this.label2.AllowDrop = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label2.Location = new System.Drawing.Point(69, 0);
+            this.label2.Location = new System.Drawing.Point(66, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 63);
+            this.label2.Size = new System.Drawing.Size(66, 63);
             this.label2.TabIndex = 1;
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label_Click);
@@ -892,9 +955,10 @@ namespace WFChessGame
             this.label1.AllowDrop = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Webdings", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 63);
+            this.label1.Size = new System.Drawing.Size(66, 63);
             this.label1.TabIndex = 0;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label_Click);
