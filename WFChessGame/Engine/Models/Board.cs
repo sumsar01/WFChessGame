@@ -3,18 +3,18 @@ using System;
 using System.ComponentModel;
 
 
-namespace WFChessGame.Models
+namespace WFChessGame.Engine.Models
 {
     public static class Board
     {
         private static int[] _square;
         static int intRep;
 
-        public static int getSquare(int index)
+        public static int GetSquare(int index)
         {
             return _square[index];
         }
-        public static void setSquare(int index, int value)
+        public static void SetSquare(int index, int value)
         {
             if (value != _square[index])
             {

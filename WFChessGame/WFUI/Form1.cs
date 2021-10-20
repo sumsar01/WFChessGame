@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
-using WFChessGame.Models;
+using WFChessGame.Engine.Models;
 using System;
 
 namespace WFChessGame
@@ -56,7 +56,7 @@ namespace WFChessGame
             if (_oldLocation == -1)
             {
                 _oldLocation = label.TabIndex;
-                _pieceHolder = Board.getSquare(_oldLocation);
+                _pieceHolder = Board.GetSquare(_oldLocation);
                 if(_pieceHolder == 0)
                 {
                     _oldLocation = -1;
@@ -65,8 +65,7 @@ namespace WFChessGame
             else
             {
                 _newLocation = label.TabIndex;
-                Board.setSquare(_newLocation, _pieceHolder);
-                Board.setSquare(_oldLocation, 0);
+                Turn.MakeMove(_newLocation, _oldLocation);
                 _oldLocation = -1;
             }
         }

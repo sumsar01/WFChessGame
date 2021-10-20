@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WFChessGame.Models;
+using WFChessGame.Engine.Models;
 
 namespace WFChessGame.Engine.viewModels
 {
@@ -17,6 +17,19 @@ namespace WFChessGame.Engine.viewModels
 
             // Starting player white
             playerTurn = "1000";
+        }
+
+
+        public static void ChangeTurn()
+        {
+            if(playerTurn == "1000")
+            {
+                playerTurn = "10000";
+            }
+            else if(playerTurn == "10000")
+            {
+                playerTurn = "1000";
+            }
         }
 
     }
