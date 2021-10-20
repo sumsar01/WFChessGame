@@ -1,7 +1,6 @@
 ﻿using System;
 using WFChessGame.Engine.viewModels;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace WFChessGame.Engine.Models
 {
@@ -37,7 +36,7 @@ namespace WFChessGame.Engine.Models
             return moves;
         }
 
-        private static bool CheckTurn(int piece)
+        public static bool CheckTurn(int piece)
         {
             int stringLength = Convert.ToString(piece, 2).Length;
             if (stringLength == GameSession.playerTurn.Length)
@@ -48,10 +47,16 @@ namespace WFChessGame.Engine.Models
             return false;
         }
 
-        private static bool CheckIfEnemy(int piecePos, int enemyPos)
+        public static bool CheckIfEnemy(int piecePos, int enemyPos)
         {
-            int pieceColor = Convert.ToString(piecePos, 2).Length;
-            int enemyColor = Convert.ToString(enemyPos, 2).Length;
+            int piece = Board.GetSquare(piecePos);
+            int enemyPiece = Board.GetSquare(enemyPos);
+
+            // Return false if no piece occupy square.
+            if (enemyPiece == 0) return false;
+
+            int pieceColor = Convert.ToString(piece, 2).Length;
+            int enemyColor = Convert.ToString(enemyPiece, 2).Length;
             
             if(pieceColor != enemyColor)
             {
@@ -61,7 +66,7 @@ namespace WFChessGame.Engine.Models
         }
 
         // Prune any move that would take the piece of the grid.
-        private static List<int> RemoveOutOfBound(List<int> moves)
+        public static List<int> RemoveOutOfBound(List<int> moves)
         {
             foreach(int move in moves)
             {
@@ -74,8 +79,9 @@ namespace WFChessGame.Engine.Models
             return moves;
         }
 
-        private static List<int> CheckIfOccupied(List<int> moves, int piece, int location)
+        public static List<int> CheckIfOccupied(List<int> moves, int piece, int location)
         {
+            List<int> occupiedMoves = new List<int>();
             foreach(int move in moves)
             {
                 int destinationSquare = Board.GetSquare(move);
@@ -83,9 +89,14 @@ namespace WFChessGame.Engine.Models
                 {
                     if(CheckIfEnemy(location, move) != true)
                     {
-                        moves.Remove(move);
+                        occupiedMoves.Add(move);
                     }
                 }
+            }
+
+            foreach(int move in occupiedMoves)
+            {
+                moves.Remove(move);
             }
 
             return moves;
@@ -93,7 +104,7 @@ namespace WFChessGame.Engine.Models
 
         // Need moves from other pieces as well
         // Should probably refactor
-        private static List<int> GetMoves(int piece, int location, List<int> moves)
+        public static List<int> GetMoves(int piece, int location, List<int> moves)
         {
             int type = piece % 8;
             switch (type)

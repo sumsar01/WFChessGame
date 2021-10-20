@@ -1,7 +1,8 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using WFChessGame.Engine.Models;
-using System;
+using System.Collections.Generic;
 
 namespace WFChessGame
 {
@@ -26,18 +27,35 @@ namespace WFChessGame
         {
             foreach (Control control in tableLayoutPanel1.Controls)
             {
-                Label iconLabel = control as Label;
-                if (iconLabel != null)
+                Label label = control as Label;
+                if (label != null)
                 {
-                    Image i = Image.FromFile(Board.GetPieceImg(iconLabel.TabIndex));
+                    Image i = Image.FromFile(Board.GetPieceImg(label.TabIndex));
                     i = (Image)(new Bitmap(i, new Size(64, 64)));
-                    iconLabel.Image = i;
-                    iconLabel.BackColor = System.Drawing.Color.Transparent;
+                    label.Image = i;
+                    label.BackColor = System.Drawing.Color.Transparent;
 
                 }
             }
         }
 
+        private void ShowPossibleMoves(int location)
+        {
+            int piece = Board.GetSquare(location);
+            List<int> moves = Turn.GetLegalMoves(piece, location);
+
+            foreach(Control control in tableLayoutPanel1.Controls)
+            {
+                Label label = control as Label;
+                if(label != null)
+                {
+                    if(moves.Contains(label.TabIndex))
+                    {
+                        label.BackColor = Color.OrangeRed;
+                    }
+                }
+            }
+        }
 
         public void UpdateSquare(object sender, EventArgs e)
         {
@@ -57,7 +75,8 @@ namespace WFChessGame
             {
                 _oldLocation = label.TabIndex;
                 _pieceHolder = Board.GetSquare(_oldLocation);
-                if(_pieceHolder == 0)
+                ShowPossibleMoves(_oldLocation);
+                if (_pieceHolder == 0)
                 {
                     _oldLocation = -1;
                 }
