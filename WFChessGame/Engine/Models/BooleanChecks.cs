@@ -58,5 +58,13 @@ namespace WFChessGame.Engine.Models
 
             return moves;
         }
+
+        public static bool CheckOutOfBound(int X, int Y)
+        {
+            if (X >= 8 || Y >= 8) return true;
+            if (X < 0 || Y < 0) return true;
+
+            return false;
+        }
     }
 }

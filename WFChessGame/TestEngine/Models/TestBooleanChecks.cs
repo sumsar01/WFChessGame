@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WFChessGame.Engine.Models;
-using System;
 
 namespace TestEngine.Models
 {

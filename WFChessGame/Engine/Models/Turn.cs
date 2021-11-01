@@ -7,11 +7,11 @@ namespace WFChessGame.Engine.Models
     public static class Turn
     {
 
+        ///<summary>
+        /// Moves a piece and change turn.
+        ///</summary>
         public static void MakeMove(int newLoaction, int oldLocation)
         {
-            ///<summary>
-            /// Moves a piece and change turn
-            ///</summary>
             int piece = Board.GetSquare(oldLocation);
             List<int> moves = GetLegalMoves(piece, oldLocation);
 
@@ -23,6 +23,9 @@ namespace WFChessGame.Engine.Models
             }
         }
 
+        ///<summary>
+        /// Get all moves and prune the ones not allowed.
+        ///</summary>
         public static List<int> GetLegalMoves(int piece, int location)
         {
             List<int> moves = new List<int>();
@@ -52,8 +55,12 @@ namespace WFChessGame.Engine.Models
             return moves;
         }
 
-        // Need moves from other pieces as well
-        // Should probably refactor
+        ///<summary>
+        /// Generate the legal moves of a piece on a given position.
+        ///</summary>
+        ///<returns>
+        /// All possible moves for the piece.
+        /// </returns>
         public static List<int> GetMoves(int piece, int location, List<int> moves)
         {
             int type = piece % 8;
@@ -62,6 +69,9 @@ namespace WFChessGame.Engine.Models
 
             switch (type)
             {
+                case 1:
+                    return MovementRules.King(location, moves);
+
                 case 2:
                     if(GameSession.playerTurn == "1000")
                     {
@@ -72,6 +82,18 @@ namespace WFChessGame.Engine.Models
                         return MovementRules.BlackPawn(location, moves);
                     }
                     return moves;
+
+                case 3:
+                    return MovementRules.Knight(location, moves);
+
+                case 4:
+                    return MovementRules.Bishop(location, moves);
+
+                case 5:
+                    return MovementRules.Rook(location, moves);
+
+                case 6:
+                    return MovementRules.Queen(location, moves);
 
                 default:
                     return moves;
