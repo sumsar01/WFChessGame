@@ -14,15 +14,17 @@ namespace WFChessGame.Engine.viewModels
         static GameSession()
         {
             Board.NewGame();
-
             // Starting player white
             playerTurn = "1000";
         }
 
-
+        
         public static void ChangeTurn()
         {
-            if(playerTurn == "1000")
+            /// <summary>
+            /// Change turn players turn.
+            /// </summary>
+            if (playerTurn == "1000")
             {
                 playerTurn = "10000";
             }

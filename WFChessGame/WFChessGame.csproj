@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\WFChessGame.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\Models\BooleanChecks.cs" />
+    <Compile Include="Engine\Models\MovementRules.cs" />
     <Compile Include="Engine\Models\Turn.cs" />
     <Compile Include="Engine\viewModels\GameSession.cs" />
     <Compile Include="WFUI\Form1.cs">

@@ -80,7 +80,7 @@ namespace WFChessGame
             {
                 _oldLocation = label.TabIndex;
                 _pieceHolder = Board.GetSquare(_oldLocation);
-                bool isTurn = Turn.CheckTurn(_pieceHolder);
+                bool isTurn = BooleanChecks.CheckTurn(_pieceHolder);
 
                 if (isTurn == false)
                 {

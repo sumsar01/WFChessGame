@@ -5,7 +5,7 @@ using System;
 namespace TestEngine.Models
 {
     [TestClass]
-    public class TestTurn
+    public class TestBooleanChecks
     {
         [TestMethod]
         public void TestCheckIfEnemy1()
@@ -15,7 +15,7 @@ namespace TestEngine.Models
             // Check if enemy is enemy
             int piecePos = 8;
             int enemyPos = 48;
-            bool isEnemy = Turn.CheckIfEnemy(piecePos, enemyPos);
+            bool isEnemy = BooleanChecks.CheckIfEnemy(piecePos, enemyPos);
 
             Assert.IsTrue(isEnemy, "CheckIfEnemy failed: Enemy is not enemy");
 
@@ -28,7 +28,7 @@ namespace TestEngine.Models
             // Check if friend is enemy
             int piecePos = 8;
             int enemyPos = 9;
-            bool isEnemy = Turn.CheckIfEnemy(piecePos, enemyPos);
+            bool isEnemy = BooleanChecks.CheckIfEnemy(piecePos, enemyPos);
 
             Assert.IsFalse(isEnemy, "CheckIfEnemy failed: Friend is enemy");
 
@@ -41,7 +41,7 @@ namespace TestEngine.Models
             // Check if empty square is enemy
             int piecePos = 8;
             int enemyPos = 16;
-            bool isEnemy = Turn.CheckIfEnemy(piecePos, enemyPos);
+            bool isEnemy = BooleanChecks.CheckIfEnemy(piecePos, enemyPos);
 
             Assert.IsFalse(isEnemy, "CheckIfEnemy failed: Friend is enemy");
         }
