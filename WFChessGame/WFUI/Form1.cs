@@ -42,7 +42,7 @@ namespace WFChessGame
         private void ShowPossibleMoves(int location)
         {
             int piece = Board.GetSquare(location);
-            List<int> moves = Turn.GetLegalMoves(piece, location);
+            List<int> moves = Turn.GetMoves(piece, location);
 
             foreach(Control control in tableLayoutPanel1.Controls)
             {
@@ -73,7 +73,7 @@ namespace WFChessGame
         private void label_Click(object sender, EventArgs e)
         {
             Label label = (Label)sender;
-            List<int> moves = Turn.GetLegalMoves(_pieceHolder, _oldLocation);
+            List<int> moves = Turn.GetMoves(_pieceHolder, _oldLocation);
             // If no piece is selected select it, if square is empty do nothing
             // else move the piece and reset click
             if (_oldLocation == -1)

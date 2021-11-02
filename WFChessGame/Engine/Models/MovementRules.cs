@@ -118,10 +118,22 @@ namespace WFChessGame.Engine.Models
 
         public static List<int> Queen(int location, List<int> moves)
         {
-            moves.AddRange(Rook(location, moves));
-            moves.AddRange(Bishop(location, moves));
+            dX = new int[] {
+                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7,
+                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7,
+                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7,
+                                 0,  0,  0,  0,  0,  0,  0, 0, 0, 0, 0, 0, 0, 0
+                           };
 
-            return moves;
+            dY = new int[] {
+                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7,
+                                 7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7,
+                                 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,
+                                 7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7
+                           };
+
+
+            return GenerateMoves(location, dX, dY, moves);
         }
 
         /// <summary>
@@ -142,6 +154,7 @@ namespace WFChessGame.Engine.Models
             }
 
             moves = RemoveIfOccupied(moves, location);
+            moves = RemoveIfBlocked(moves, location);
 
             return moves;
         }
@@ -167,6 +180,18 @@ namespace WFChessGame.Engine.Models
             {
                 moves.Remove(move);
             }
+
+            return moves;
+        }
+
+        /// <summary>
+        /// Remove moves blocked by allies or enemies from list of moves.
+        /// </summary>
+        /// <param name="moves">List of possible moves</param>
+        /// <param name="location">Location of the piece about to move</param>
+        public static List<int> RemoveIfBlocked(List<int> moves, int location)
+        {
+
 
             return moves;
         }
