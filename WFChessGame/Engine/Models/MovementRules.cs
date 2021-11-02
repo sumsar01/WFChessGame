@@ -30,13 +30,15 @@ namespace WFChessGame.Engine.Models
             // If pawn has not moved allow two forward moves
             if (48 <= location & location <= 55)
             {
-                input = new int[] { location - 8, location - 16 };
-                moves.AddRange(input);
+                dX = new int[] { 0, 0 };
+                dY = new int[] { -1, -2 };
+                moves = GenerateMoves(location, dX, dY, moves);
             }
             else
             {
-                input = new int[] { location - 8 };
-                moves.AddRange(input);
+                dX = new int[] { 0 };
+                dY = new int[] { -1 };
+                moves = GenerateMoves(location, dX, dY, moves);
             }
 
             // If enemy in range allow attack move
@@ -56,13 +58,15 @@ namespace WFChessGame.Engine.Models
             // If pawn has not moved allow two forward moves
             if (8 <= location & location <= 15)
             {
-                input = new int[] { location + 8, location + 16 };
-                moves.AddRange(input);
+                dX = new int[] { 0, 0 };
+                dY = new int[] { 1, 2 };
+                moves = GenerateMoves(location, dX, dY, moves);
             }
             else
             {
-                input = new int[] { location + 8 };
-                moves.AddRange(input);
+                dX = new int[] { 0 };
+                dY = new int[] { 1 };
+                moves = GenerateMoves(location, dX, dY, moves);
             }
 
             // If enemy in range allow attack move
