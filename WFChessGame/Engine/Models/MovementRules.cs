@@ -87,7 +87,11 @@ namespace WFChessGame.Engine.Models
 
         public static List<int> Bishop(int location, List<int> moves)
         {
-            return moves;
+            dX = new int[] { -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7 };
+            dY = new int[] { -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7 };
+            (X, Y) = Transformation.LineToXY(location);
+
+            return GenerateMoves(X, Y, dX, dY, moves);
         }
 
         public static List<int> Rook(int location, List<int> moves)
