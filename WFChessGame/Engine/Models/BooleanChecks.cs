@@ -43,13 +43,13 @@ namespace WFChessGame.Engine.Models
         /// Check if a square is occupied by a friendly piece, and returns true if it is the case.
         /// </summary>
         static int destinationSquare;
-        public static bool CheckIfOccupied(int move, int piece, int location)
+        public static bool CheckIfOccupied(int piecePos, int destination)
         {
 
-            destinationSquare = Board.GetSquare(move);
+            destinationSquare = Board.GetSquare(destination);
             if (destinationSquare != 0)
             {
-                if (CheckIfEnemy(location, move) == false)
+                if (CheckIfEnemy(piecePos, destination) == false)
                 {
                     return true;
                 }

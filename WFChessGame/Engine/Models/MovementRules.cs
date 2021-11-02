@@ -96,60 +96,96 @@ namespace WFChessGame.Engine.Models
             dX = new int[] {-1, 1, 2, 2, 1, -1, -2, -2};
             dY = new int[] {-2, -2, -1, 1, 2, 2, 1, -1};
 
-            return GenerateMoves(location, dX, dY, moves);
+            return GenerateJumps(location, dX, dY, moves);
         }
 
         public static List<int> Bishop(int location, List<int> moves)
         {
-            dX = new int[] {
-                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7,
-                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7
-                           };
 
-            dY = new int[] {
-                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7,
-                                 7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7
-                           };
+            // Generate moves for each of the four possible paths.
+            // Allows tracking of blocked paths.
+            dX = new int[] { -1, -2, -3, -4, -5, -6, -7 };
+            dY = new int[] { -1, -2, -3, -4, -5, -6, -7 };
+            moves = GenerateMoves(location, dX, dY, moves);
 
+            dX = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+            dY = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+            moves = GenerateMoves(location, dX, dY, moves);
 
+            dX = new int[] { -1, -2, -3, -4, -5, -6, -7 };
+            dY = new int[] {  1,  2,  3,  4,  5,  6,  7 };
+            moves = GenerateMoves(location, dX, dY, moves);
 
+            dX = new int[] {  1,  2,  3,  4,  5,  6,  7 };
+            dY = new int[] { -1, -2, -3, -4, -5, -6, -7 };
+            moves = GenerateMoves(location, dX, dY, moves);
 
-            return GenerateMoves(location, dX, dY, moves);
+            return moves;
         }
 
         public static List<int> Rook(int location, List<int> moves)
         {
-            dX = new int[] {
-                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7,
-                                 0,  0,  0,  0,  0,  0,  0, 0, 0, 0, 0, 0, 0, 0
-                           };
 
-            dY = new int[] {
-                                 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,
-                                 7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7
-                           };
+            // Generate moves for each of the four possible paths.
+            // Allows tracking of blocked paths.
+            dX = new int[] { -1, -2, -3, -4, -5, -6, -7 };
+            dY = new int[] {  0,  0,  0,  0,  0,  0,  0 };
+            moves = GenerateMoves(location, dX, dY, moves);
 
-            return GenerateMoves(location, dX, dY, moves);
+            dX = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+            dY = new int[] { 0, 0, 0, 0, 0, 0, 0 };
+            moves = GenerateMoves(location, dX, dY, moves);
+
+            dX = new int[] { 0, 0, 0, 0, 0, 0, 0 };
+            dY = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+            moves = GenerateMoves(location, dX, dY, moves);
+
+            dX = new int[] {  0,  0,  0,  0,  0,  0,  0 };
+            dY = new int[] { -1, -2, -3, -4, -5, -6, -7 };
+            moves = GenerateMoves(location, dX, dY, moves);
+
+            return moves;
         }
 
         public static List<int> Queen(int location, List<int> moves)
         {
-            dX = new int[] {
-                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7,
-                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7,
-                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7,
-                                 0,  0,  0,  0,  0,  0,  0, 0, 0, 0, 0, 0, 0, 0
-                           };
+            // Generate moves for each of the four possible paths.
+            // Allows tracking of blocked paths.
+            // Bishop moves.
+            dX = new int[] { -1, -2, -3, -4, -5, -6, -7 };
+            dY = new int[] { -1, -2, -3, -4, -5, -6, -7 };
+            moves = GenerateMoves(location, dX, dY, moves);
 
-            dY = new int[] {
-                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7,
-                                 7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7,
-                                 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,
-                                 7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7
-                           };
+            dX = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+            dY = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+            moves = GenerateMoves(location, dX, dY, moves);
 
+            dX = new int[] { -1, -2, -3, -4, -5, -6, -7 };
+            dY = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+            moves = GenerateMoves(location, dX, dY, moves);
 
-            return GenerateMoves(location, dX, dY, moves);
+            dX = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+            dY = new int[] { -1, -2, -3, -4, -5, -6, -7 };
+            moves = GenerateMoves(location, dX, dY, moves);
+
+            // Rook moves
+            dX = new int[] { -1, -2, -3, -4, -5, -6, -7 };
+            dY = new int[] { 0, 0, 0, 0, 0, 0, 0 };
+            moves = GenerateMoves(location, dX, dY, moves);
+
+            dX = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+            dY = new int[] { 0, 0, 0, 0, 0, 0, 0 };
+            moves = GenerateMoves(location, dX, dY, moves);
+
+            dX = new int[] { 0, 0, 0, 0, 0, 0, 0 };
+            dY = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+            moves = GenerateMoves(location, dX, dY, moves);
+
+            dX = new int[] { 0, 0, 0, 0, 0, 0, 0 };
+            dY = new int[] { -1, -2, -3, -4, -5, -6, -7 };
+            moves = GenerateMoves(location, dX, dY, moves);
+
+            return moves;
         }
 
         /// <summary>
@@ -165,12 +201,37 @@ namespace WFChessGame.Engine.Models
                 if (BooleanChecks.CheckOutOfBound(X1, Y1) == false)
                 {
                     destination = Transformation.XYToLine(X1, Y1);
+                    if (BooleanChecks.CheckIfOccupied(location, destination)) break;
+
+                    moves.Add(destination);
+
+                    if (BooleanChecks.CheckIfEnemy(location, destination)) break;
+                }
+            }
+
+            moves = RemoveIfOccupied(moves, location);
+
+            return moves;
+        }
+
+        /// <summary>
+        /// Auxiliary method that generates and returns a list of moves for the knight.
+        /// </summary>
+        private static List<int> GenerateJumps(int location, int[] dX, int[] dY, List<int> moves)
+        {
+            (X, Y) = Transformation.LineToXY(location);
+            for (int i = 0; i < dX.Length; ++i)
+            {
+                X1 = X + dX[i];
+                Y1 = Y + dY[i];
+                if (BooleanChecks.CheckOutOfBound(X1, Y1) == false)
+                {
+                    destination = Transformation.XYToLine(X1, Y1);
                     moves.Add(destination);
                 }
             }
 
             moves = RemoveIfOccupied(moves, location);
-            moves = RemoveIfBlocked(moves, location);
 
             return moves;
         }
@@ -186,7 +247,7 @@ namespace WFChessGame.Engine.Models
             List<int> occupiedMoves = new List<int>();
             foreach (int move in moves)
             {
-                if (BooleanChecks.CheckIfOccupied(move, piece, location))
+                if (BooleanChecks.CheckIfOccupied(location, move))
                 {
                     occupiedMoves.Add(move);
                 }
@@ -200,16 +261,5 @@ namespace WFChessGame.Engine.Models
             return moves;
         }
 
-        /// <summary>
-        /// Remove moves blocked by allies or enemies from list of moves.
-        /// </summary>
-        /// <param name="moves">List of possible moves</param>
-        /// <param name="location">Location of the piece about to move</param>
-        public static List<int> RemoveIfBlocked(List<int> moves, int location)
-        {
-
-
-            return moves;
-        }
     }
 }
