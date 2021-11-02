@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
+using WFChessGame.Engine.viewModels;
 
 namespace WFChessGame.Engine.Models
 {
     public static class MovementRules
     {
-        static int[] input;
         static int X;
         static int Y;
         static int X1;
@@ -76,6 +75,19 @@ namespace WFChessGame.Engine.Models
             if (enemyRight == true) moves.Add(location + 7);
             if (enemyLeft == true) moves.Add(location + 9);
 
+            return moves;
+        }
+
+        public static List<int> Pawn(int location, List<int> moves)
+        {
+            if (GameSession.playerTurn == "1000")
+            {
+                return MovementRules.WhitePawn(location, moves);
+            }
+            if (GameSession.playerTurn == "10000")
+            {
+                return MovementRules.BlackPawn(location, moves);
+            }
             return moves;
         }
 

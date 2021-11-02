@@ -47,15 +47,7 @@ namespace WFChessGame.Engine.Models
                         return MovementRules.King(location, moves);
 
                     case 2:
-                        if(GameSession.playerTurn == "1000")
-                        {
-                            return MovementRules.WhitePawn(location, moves);
-                        }
-                        if (GameSession.playerTurn == "10000")
-                        {
-                            return MovementRules.BlackPawn(location, moves);
-                        }
-                        return moves;
+                        return MovementRules.Pawn(location, moves);
 
                     case 3:
                         return MovementRules.Knight(location, moves);
