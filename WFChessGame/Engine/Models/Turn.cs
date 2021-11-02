@@ -6,6 +6,7 @@ namespace WFChessGame.Engine.Models
 {
     public static class Turn
     {
+        static List<int> moves;
 
         ///<summary>
         /// Moves a piece and change turn.
@@ -13,7 +14,13 @@ namespace WFChessGame.Engine.Models
         public static void MakeMove(int newLoaction, int oldLocation)
         {
             int piece = Board.GetSquare(oldLocation);
-            List<int> moves = GetLegalMoves(piece, oldLocation);
+            moves = new List<int>();
+
+            bool _isTurn = BooleanChecks.CheckTurn(piece);
+            if (_isTurn == true)
+            {
+                moves = GetMoves(piece, oldLocation, moves);
+            }
 
             if (moves.Contains(newLoaction))
             {
@@ -24,57 +31,6 @@ namespace WFChessGame.Engine.Models
         }
 
         ///<summary>
-        /// Get all moves and prune the ones not allowed.
-        ///</summary>
-        public static List<int> GetLegalMoves(int piece, int location)
-        {
-            List<int> moves = new List<int>();
-
-            bool _isTurn = BooleanChecks.CheckTurn(piece);
-            if (_isTurn == true)
-            {
-                moves = GetMoves(piece, location, moves);
-                moves = RemoveOutOfBound(moves);
-                moves = RemoveIfOccupied(moves, piece, location);
-            }
-
-            return moves;
-        }
-
-        // Prune any move that would take the piece of the grid.
-        public static List<int> RemoveOutOfBound(List<int> moves)
-        {
-            foreach(int move in moves)
-            {
-                if(move < 0 & 63 < move)
-                {
-                    moves.Remove(move);
-                }
-            }
-
-            return moves;
-        }
-
-        public static List<int> RemoveIfOccupied(List<int> moves, int piece, int location)
-        {
-            List<int> occupiedMoves = new List<int>();
-            foreach (int move in moves)
-            {
-                if (BooleanChecks.CheckIfOccupied(move, piece, location))
-                {
-                    occupiedMoves.Add(move);
-                }
-            }
-
-            foreach (int move in occupiedMoves)
-            {
-                moves.Remove(move);
-            }
-
-            return moves;
-        }
-
-        ///<summary>
         /// Generate the legal moves of a piece on a given position.
         ///</summary>
         ///<returns>
@@ -82,11 +38,9 @@ namespace WFChessGame.Engine.Models
         /// </returns>
         public static List<int> GetMoves(int piece, int location, List<int> moves)
         {
-            int type = piece % 8;
-            if(BooleanChecks.CheckTurn(piece) == false) return moves;
-          
+            int pieceType = piece % 8;
 
-            switch (type)
+            switch (pieceType)
             {
                 case 1:
                     return MovementRules.King(location, moves);

@@ -19,9 +19,8 @@ namespace WFChessGame.Engine.Models
         {
             dX = new int[] { -1, 0, 1, 1, 1, 0, -1, -1 };
             dY = new int[] { -1, -1, -1, 0, 1, 1, 1, 0 };
-            (X, Y) = Transformation.LineToXY(location);
 
-            return GenerateMoves(X, Y, dX, dY, moves);
+            return GenerateMoves(location, dX, dY, moves);
         }
 
         // Potentially needs refactoring
@@ -80,35 +79,57 @@ namespace WFChessGame.Engine.Models
         {
             dX = new int[] {-1, 1, 2, 2, 1, -1, -2, -2};
             dY = new int[] {-2, -2, -1, 1, 2, 2, 1, -1};
-            (X, Y) = Transformation.LineToXY(location);
 
-            return GenerateMoves(X, Y, dX, dY, moves);
+            return GenerateMoves(location, dX, dY, moves);
         }
 
         public static List<int> Bishop(int location, List<int> moves)
         {
-            dX = new int[] { -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7 };
-            dY = new int[] { -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7 };
-            (X, Y) = Transformation.LineToXY(location);
+            dX = new int[] {
+                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7,
+                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7
+                           };
 
-            return GenerateMoves(X, Y, dX, dY, moves);
+            dY = new int[] {
+                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7,
+                                 7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7
+                           };
+
+
+
+
+            return GenerateMoves(location, dX, dY, moves);
         }
 
         public static List<int> Rook(int location, List<int> moves)
         {
-            return moves;
+            dX = new int[] {
+                                -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7,
+                                 0,  0,  0,  0,  0,  0,  0, 0, 0, 0, 0, 0, 0, 0
+                           };
+
+            dY = new int[] {
+                                 0, 0, 0, 0, 0, 0, 0,  0,  0,  0,  0,  0,  0,  0,
+                                 7, 6, 5, 4, 3, 2, 1, -1, -2, -3, -4, -5, -6, -7
+                           };
+
+            return GenerateMoves(location, dX, dY, moves);
         }
 
         public static List<int> Queen(int location, List<int> moves)
         {
+            moves.AddRange(Rook(location, moves));
+            moves.AddRange(Bishop(location, moves));
+
             return moves;
         }
 
         /// <summary>
         /// Auxiliary method that generates and returns a list of moves.
         /// </summary>
-        private static List<int> GenerateMoves(int X, int Y, int[] dX, int[] dY, List<int> moves)
+        private static List<int> GenerateMoves(int location, int[] dX, int[] dY, List<int> moves)
         {
+            (X, Y) = Transformation.LineToXY(location);
             for (int i = 0; i < dX.Length; ++i)
             {
                 X1 = X + dX[i];
@@ -118,6 +139,33 @@ namespace WFChessGame.Engine.Models
                     destination = Transformation.XYToLine(X1, Y1);
                     moves.Add(destination);
                 }
+            }
+
+            moves = RemoveIfOccupied(moves, location);
+
+            return moves;
+        }
+
+        /// <summary>
+        /// Remove moves occupied by allies from list of moves.
+        /// </summary>
+        /// <param name="moves">List of possible moves</param>
+        /// <param name="location">Location of the piece about to move</param>
+        public static List<int> RemoveIfOccupied(List<int> moves, int location)
+        {
+            int piece = Board.GetSquare(location);
+            List<int> occupiedMoves = new List<int>();
+            foreach (int move in moves)
+            {
+                if (BooleanChecks.CheckIfOccupied(move, piece, location))
+                {
+                    occupiedMoves.Add(move);
+                }
+            }
+
+            foreach (int move in occupiedMoves)
+            {
+                moves.Remove(move);
             }
 
             return moves;
