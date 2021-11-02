@@ -18,6 +18,9 @@ namespace WFChessGame.Engine.Models
             return false;
         }
 
+        /// <summary>
+        /// Check if a piece is an enemy and returns true if it is the case.
+        /// </summary>
         public static bool CheckIfEnemy(int piecePos, int enemyPos)
         {
             int piece = Board.GetSquare(piecePos);
@@ -36,27 +39,23 @@ namespace WFChessGame.Engine.Models
             return false;
         }
 
-        public static List<int> CheckIfOccupied(List<int> moves, int piece, int location)
+        /// <summary>
+        /// Check if a square is occupied by a friendly piece, and returns true if it is the case.
+        /// </summary>
+        static int destinationSquare;
+        public static bool CheckIfOccupied(int move, int piece, int location)
         {
-            List<int> occupiedMoves = new List<int>();
-            foreach (int move in moves)
+
+            destinationSquare = Board.GetSquare(move);
+            if (destinationSquare != 0)
             {
-                int destinationSquare = Board.GetSquare(move);
-                if (destinationSquare != 0)
+                if (CheckIfEnemy(location, move) == false)
                 {
-                    if (CheckIfEnemy(location, move) != true)
-                    {
-                        occupiedMoves.Add(move);
-                    }
+                    return true;
                 }
             }
 
-            foreach (int move in occupiedMoves)
-            {
-                moves.Remove(move);
-            }
-
-            return moves;
+            return false;
         }
 
         public static bool CheckOutOfBound(int X, int Y)

@@ -35,7 +35,7 @@ namespace WFChessGame.Engine.Models
             {
                 moves = GetMoves(piece, location, moves);
                 moves = RemoveOutOfBound(moves);
-                moves = BooleanChecks.CheckIfOccupied(moves, piece, location);
+                moves = RemoveIfOccupied(moves, piece, location);
             }
 
             return moves;
@@ -50,6 +50,25 @@ namespace WFChessGame.Engine.Models
                 {
                     moves.Remove(move);
                 }
+            }
+
+            return moves;
+        }
+
+        public static List<int> RemoveIfOccupied(List<int> moves, int piece, int location)
+        {
+            List<int> occupiedMoves = new List<int>();
+            foreach (int move in moves)
+            {
+                if (BooleanChecks.CheckIfOccupied(move, piece, location))
+                {
+                    occupiedMoves.Add(move);
+                }
+            }
+
+            foreach (int move in occupiedMoves)
+            {
+                moves.Remove(move);
             }
 
             return moves;
