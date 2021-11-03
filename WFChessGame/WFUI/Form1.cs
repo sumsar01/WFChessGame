@@ -63,7 +63,7 @@ namespace WFChessGame
 
         public void UpdateSquare(object sender, EventArgs e)
         {
-            // Rendering whole board when one move is made is inefficient. Refactor to something smarter.
+            // Rendering whole board when one move is inefficient. Refactor to something smarter.
             DisplayBoard();
         }
 

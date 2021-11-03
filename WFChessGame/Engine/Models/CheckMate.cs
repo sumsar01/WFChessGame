@@ -9,7 +9,11 @@ namespace WFChessGame.Engine.Models
     /// <summary>
     /// Checks for mate and checkmate
     /// </summary>
-    class WinCondition
+    public static class CheckMate
     {
+        public static bool Mate()
+        {
+            return false;
+        }
     }
 }

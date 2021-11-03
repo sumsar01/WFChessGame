@@ -19,7 +19,7 @@ namespace WFChessGame.Engine.Models
             dX = new int[] { -1, 0, 1, 1, 1, 0, -1, -1 };
             dY = new int[] { -1, -1, -1, 0, 1, 1, 1, 0 };
 
-            return GenerateMoves(location, dX, dY, moves);
+            return GenerateJumps(location, dX, dY, moves);
         }
 
         // Potentially needs refactoring
@@ -215,7 +215,7 @@ namespace WFChessGame.Engine.Models
         }
 
         /// <summary>
-        /// Auxiliary method that generates and returns a list of moves for the knight.
+        /// Auxiliary method that generates and returns a list of moves for the knight and the king.
         /// </summary>
         private static List<int> GenerateJumps(int location, int[] dX, int[] dY, List<int> moves)
         {
