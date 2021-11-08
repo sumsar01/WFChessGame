@@ -10,20 +10,20 @@ namespace WFChessGame.Engine.Models
         private static int[] _square;
         static int intRep;
 
-        public static int GetSquare(int index)
+        public static int GetSquare(int location)
         {
-            if(index >= 0 & 63 >= index)
+            if(location >= 0 & 63 >= location)
             {
-                return _square[index];
+                return _square[location];
             }
 
             return -1;
         }
-        public static void SetSquare(int index, int value)
+        public static void SetSquare(int location, int piece)
         {
-            if (value != _square[index] & index >= 0 & 63 >= index)
+            if (piece != _square[location] & location >= 0 & 63 >= location)
             {
-                _square[index] = value;
+                _square[location] = piece;
                 OnValueChanged(null);
             }
         }

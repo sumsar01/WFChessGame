@@ -9,7 +9,7 @@ namespace TestEngine.Models
     public class TestCheckMate
     {
         [TestMethod]
-        public void TestGenerateEnemyPositions()
+        public void TestGenerateEnemyPositions1()
         {
             GameSession.playerTurn = "1000";
             List<int> movesToGet = new List<int>();
@@ -37,6 +37,108 @@ namespace TestEngine.Models
 
             Assert.IsFalse(movesToGet.Contains(wrongpos1));
             Assert.IsFalse(movesToGet.Contains(wrongpos2));
+        }
+
+        [TestMethod]
+        public void TestGenerateEnemyPositions2()
+        {
+            GameSession.playerTurn = "10000";
+            List<int> movesToGet = new List<int>();
+            int wrongpos1 = 1;
+            int wrongpos2 = 5;
+            int wrongpos3 = 8;
+
+            int pos1 = 2;
+            int pos2 = 9;
+
+            // Set black pieces
+            Board.SetSquare(1, 17);
+            Board.SetSquare(5, 18);
+            Board.SetSquare(8, 19);
+
+            // set white pieces
+            Board.SetSquare(2, 9);
+            Board.SetSquare(9, 10);
+
+            movesToGet = CheckMate.GenerateEnemyPositions(movesToGet);
+
+            Assert.IsFalse(movesToGet.Contains(wrongpos1));
+            Assert.IsFalse(movesToGet.Contains(wrongpos2));
+            Assert.IsFalse(movesToGet.Contains(wrongpos3));
+
+            Assert.IsTrue(movesToGet.Contains(pos1));
+            Assert.IsTrue(movesToGet.Contains(pos2));
+        }
+
+        [TestMethod]
+        public void TestGenerateAllEnemyMoves1()
+        {
+            GameSession.playerTurn = "1000";
+            List<int> enemyMoves = new List<int>();
+            List<int> enemy1 = new List<int>();
+            List<int> enemy2 = new List<int>();
+            List<int> enemy3 = new List<int>();
+
+            // Set black pieces
+            Board.SetSquare(1, 17);
+            Board.SetSquare(5, 18);
+            Board.SetSquare(8, 19);
+            enemy1 = Turn.GetMoves(17, 1);
+            enemy2 = Turn.GetMoves(18, 5);
+            enemy3 = Turn.GetMoves(19, 8);
+
+            enemyMoves = CheckMate.GenerateAllEnemyMoves();
+
+            foreach (int move in enemy1)
+            {
+                Assert.IsTrue(enemyMoves.Contains(move));
+            }
+
+            foreach (int move in enemy2)
+            {
+                Assert.IsTrue(enemyMoves.Contains(move));
+            }
+
+            foreach (int move in enemy3)
+            {
+                Assert.IsTrue(enemyMoves.Contains(move));
+            }
+        }
+
+
+        [TestMethod]
+        public void TestGenerateAllEnemyMoves2()
+        {
+            GameSession.playerTurn = "10000";
+            List<int> enemyMoves = new List<int>();
+            List<int> enemy1 = new List<int>();
+            List<int> enemy2 = new List<int>();
+            List<int> enemy3 = new List<int>();
+
+            // Set black pieces
+            Board.SetSquare(1, 10);
+            Board.SetSquare(5, 11);
+            Board.SetSquare(8, 12);
+            enemy1 = Turn.GetMoves(10, 1);
+            enemy2 = Turn.GetMoves(11, 5);
+            enemy3 = Turn.GetMoves(12, 8);
+
+            enemyMoves = CheckMate.GenerateAllEnemyMoves();
+
+            foreach (int move in enemy1)
+            {
+                Assert.IsTrue(enemyMoves.Contains(move));
+            }
+
+            foreach (int move in enemy2)
+            {
+                Assert.IsTrue(enemyMoves.Contains(move));
+            }
+
+            foreach (int move in enemy3)
+            {
+                Assert.IsTrue(enemyMoves.Contains(move));
+            }
         }
     }
 }

@@ -10,7 +10,11 @@ namespace WFChessGame.Engine.Models
         {
             int piece = Board.GetSquare(location);
             int stringLength = Convert.ToString(piece, 2).Length;
-            if (stringLength == 5) return true;
+            
+            if (stringLength == 5)
+            {
+                return true;
+            }
 
             return false;
         }
@@ -19,7 +23,11 @@ namespace WFChessGame.Engine.Models
         {
             int piece = Board.GetSquare(location);
             int stringLength = Convert.ToString(piece, 2).Length;
-            if (stringLength == 4) return true;
+            
+            if (stringLength == 4)
+            {
+                return true;
+            }
 
             return false;
         }

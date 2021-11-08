@@ -32,7 +32,7 @@ namespace WFChessGame.Engine.Models
                 }
             }
             // If black players turn. Get location of white pieces
-            else
+            if (GameSession.playerTurn == "10000")
             {
                 for (int location = 0; location < 64; ++location)
                 {
@@ -53,8 +53,16 @@ namespace WFChessGame.Engine.Models
         {
             List<int> enemyMoves = new List<int>();
             List<int> movesToGet = new List<int>();
+            int piece;
 
             movesToGet = GenerateEnemyPositions(movesToGet);
+
+            foreach(int location in movesToGet)
+            {
+                piece = Board.GetSquare(location);
+
+                enemyMoves.AddRange(Turn.GetMoves(piece, location));
+            }
 
             return enemyMoves;
         }
