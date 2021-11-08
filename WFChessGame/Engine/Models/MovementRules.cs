@@ -40,6 +40,8 @@ namespace WFChessGame.Engine.Models
                 moves = GenerateMoves(location, dX, dY, moves);
             }
 
+            moves = RemoveIfBlocked(moves);
+
             // If enemy in range allow attack move
             bool enemyRight = BooleanChecks.CheckIfEnemy(location, location - 7);
             bool enemyLeft = BooleanChecks.CheckIfEnemy(location, location - 9);
@@ -67,6 +69,8 @@ namespace WFChessGame.Engine.Models
                 dY = new int[] { 1 };
                 moves = GenerateMoves(location, dX, dY, moves);
             }
+
+            moves = RemoveIfBlocked(moves);
 
             // If enemy in range allow attack move
             bool enemyRight = BooleanChecks.CheckIfEnemy(location, location + 7);
@@ -261,6 +265,18 @@ namespace WFChessGame.Engine.Models
             return moves;
         }
 
+        public static List<int> RemoveIfBlocked(List<int> moves)
+        {
+            for(int i = 0; i < moves.Count; ++i)
+            {
+                int move = moves[i];
+                if (BooleanChecks.IsBlocked(move))
+                {
+                    moves.Remove(move);
+                }
+            }
 
+            return moves;
+        }
     }
 }

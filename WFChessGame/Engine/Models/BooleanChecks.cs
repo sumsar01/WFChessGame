@@ -32,7 +32,22 @@ namespace WFChessGame.Engine.Models
             return false;
         }
 
+        /// <summary>
+        /// Return true if the piece is a king.
+        /// </summary>
+        /// <param name="piece"></param>
+        /// <returns></returns>
+        public static bool IsKing(int piece)
+        {
+            if (piece % 8 == 1) return true;
+            return false;
+        }
 
+        /// <summary>
+        /// Return true is it the owner of the peice's turn.
+        /// </summary>
+        /// <param name="piece"></param>
+        /// <returns></returns>
         public static bool CheckTurn(int piece)
         {
             int stringLength = Convert.ToString(piece, 2).Length;
@@ -66,13 +81,27 @@ namespace WFChessGame.Engine.Models
         }
 
         /// <summary>
+        /// Check if square is blocked by enemy. Used by pawns
+        /// </summary>
+        public static bool IsBlocked(int destination)
+        {
+
+            int destinationSquare = Board.GetSquare(destination);
+            if (destinationSquare != 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
         /// Check if a square is occupied by a friendly piece, and returns true if it is the case.
         /// </summary>
-        static int destinationSquare;
         public static bool CheckIfOccupied(int piecePos, int destination)
         {
 
-            destinationSquare = Board.GetSquare(destination);
+            int destinationSquare = Board.GetSquare(destination);
             if (destinationSquare != 0)
             {
                 if (CheckIfEnemy(piecePos, destination) == false)

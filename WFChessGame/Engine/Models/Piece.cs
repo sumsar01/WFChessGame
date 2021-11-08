@@ -1,7 +1,7 @@
 ﻿
 namespace WFChessGame.Engine.Models
 {
-    class Piece
+    public class Piece
     {
         public const int None = 0;
         public const int King = 1;

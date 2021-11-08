@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Models\TestBooleanChecks.cs" />
     <Compile Include="Models\TestCheckMate.cs" />
+    <Compile Include="Models\TestTurn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

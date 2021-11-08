@@ -2,6 +2,7 @@
 using WFChessGame.Engine.Models;
 using WFChessGame.Engine.viewModels;
 using System.Collections.Generic;
+using System;
 
 namespace TestEngine.Models
 {
@@ -11,6 +12,7 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestGenerateEnemyPositions1()
         {
+            Board.ClearBoard();
             GameSession.playerTurn = "1000";
             List<int> movesToGet = new List<int>();
             int pos1 = 1;
@@ -42,6 +44,7 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestGenerateEnemyPositions2()
         {
+            Board.ClearBoard();
             GameSession.playerTurn = "10000";
             List<int> movesToGet = new List<int>();
             int wrongpos1 = 1;
@@ -73,6 +76,7 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestGenerateAllEnemyMoves1()
         {
+            Board.ClearBoard();
             GameSession.playerTurn = "1000";
             List<int> enemyMoves = new List<int>();
             List<int> enemy1 = new List<int>();
@@ -80,12 +84,12 @@ namespace TestEngine.Models
             List<int> enemy3 = new List<int>();
 
             // Set black pieces
-            Board.SetSquare(1, 17);
-            Board.SetSquare(5, 18);
-            Board.SetSquare(8, 19);
-            enemy1 = Turn.GetMoves(17, 1);
-            enemy2 = Turn.GetMoves(18, 5);
-            enemy3 = Turn.GetMoves(19, 8);
+            Board.SetSquare(9, 17);
+            Board.SetSquare(11, 18);
+            Board.SetSquare(13, 19);
+            enemy1 = Turn.GetMoves(17, 9);
+            enemy2 = Turn.GetMoves(18, 11);
+            enemy3 = Turn.GetMoves(19, 13);
 
             enemyMoves = CheckMate.GenerateAllEnemyMoves();
 
@@ -109,6 +113,7 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestGenerateAllEnemyMoves2()
         {
+            Board.ClearBoard();
             GameSession.playerTurn = "10000";
             List<int> enemyMoves = new List<int>();
             List<int> enemy1 = new List<int>();
@@ -116,12 +121,12 @@ namespace TestEngine.Models
             List<int> enemy3 = new List<int>();
 
             // Set black pieces
-            Board.SetSquare(1, 10);
-            Board.SetSquare(5, 11);
-            Board.SetSquare(8, 12);
-            enemy1 = Turn.GetMoves(10, 1);
-            enemy2 = Turn.GetMoves(11, 5);
-            enemy3 = Turn.GetMoves(12, 8);
+            Board.SetSquare(9, 10);
+            Board.SetSquare(11, 11);
+            Board.SetSquare(13, 12);
+            enemy1 = Turn.GetMoves(10, 9);
+            enemy2 = Turn.GetMoves(11, 11);
+            enemy3 = Turn.GetMoves(12, 13);
 
             enemyMoves = CheckMate.GenerateAllEnemyMoves();
 
@@ -139,6 +144,23 @@ namespace TestEngine.Models
             {
                 Assert.IsTrue(enemyMoves.Contains(move));
             }
+        }
+
+
+        [TestMethod]
+        public void TestMate()
+        {
+            Board.ClearBoard();
+            GameSession.playerTurn = "1000";
+
+            Board.SetSquare(0, Piece.White | Piece.King);
+            Board.SetSquare(1, Piece.Black | Piece.Queen);
+
+            List<int> enemyMoves = CheckMate.GenerateAllEnemyMoves();
+
+            bool isMate = CheckMate.Mate();
+
+            Assert.IsTrue(isMate);
         }
     }
 }

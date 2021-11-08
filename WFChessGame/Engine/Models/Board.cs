@@ -137,5 +137,13 @@ namespace WFChessGame.Engine.Models
             _square[62] = Piece.White | Piece.Knight;
             _square[63] = Piece.White | Piece.Rook;
         }
+
+        public static void ClearBoard()
+        {
+            for(int i = 0; i < 64; ++i)
+            {
+                _square[i] = 0;
+            }
+        }
     }
 }

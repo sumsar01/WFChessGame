@@ -69,5 +69,48 @@ namespace WFChessGame.Engine.Models
             return moves;
         }
 
+
+        ///<summary>
+        /// Generate the legal moves of an enemy piece on a given position.
+        ///</summary>
+        ///<returns>
+        /// All possible moves for the piece.
+        /// </returns>
+        public static List<int> GetEnemyMoves(int piece, int location)
+        {
+            moves = new List<int>();
+            _isTurn = BooleanChecks.CheckTurn(piece);
+            pieceType = piece % 8;
+
+            if (_isTurn == false)
+            {
+                switch (pieceType)
+                {
+                    case 1:
+                        return MovementRules.King(location, moves);
+
+                    case 2:
+                        return MovementRules.Pawn(location, moves);
+
+                    case 3:
+                        return MovementRules.Knight(location, moves);
+
+                    case 4:
+                        return MovementRules.Bishop(location, moves);
+
+                    case 5:
+                        return MovementRules.Rook(location, moves);
+
+                    case 6:
+                        return MovementRules.Queen(location, moves);
+
+                    default:
+                        return moves;
+                }
+            }
+
+            return moves;
+        }
+
     }
 }

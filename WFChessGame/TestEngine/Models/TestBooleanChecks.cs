@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WFChessGame.Engine.Models;
+using WFChessGame.Engine.viewModels;
 
 namespace TestEngine.Models
 {
@@ -75,5 +76,28 @@ namespace TestEngine.Models
 
         }
 
+
+        [TestMethod]
+        public void TestIsKing()
+        {
+            Board.SetSquare(1, 9);
+            int piece = Board.GetSquare(1);
+
+            bool isKing = BooleanChecks.IsKing(piece);
+            
+            Assert.IsTrue(isKing);
+        }
+
+        [TestMethod]
+        public void TestCheckTurn()
+        {
+            GameSession.playerTurn = "1000";
+            Board.SetSquare(1, 9);
+            int piece = Board.GetSquare(1);
+
+            bool isTurn = BooleanChecks.CheckTurn(piece);
+
+            Assert.IsTrue(isTurn);
+        }
     }
 }
