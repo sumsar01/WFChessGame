@@ -8,9 +8,10 @@ namespace WFChessGame.Engine.viewModels
         public static bool WhiteMate;
         public static bool BlackMate;
 
-        static GameSession()
+
+        public static void NewGame()
         {
-            Board.NewGame();
+            Board.FreshBoard();
             // Starting player white.
             // The turn is represented by the string value of the int representing the color.
             playerTurn = "1000";

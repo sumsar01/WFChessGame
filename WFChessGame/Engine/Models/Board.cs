@@ -31,7 +31,7 @@ namespace WFChessGame.Engine.Models
         static Board()
         {
             _square = new int[64];
-            NewGame();
+
 
         }
 
@@ -97,7 +97,7 @@ namespace WFChessGame.Engine.Models
             return EmptySquare;
         }
 
-        public static void NewGame()
+        public static void FreshBoard()
         {
             // Black side first
             _square[0] = Piece.Black | Piece.Rook;
@@ -136,7 +136,6 @@ namespace WFChessGame.Engine.Models
             _square[61] = Piece.White | Piece.Bishop;
             _square[62] = Piece.White | Piece.Knight;
             _square[63] = Piece.White | Piece.Rook;
-
         }
     }
 }

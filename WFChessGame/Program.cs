@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using WFChessGame.Engine.viewModels;
 using System.Windows.Forms;
 
 namespace WFChessGame
@@ -14,6 +12,7 @@ namespace WFChessGame
         [STAThread]
         static void Main()
         {
+            GameSession.NewGame();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

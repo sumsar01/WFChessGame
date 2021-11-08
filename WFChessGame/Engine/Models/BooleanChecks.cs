@@ -6,6 +6,24 @@ namespace WFChessGame.Engine.Models
 {
     public static class BooleanChecks
     {
+        public static bool IsBlackPiece(int location)
+        {
+            int piece = Board.GetSquare(location);
+            int stringLength = Convert.ToString(piece, 2).Length;
+            if (stringLength == 5) return true;
+
+            return false;
+        }
+
+        public static bool IsWhitePiece(int location)
+        {
+            int piece = Board.GetSquare(location);
+            int stringLength = Convert.ToString(piece, 2).Length;
+            if (stringLength == 4) return true;
+
+            return false;
+        }
+
 
         public static bool CheckTurn(int piece)
         {

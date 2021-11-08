@@ -9,7 +9,7 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestCheckIfEnemy1()
         {
-            Board.NewGame();
+            Board.FreshBoard();
 
             // Check if enemy is enemy
             int piecePos = 8;
@@ -23,6 +23,7 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestCheckIfEnemy2()
         {
+            Board.FreshBoard();
 
             // Check if friend is enemy
             int piecePos = 8;
@@ -36,6 +37,7 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestCheckIfEnemy3()
         {
+            Board.FreshBoard();
 
             // Check if empty square is enemy
             int piecePos = 8;
