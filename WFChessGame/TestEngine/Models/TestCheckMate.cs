@@ -87,11 +87,19 @@ namespace TestEngine.Models
             Board.SetSquare(9, 17);
             Board.SetSquare(11, 18);
             Board.SetSquare(13, 19);
-            enemy1 = Turn.GetMoves(17, 9);
-            enemy2 = Turn.GetMoves(18, 11);
-            enemy3 = Turn.GetMoves(19, 13);
+            enemy1 = WFChessGame.Engine.Models.Moves.GetPseudoLegalMoves(17, 9);
+            enemy2 = WFChessGame.Engine.Models.Moves.GetPseudoLegalMoves(18, 11);
+            enemy3 = WFChessGame.Engine.Models.Moves.GetPseudoLegalMoves(19, 13);
 
             enemyMoves = CheckMate.GenerateAllEnemyMoves();
+
+            for (int i = 0; i < 64; ++i)
+            {
+                if (i % 8 == 0) Console.WriteLine("");
+                if (enemyMoves.Contains(i)) Console.Write(String.Format("{0,2} ", 1));
+                else Console.Write(String.Format("{0,2} ", Board.GetSquare(i)));
+            }
+
 
             foreach (int move in enemy1)
             {
@@ -124,11 +132,18 @@ namespace TestEngine.Models
             Board.SetSquare(9, 10);
             Board.SetSquare(11, 11);
             Board.SetSquare(13, 12);
-            enemy1 = Turn.GetMoves(10, 9);
-            enemy2 = Turn.GetMoves(11, 11);
-            enemy3 = Turn.GetMoves(12, 13);
+            enemy1 = WFChessGame.Engine.Models.Moves.GetPseudoLegalMoves(10, 9);
+            enemy2 = WFChessGame.Engine.Models.Moves.GetPseudoLegalMoves(11, 11);
+            enemy3 = WFChessGame.Engine.Models.Moves.GetPseudoLegalMoves(12, 13);
 
             enemyMoves = CheckMate.GenerateAllEnemyMoves();
+
+            for (int i = 0; i < 64; ++i)
+            {
+                if (i % 8 == 0) Console.WriteLine("");
+                if (enemyMoves.Contains(i)) Console.Write(String.Format("{0,2} ", 1));
+                else Console.Write(String.Format("{0,2} ", Board.GetSquare(i)));
+            }
 
             foreach (int move in enemy1)
             {
@@ -148,7 +163,7 @@ namespace TestEngine.Models
 
 
         [TestMethod]
-        public void TestMate()
+        public void TestMate1()
         {
             Board.ClearBoard();
             GameSession.playerTurn = "1000";
@@ -161,6 +176,23 @@ namespace TestEngine.Models
             bool isMate = CheckMate.Mate();
 
             Assert.IsTrue(isMate);
+        }
+
+        [TestMethod]
+        public void TestMate2()
+        {
+            Board.ClearBoard();
+            GameSession.playerTurn = "10000";
+
+            Board.SetSquare(3, Piece.Black | Piece.King);
+            Board.SetSquare(17, Piece.Black | Piece.Pawn);
+            Board.SetSquare(24, Piece.White | Piece.Queen);
+
+            List<int> enemyMoves = CheckMate.GenerateAllEnemyMoves();
+
+            bool isMate = CheckMate.Mate();
+
+            Assert.IsFalse(isMate);
         }
     }
 }

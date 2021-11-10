@@ -32,8 +32,13 @@ namespace WFChessGame.Engine.Models
         {
             _square = new int[64];
 
-
         }
+
+        public static void CopyBoard(int[] boardCopy)
+        {
+            Array.Copy(_square, boardCopy, 64);
+        }
+
 
         [Category("Action")]
         [Description("Fires when the value is changed")]

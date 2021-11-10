@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace WFChessGame.Engine.Models
 {
-    public static class Turn
+    public static class Moves
     {
         static int piece;
         static List<int> moves;
@@ -17,7 +17,7 @@ namespace WFChessGame.Engine.Models
         public static void MakeMove(int newLoaction, int oldLocation)
         {
             piece = Board.GetSquare(oldLocation);
-            moves = GetMoves(piece, oldLocation);
+            moves = GetLegalMoves(piece, oldLocation);
 
             if (moves.Contains(newLoaction))
             {
@@ -27,13 +27,35 @@ namespace WFChessGame.Engine.Models
             }
         }
 
+
+        public static List<int> GetLegalMoves(int piece, int location)
+        {
+            List<int> LegalMoves = new List<int>();
+            List<int> moves = GetPseudoLegalMoves(piece, location);
+
+            foreach (int move in moves)
+            {
+                Board.CopyBoard(FutureBoard.futureSquare);
+                FutureBoard.SetSquare(move, piece);
+                FutureBoard.SetSquare(location, 0);
+
+                if (CheckMate.FutureMate() != true)
+                {
+                    LegalMoves.Add(move);
+                }
+            }
+
+            return LegalMoves;
+        }
+
+
         ///<summary>
         /// Generate the legal moves of a piece on a given position.
         ///</summary>
         ///<returns>
         /// All possible moves for the piece.
         /// </returns>
-        public static List<int> GetMoves(int piece, int location)
+        public static List<int> GetPseudoLegalMoves(int piece, int location)
         {
             moves = new List<int>();
             _isTurn = BooleanChecks.CheckTurn(piece);

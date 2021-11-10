@@ -23,7 +23,7 @@ namespace WFChessGame.Engine.Models
         }
 
         // Potentially needs refactoring
-        public static List<int> WhitePawn(int location, List<int> moves)
+        private static List<int> WhitePawn(int location, List<int> moves)
         {
             // Chicking if white pawn has moved yet
             // If pawn has not moved allow two forward moves
@@ -46,14 +46,25 @@ namespace WFChessGame.Engine.Models
             bool enemyRight = BooleanChecks.CheckIfEnemy(location, location - 7);
             bool enemyLeft = BooleanChecks.CheckIfEnemy(location, location - 9);
 
-            if (enemyRight == true) moves.Add(location - 7);
-            if (enemyLeft == true) moves.Add(location - 9);
+            if (enemyRight == true)
+            {
+                dX = new int[] { 1 };
+                dY = new int[] { -1 };
+                moves = GenerateMoves(location, dX, dY, moves);
+            }
+            if (enemyLeft == true)
+            {
+                dX = new int[] { -1 };
+                dY = new int[] { -1 };
+                moves = GenerateMoves(location, dX, dY, moves);
+            }
+
 
             return moves;
         }
 
         // Potentially needs refactoring
-        public static List<int> BlackPawn(int location, List<int> moves)
+        private static List<int> BlackPawn(int location, List<int> moves)
         {
             // Chicking if black pawn has moved yet
             // If pawn has not moved allow two forward moves
@@ -76,8 +87,19 @@ namespace WFChessGame.Engine.Models
             bool enemyRight = BooleanChecks.CheckIfEnemy(location, location + 7);
             bool enemyLeft = BooleanChecks.CheckIfEnemy(location, location + 9);
 
-            if (enemyRight == true) moves.Add(location + 7);
-            if (enemyLeft == true) moves.Add(location + 9);
+            if (enemyRight == true)
+            {
+                dX = new int[] { -1 };
+                dY = new int[] { 1  };
+                moves = GenerateMoves(location, dX, dY, moves);
+            }
+
+            if (enemyLeft == true)
+            {
+                dX = new int[] { 1 };
+                dY = new int[] { 1 };
+                moves = GenerateMoves(location, dX, dY, moves);
+            }
 
             return moves;
         }
@@ -245,7 +267,7 @@ namespace WFChessGame.Engine.Models
         /// </summary>
         /// <param name="moves">List of possible moves</param>
         /// <param name="location">Location of the piece about to move</param>
-        public static List<int> RemoveIfOccupied(List<int> moves, int location)
+        private static List<int> RemoveIfOccupied(List<int> moves, int location)
         {
             int piece = Board.GetSquare(location);
             List<int> occupiedMoves = new List<int>();
@@ -265,7 +287,7 @@ namespace WFChessGame.Engine.Models
             return moves;
         }
 
-        public static List<int> RemoveIfBlocked(List<int> moves)
+        private static List<int> RemoveIfBlocked(List<int> moves)
         {
             for(int i = 0; i < moves.Count; ++i)
             {

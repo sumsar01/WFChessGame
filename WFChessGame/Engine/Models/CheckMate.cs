@@ -30,6 +30,26 @@ namespace WFChessGame.Engine.Models
             return false;
         }
 
+        public static bool FutureMate()
+        {
+            List<int> allEnemyMoves = new List<int>();
+            int piece;
+
+            allEnemyMoves = GenerateAllEnemyMoves();
+
+            foreach (int move in allEnemyMoves)
+            {
+                piece = FutureBoard.GetSquare(move);
+
+                if (BooleanChecks.CheckTurn(piece) && BooleanChecks.IsKing(piece))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         /// <summary>
         /// Get location of all enemy pieces.
         /// </summary>
@@ -75,7 +95,7 @@ namespace WFChessGame.Engine.Models
             foreach(int location in movesToGet)
             {
                 piece = Board.GetSquare(location);
-                moves = Turn.GetEnemyMoves(piece, location);
+                moves = Moves.GetEnemyMoves(piece, location);
 
                 foreach(int move in moves)
                 {
