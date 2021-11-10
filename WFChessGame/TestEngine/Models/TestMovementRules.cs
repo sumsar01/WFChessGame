@@ -48,11 +48,93 @@ namespace TestEngine.Models
             GameSession.playerTurn = "1000";
             Board.ClearBoard();
             Board.SetSquare(50, Piece.White | Piece.Pawn);
+            Board.SetSquare(10, Piece.Black | Piece.Pawn);
 
             List<int> moves = Moves.GetPseudoLegalMoves(Piece.White | Piece.Pawn, 50);
 
             Assert.IsTrue(moves.Contains(42));
             Assert.IsTrue(moves.Contains(34));
+
+            GameSession.playerTurn = "10000";
+
+            moves = Moves.GetPseudoLegalMoves(Piece.Black | Piece.Pawn, 10);
+
+            Assert.IsTrue(moves.Contains(18));
+            Assert.IsTrue(moves.Contains(26));
+        }
+
+        [TestMethod]
+        public void Testknight()
+        {
+            GameSession.playerTurn = "1000";
+            Board.ClearBoard();
+            Board.SetSquare(29, Piece.White | Piece.Knight);
+
+            List<int> moves = Moves.GetPseudoLegalMoves(Piece.White | Piece.Knight, 29);
+
+            Assert.IsTrue(moves.Contains(12));
+            Assert.IsTrue(moves.Contains(14));
+            Assert.IsTrue(moves.Contains(23));
+            Assert.IsTrue(moves.Contains(39));
+            Assert.IsTrue(moves.Contains(46));
+            Assert.IsTrue(moves.Contains(44));
+            Assert.IsTrue(moves.Contains(35));
+            Assert.IsTrue(moves.Contains(19));
+        }
+
+        [TestMethod]
+        public void TestBishop1()
+        {
+            GameSession.playerTurn = "1000";
+            Board.ClearBoard();
+            Board.SetSquare(29, Piece.White | Piece.Knight);
+
+            List<int> moves = Moves.GetPseudoLegalMoves(Piece.White | Piece.Bishop, 29);
+
+            Assert.IsTrue(moves.Contains(22));
+            Assert.IsTrue(moves.Contains(15));
+            Assert.IsTrue(moves.Contains(36));
+            Assert.IsTrue(moves.Contains(43));
+            Assert.IsTrue(moves.Contains(50));
+
+            Assert.IsTrue(moves.Contains(38));
+            Assert.IsTrue(moves.Contains(47));
+            Assert.IsTrue(moves.Contains(20));
+            Assert.IsTrue(moves.Contains(11));
+            Assert.IsTrue(moves.Contains(2));
+        }
+
+        [TestMethod]
+        public void TestBishop2()
+        {
+            GameSession.playerTurn = "1000";
+            Board.ClearBoard();
+            Board.SetSquare(36, Piece.Black | Piece.Pawn);
+            Board.SetSquare(29, Piece.White | Piece.Bishop);
+
+
+            List<int> moves = Moves.GetPseudoLegalMoves(Piece.White | Piece.Bishop, 29);
+
+            Assert.IsTrue(moves.Contains(36));
+            Assert.IsFalse(moves.Contains(43));
+            Assert.IsFalse(moves.Contains(50));
+        }
+
+        [TestMethod]
+        public void TestBishop3()
+        {
+            GameSession.playerTurn = "1000";
+            Board.ClearBoard();
+            Board.SetSquare(36, Piece.White | Piece.Pawn);
+            Board.SetSquare(29, Piece.White | Piece.Bishop);
+
+            List<int> moves = Moves.GetPseudoLegalMoves(Piece.White | Piece.Bishop, 29);
+
+            Assert.IsTrue(BooleanChecks.CheckIfOccupied(29, 36));
+
+            Assert.IsFalse(moves.Contains(36));
+            Assert.IsFalse(moves.Contains(43));
+            Assert.IsFalse(moves.Contains(50));
         }
     }
 }

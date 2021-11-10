@@ -37,11 +37,11 @@ namespace TestEngine.Models
             GameSession.playerTurn = "10000";
 
             Board.FreshBoard();
-            Board.SetSquare(10, 0);
+            Board.SetSquare(10, Piece.None);
             Board.SetSquare(24, Piece.White | Piece.Queen);
 
 
-            moves = Moves.GetLegalMoves(18, 9);
+            moves = Moves.GetLegalMoves(Piece.Black | Piece.Pawn, 9);
 
 
             Assert.IsTrue(moves.Contains(17));
