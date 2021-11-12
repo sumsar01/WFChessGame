@@ -10,8 +10,9 @@ namespace WFChessGame
     public partial class Form1 : Form
     {
         GameSession gameSession;
-        public Form1(GameSession gameSession)
+        public Form1(GameSession _)
         {
+            gameSession = _;
             InitializeComponent();
             DisplayBoard(gameSession);
             gameSession.board.ValueChanged += UpdateSquare;
