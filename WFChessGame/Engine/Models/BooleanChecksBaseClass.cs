@@ -2,7 +2,7 @@
 
 namespace WFChessGame.Engine.Models
 {
-    public class BooleanChecks
+    public class BooleanChecksBaseClass
     {
         public bool IsBlackPiece(int location, Board board)
         {

@@ -1,5 +1,4 @@
-﻿
-namespace WFChessGame.Engine.Models
+﻿namespace WFChessGame.Engine.Models
 {
     public class Piece
     {

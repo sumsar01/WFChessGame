@@ -12,11 +12,9 @@ namespace WFChessGame.Engine.viewModels
 
         private int piece;
         private List<int> moves;
-        private bool _isTurn;
-        private int pieceType;
         private Board futureBoard;
         private CheckMate checkMate;
-        private MoveGenerator moveGenerator;
+        public MoveGenerator moveGenerator;
 
         public Turn()
         {

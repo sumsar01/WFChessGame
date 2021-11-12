@@ -9,10 +9,20 @@ namespace TestEngine.Models
     [TestClass]
     public class TestCheckMate
     {
+        Board board;
+        CheckMate checkMate;
+        MoveGenerator moveGenerator;
+
+        TestCheckMate()
+        {
+            board = new Board();
+            checkMate = new CheckMate();
+            moveGenerator = new MoveGenerator();
+        }
+
         [TestMethod]
         public void TestGenerateEnemyPositions1()
         {
-            Board board = new Board();
             board.ClearBoard();
             board.playerTurn = "1000";
             List<int> movesToGet = new List<int>();
@@ -32,7 +42,7 @@ namespace TestEngine.Models
             board.SetSquare(2, 9);
             board.SetSquare(9, 6);
 
-            movesToGet = CheckMate.GenerateEnemyPositions(movesToGet, board);
+            movesToGet = checkMate.GenerateEnemyPositions(movesToGet, board);
 
             Assert.IsTrue(movesToGet.Contains(pos1));
             Assert.IsTrue(movesToGet.Contains(pos2));
@@ -45,7 +55,6 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestGenerateEnemyPositions2()
         {
-            Board board = new Board();
             board.ClearBoard();
             board.playerTurn = "10000";
             List<int> movesToGet = new List<int>();
@@ -65,7 +74,7 @@ namespace TestEngine.Models
             board.SetSquare(2, 9);
             board.SetSquare(9, 10);
 
-            movesToGet = CheckMate.GenerateEnemyPositions(movesToGet, board);
+            movesToGet = checkMate.GenerateEnemyPositions(movesToGet, board);
 
             Assert.IsFalse(movesToGet.Contains(wrongpos1));
             Assert.IsFalse(movesToGet.Contains(wrongpos2));
@@ -78,7 +87,6 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestGenerateAllEnemyMoves1()
         {
-            Board board = new Board();
             board.ClearBoard();
             board.playerTurn = "1000";
             List<int> enemyMoves = new List<int>();
@@ -90,11 +98,11 @@ namespace TestEngine.Models
             board.SetSquare(9, 17);
             board.SetSquare(11, 18);
             board.SetSquare(13, 19);
-            enemy1 = WFChessGame.Engine.Models.Moves.GetPseudoLegalMoves(17, 9, board);
-            enemy2 = WFChessGame.Engine.Models.Moves.GetPseudoLegalMoves(18, 11, board);
-            enemy3 = WFChessGame.Engine.Models.Moves.GetPseudoLegalMoves(19, 13, board);
+            enemy1 = moveGenerator.GetPseudoLegalMoves(17, 9, board);
+            enemy2 = moveGenerator.GetPseudoLegalMoves(18, 11, board);
+            enemy3 = moveGenerator.GetPseudoLegalMoves(19, 13, board);
 
-            enemyMoves = CheckMate.GenerateAllEnemyMoves(board);
+            enemyMoves = checkMate.GenerateAllEnemyMoves(board);
 
 
             foreach (int move in enemy1)
@@ -117,7 +125,6 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestGenerateAllEnemyMoves2()
         {
-            Board board = new Board();
             board.ClearBoard();
             board.playerTurn = "10000";
             List<int> enemyMoves = new List<int>();
@@ -129,11 +136,11 @@ namespace TestEngine.Models
             board.SetSquare(9, 10);
             board.SetSquare(11, 11);
             board.SetSquare(13, 12);
-            enemy1 = WFChessGame.Engine.Models.Moves.GetPseudoLegalMoves(10, 9, board);
-            enemy2 = WFChessGame.Engine.Models.Moves.GetPseudoLegalMoves(11, 11, board);
-            enemy3 = WFChessGame.Engine.Models.Moves.GetPseudoLegalMoves(12, 13, board);
+            enemy1 = moveGenerator.GetPseudoLegalMoves(10, 9, board);
+            enemy2 = moveGenerator.GetPseudoLegalMoves(11, 11, board);
+            enemy3 = moveGenerator.GetPseudoLegalMoves(12, 13, board);
 
-            enemyMoves = CheckMate.GenerateAllEnemyMoves(board);
+            enemyMoves = checkMate.GenerateAllEnemyMoves(board);
 
             for (int i = 0; i < 64; ++i)
             {
@@ -162,7 +169,6 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestMate1()
         {
-            Board board = new Board();
             board.ClearBoard();
             board.playerTurn = "1000";
 
@@ -170,7 +176,7 @@ namespace TestEngine.Models
             board.SetSquare(1, Piece.Black | Piece.Queen);
 
 
-            bool isMate = CheckMate.Mate(board);
+            bool isMate = checkMate.Mate(board);
 
             Assert.IsTrue(isMate);
         }
@@ -178,7 +184,6 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestMate2()
         {
-            Board board = new Board();
             board.ClearBoard();
             board.playerTurn = "10000";
 
@@ -188,26 +193,7 @@ namespace TestEngine.Models
             board.SetSquare(17, Piece.Black | Piece.Pawn);
             board.SetSquare(24, Piece.White | Piece.Queen);
 
-            bool isMate = CheckMate.Mate(board);
-
-            Assert.IsFalse(isMate);
-        }
-
-        [TestMethod]
-        public void TestFutureMate()
-        {
-            Board board = new Board();
-            board.ClearBoard();
-            board.playerTurn = "10000";
-
-            board.FreshBoard();
-            board.CopyBoard(FutureBoard.futureSquare);
-            FutureBoard.SetSquare(10, Piece.None);
-            FutureBoard.SetSquare(3, Piece.Black | Piece.King);
-            FutureBoard.SetSquare(17, Piece.Black | Piece.Pawn);
-            FutureBoard.SetSquare(24, Piece.White | Piece.Queen);
-
-            bool isMate = CheckMate.FutureMate(board);
+            bool isMate = checkMate.Mate(board);
 
             Assert.IsFalse(isMate);
         }

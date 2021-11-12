@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using WFChessGame.Engine.viewModels;
 
 namespace WFChessGame.Engine.Models
 {
-    public class MovementRules : BooleanChecks
+    public class MovementRules : BooleanChecksBaseClass
     {
         private int X;
         private int Y;

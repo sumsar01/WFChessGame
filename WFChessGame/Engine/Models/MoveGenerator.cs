@@ -4,7 +4,6 @@ namespace WFChessGame.Engine.Models
 {
     public class MoveGenerator : BooleanChecksBaseClass
     {
-        private int piece;
         private List<int> moves;
         private bool _isTurn;
         private int pieceType;

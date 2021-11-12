@@ -54,6 +54,7 @@
     <Compile Include="Models\TestMove.cs" />
     <Compile Include="Models\TestMovementRules.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="viewModels\TestTurn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
