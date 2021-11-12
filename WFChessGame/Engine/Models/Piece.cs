@@ -13,7 +13,5 @@ namespace WFChessGame.Engine.Models
 
         public const int White = 8;
         public const int Black = 16;
-
-        
     }
 }

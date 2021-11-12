@@ -7,10 +7,12 @@ namespace WFChessGame.Engine.viewModels
         public bool WhiteMate;
         public bool BlackMate;
         public Board board;
+        public Turn turn;
 
         public GameSession()
         {
             board = new Board();
+            turn = new Turn();
         }
 
         public void NewGame()

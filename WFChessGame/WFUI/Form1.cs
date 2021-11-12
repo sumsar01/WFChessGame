@@ -45,7 +45,7 @@ namespace WFChessGame
         private void ShowPossibleMoves(int location, Board board)
         {
             int piece = board.GetSquare(location);
-            List<int> moves = Engine.Models.Moves.GetLegalMoves(piece, location, board);
+            List<int> moves = gameSession.turn.GetLegalMoves(piece, location, board);
 
             foreach(Control control in tableLayoutPanel1.Controls)
             {
@@ -76,14 +76,14 @@ namespace WFChessGame
         private void label_Click(object sender, EventArgs e)
         {
             Label label = (Label)sender;
-            List<int> moves = Engine.Models.Moves.GetLegalMoves(_pieceHolder, _oldLocation, gameSession.board);
+            List<int> moves = gameSession.turn.GetLegalMoves(_pieceHolder, _oldLocation, gameSession.board);
             // If no piece is selected select it, if square is empty do nothing
             // else move the piece and reset click
             if (_oldLocation == -1)
             {
                 _oldLocation = label.TabIndex;
                 _pieceHolder = gameSession.board.GetSquare(_oldLocation);
-                bool isTurn = BooleanChecks.CheckTurn(_pieceHolder, gameSession.board);
+                bool isTurn = gameSession.turn. BooleanChecksBaseClass.CheckTurn(_pieceHolder, gameSession.board);
 
                 if (isTurn == false)
                 {
@@ -101,7 +101,7 @@ namespace WFChessGame
             else if(moves.Contains(label.TabIndex))
             {
                 _newLocation = label.TabIndex;
-                Engine.Models.Moves.MakeMove(_newLocation, _oldLocation, gameSession.board);
+                gameSession.turn.MakeMove(_newLocation, _oldLocation, gameSession.board);
                 _oldLocation = -1;
             }
             else

@@ -22,7 +22,7 @@ namespace WFChessGame.Engine.Models
         }
         public void SetSquare(int location, int piece)
         {
-            if (piece != _square[location] & location >= 0 & 63 >= location)
+            if (location >= 0 & 63 >= location && piece != _square[location])
             {
                 _square[location] = piece;
                 OnValueChanged(null);
@@ -35,9 +35,12 @@ namespace WFChessGame.Engine.Models
 
         }
 
-        public void CopyBoard(int[] boardCopy)
+        public void CopyBoard(Board boardToCopy)
         {
-            Array.Copy(_square, boardCopy, 64);
+            for(int i = 0; i < 64; ++i)
+            {
+                SetSquare(i, boardToCopy.GetSquare(i));
+            }
         }
 
 

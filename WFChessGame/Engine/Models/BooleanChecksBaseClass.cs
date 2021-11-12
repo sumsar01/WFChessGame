@@ -1,12 +1,10 @@
 ﻿using System;
-using WFChessGame.Engine.viewModels;
-using System.Collections.Generic;
 
 namespace WFChessGame.Engine.Models
 {
-    public static class BooleanChecks
+    public class BooleanChecks
     {
-        public static bool IsBlackPiece(int location, Board board)
+        public bool IsBlackPiece(int location, Board board)
         {
             int piece = board.GetSquare(location);
             int stringLength = Convert.ToString(piece, 2).Length;
@@ -19,7 +17,7 @@ namespace WFChessGame.Engine.Models
             return false;
         }
 
-        public static bool IsWhitePiece(int location, Board board)
+        public bool IsWhitePiece(int location, Board board)
         {
             int piece = board.GetSquare(location);
             int stringLength = Convert.ToString(piece, 2).Length;
@@ -37,7 +35,7 @@ namespace WFChessGame.Engine.Models
         /// </summary>
         /// <param name="piece"></param>
         /// <returns></returns>
-        public static bool IsKing(int piece)
+        public bool IsKing(int piece)
         {
             if (piece % 8 == 1) return true;
             return false;
@@ -48,7 +46,7 @@ namespace WFChessGame.Engine.Models
         /// </summary>
         /// <param name="piece"></param>
         /// <returns></returns>
-        public static bool CheckTurn(int piece, Board board)
+        public bool CheckTurn(int piece, Board board)
         {
             int stringLength = Convert.ToString(piece, 2).Length;
             if (stringLength == board.playerTurn.Length)
@@ -62,7 +60,7 @@ namespace WFChessGame.Engine.Models
         /// <summary>
         /// Check if a piece is an enemy and returns true if it is the case.
         /// </summary>
-        public static bool CheckIfEnemy(int piecePos, int enemyPos, Board board)
+        public bool CheckIfEnemy(int piecePos, int enemyPos, Board board)
         {
             int piece = board.GetSquare(piecePos);
             int enemyPiece = board.GetSquare(enemyPos);
@@ -83,7 +81,7 @@ namespace WFChessGame.Engine.Models
         /// <summary>
         /// Check if square is blocked by enemy. Used by pawns
         /// </summary>
-        public static bool IsBlocked(int destination, Board board)
+        public bool IsBlocked(int destination, Board board)
         {
 
             int destinationSquare = board.GetSquare(destination);
@@ -98,7 +96,7 @@ namespace WFChessGame.Engine.Models
         /// <summary>
         /// Check if a square is occupied by a friendly piece, and returns true if it is the case.
         /// </summary>
-        public static bool CheckIfOccupied(int piecePos, int destination, Board board)
+        public bool CheckIfOccupied(int piecePos, int destination, Board board)
         {
 
             int destinationSquare = board.GetSquare(destination);
@@ -113,7 +111,7 @@ namespace WFChessGame.Engine.Models
             return false;
         }
 
-        public static bool CheckOutOfBound(int X, int Y)
+        public bool CheckOutOfBound(int X, int Y)
         {
             if (X >= 8 || Y >= 8) return true;
             if (X < 0 || Y < 0) return true;
