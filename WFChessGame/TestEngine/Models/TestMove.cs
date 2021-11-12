@@ -12,11 +12,12 @@ namespace TestEngine.Models
         [TestMethod]
         public void GetPseudoLegalMoves1()
         {
-            GameSession.playerTurn = "1000";
-            Board.ClearBoard();
-            Board.SetSquare(9, Piece.White | Piece.King);
+            Board board = new Board();
+            board.playerTurn = "1000";
+            board.ClearBoard();
+            board.SetSquare(9, Piece.White | Piece.King);
 
-            List<int> moves = Moves.GetPseudoLegalMoves(Piece.White | Piece.King, 9);
+            List<int> moves = Moves.GetPseudoLegalMoves(Piece.White | Piece.King, 9, board);
 
             Assert.IsTrue(moves.Contains(0));
             Assert.IsTrue(moves.Contains(1));
@@ -33,15 +34,16 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestGetLegalMoves1()
         {
+            Board board = new Board();
             List<int> moves = new List<int>();
-            GameSession.playerTurn = "10000";
+            board.playerTurn = "10000";
 
-            Board.FreshBoard();
-            Board.SetSquare(10, Piece.None);
-            Board.SetSquare(24, Piece.White | Piece.Queen);
+            board.FreshBoard();
+            board.SetSquare(10, Piece.None);
+            board.SetSquare(24, Piece.White | Piece.Queen);
 
 
-            moves = Moves.GetLegalMoves(Piece.Black | Piece.Pawn, 9);
+            moves = Moves.GetLegalMoves(Piece.Black | Piece.Pawn, 9, board);
 
 
             Assert.IsTrue(moves.Contains(17));
@@ -50,16 +52,17 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestGetLegalMoves2()
         {
+            Board board = new Board();
             List<int> moves = new List<int>();
             List<int> LegalMoves = new List<int>();
             List<int> enemyMoves = new List<int>();
-            GameSession.playerTurn = "10000";
+            board.playerTurn = "10000";
             int piece = Piece.Black | Piece.Pawn;
             int location = 9;
 
-            Board.FreshBoard();
-            Board.SetSquare(10, Piece.None);
-            Board.SetSquare(24, Piece.White | Piece.Queen);
+            board.FreshBoard();
+            board.SetSquare(10, Piece.None);
+            board.SetSquare(24, Piece.White | Piece.Queen);
 
 
 
@@ -68,12 +71,12 @@ namespace TestEngine.Models
 
             foreach (int move in moves)
             {
-                Board.CopyBoard(FutureBoard.futureSquare);
+                board.CopyBoard(FutureBoard.futureSquare);
                 FutureBoard.SetSquare(move, piece);
                 FutureBoard.SetSquare(location, 0);
 
 
-                enemyMoves = CheckMate.GenerateAllEnemyMoves();
+                enemyMoves = CheckMate.GenerateAllEnemyMoves(board);
 
                 for (int i = 0; i < 64; ++i)
                 {
@@ -87,12 +90,12 @@ namespace TestEngine.Models
                 for (int i = 0; i < 64; ++i)
                 {
                     if (i % 8 == 0) Console.WriteLine("");
-                    if (Board.GetSquare(i) != 0) Console.Write(String.Format("{0,2} ", FutureBoard.GetSquare(i)));
+                    if (board.GetSquare(i) != 0) Console.Write(String.Format("{0,2} ", FutureBoard.GetSquare(i)));
                     else if (enemyMoves.Contains(i)) Console.Write(String.Format("{0,2} ", 1));
                     else Console.Write(String.Format("{0,2} ", FutureBoard.GetSquare(i)));
                 }
 
-                if (CheckMate.FutureMate() != true)
+                if (CheckMate.FutureMate(board) != true)
                 {
                     LegalMoves.Add(move);
                 }

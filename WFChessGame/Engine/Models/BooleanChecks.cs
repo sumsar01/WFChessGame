@@ -48,10 +48,10 @@ namespace WFChessGame.Engine.Models
         /// </summary>
         /// <param name="piece"></param>
         /// <returns></returns>
-        public static bool CheckTurn(int piece)
+        public static bool CheckTurn(int piece, Board board)
         {
             int stringLength = Convert.ToString(piece, 2).Length;
-            if (stringLength == GameSession.playerTurn.Length)
+            if (stringLength == board.playerTurn.Length)
             {
                 return true;
             }
@@ -104,7 +104,7 @@ namespace WFChessGame.Engine.Models
             int destinationSquare = board.GetSquare(destination);
             if (destinationSquare != 0)
             {
-                if (CheckIfEnemy(piecePos, destination) == false)
+                if (CheckIfEnemy(piecePos, destination, board) == false)
                 {
                     return true;
                 }

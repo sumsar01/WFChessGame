@@ -21,7 +21,7 @@ namespace WFChessGame.Engine.Models
             {
                 piece = board.GetSquare(move);
 
-                if(BooleanChecks.CheckTurn(piece) && BooleanChecks.IsKing(piece))
+                if(BooleanChecks.CheckTurn(piece, board) && BooleanChecks.IsKing(piece))
                 {
                     return true;
                 }
@@ -41,7 +41,7 @@ namespace WFChessGame.Engine.Models
             {
                 piece = FutureBoard.GetSquare(move);
 
-                if (BooleanChecks.CheckTurn(piece) && BooleanChecks.IsKing(piece))
+                if (BooleanChecks.CheckTurn(piece, board) && BooleanChecks.IsKing(piece))
                 {
                     return true;
                 }
@@ -55,7 +55,7 @@ namespace WFChessGame.Engine.Models
         /// </summary>
         public static List<int> GenerateEnemyPositions(List<int> movesToGet, Board board)
         {
-            if (GameSession.playerTurn == "1000")
+            if (board.playerTurn == "1000")
             {
                 for (int location = 0; location < 64; ++location)
                 {
@@ -66,7 +66,7 @@ namespace WFChessGame.Engine.Models
                 }
             }
             // If black players turn. Get location of white pieces
-            if (GameSession.playerTurn == "10000")
+            if (board.playerTurn == "10000")
             {
                 for (int location = 0; location < 64; ++location)
                 {
@@ -95,7 +95,7 @@ namespace WFChessGame.Engine.Models
             foreach(int location in movesToGet)
             {
                 piece = board.GetSquare(location);
-                moves = Moves.GetEnemyMoves(piece, location);
+                moves = Moves.GetEnemyMoves(piece, location, board);
 
                 foreach(int move in moves)
                 {

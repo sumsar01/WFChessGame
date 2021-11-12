@@ -17,29 +17,29 @@ namespace WFChessGame.Engine.Models
         public static void MakeMove(int newLoaction, int oldLocation, Board board)
         {
             piece = board.GetSquare(oldLocation);
-            moves = GetLegalMoves(piece, oldLocation);
+            moves = GetLegalMoves(piece, oldLocation, board);
 
             if (moves.Contains(newLoaction))
             {
                 board.SetSquare(newLoaction, piece);
                 board.SetSquare(oldLocation, 0);
-                GameSession.ChangeTurn();
+                board.ChangeTurn();
             }
         }
 
 
-        public static List<int> GetLegalMoves(int piece, int location)
+        public static List<int> GetLegalMoves(int piece, int location, Board board)
         {
             List<int> LegalMoves = new List<int>();
-            List<int> moves = GetPseudoLegalMoves(piece, location);
+            List<int> moves = GetPseudoLegalMoves(piece, location, board);
 
             foreach (int move in moves)
             {
-                Board.CopyBoard(FutureBoard.futureSquare);
+                board.CopyBoard(FutureBoard.futureSquare);
                 FutureBoard.SetSquare(move, piece);
                 FutureBoard.SetSquare(location, 0);
 
-                if (CheckMate.FutureMate() != true)
+                if (CheckMate.FutureMate(board) != true)
                 {
                     LegalMoves.Add(move);
                 }
@@ -55,10 +55,10 @@ namespace WFChessGame.Engine.Models
         ///<returns>
         /// All possible moves for the piece.
         /// </returns>
-        public static List<int> GetPseudoLegalMoves(int piece, int location)
+        public static List<int> GetPseudoLegalMoves(int piece, int location, Board board)
         {
             moves = new List<int>();
-            _isTurn = BooleanChecks.CheckTurn(piece);
+            _isTurn = BooleanChecks.CheckTurn(piece, board);
             pieceType = piece % 8;
 
             if (_isTurn == true)
@@ -66,22 +66,22 @@ namespace WFChessGame.Engine.Models
                 switch (pieceType)
                 {
                     case 1:
-                        return MovementRules.King(location, moves);
+                        return MovementRules.King(location, moves, board);
 
                     case 2:
-                        return MovementRules.Pawn(location, moves);
+                        return MovementRules.Pawn(location, moves, board);
 
                     case 3:
-                        return MovementRules.Knight(location, moves);
+                        return MovementRules.Knight(location, moves, board);
 
                     case 4:
-                        return MovementRules.Bishop(location, moves);
+                        return MovementRules.Bishop(location, moves, board);
 
                     case 5:
-                        return MovementRules.Rook(location, moves);
+                        return MovementRules.Rook(location, moves, board);
 
                     case 6:
-                        return MovementRules.Queen(location, moves);
+                        return MovementRules.Queen(location, moves, board);
 
                     default:
                         return moves;
@@ -98,10 +98,10 @@ namespace WFChessGame.Engine.Models
         ///<returns>
         /// All possible moves for the piece.
         /// </returns>
-        public static List<int> GetEnemyMoves(int piece, int location)
+        public static List<int> GetEnemyMoves(int piece, int location, Board board)
         {
             moves = new List<int>();
-            _isTurn = BooleanChecks.CheckTurn(piece);
+            _isTurn = BooleanChecks.CheckTurn(piece, board);
             pieceType = piece % 8;
 
             if (_isTurn == false)
@@ -109,22 +109,22 @@ namespace WFChessGame.Engine.Models
                 switch (pieceType)
                 {
                     case 1:
-                        return MovementRules.King(location, moves);
+                        return MovementRules.King(location, moves, board);
 
                     case 2:
-                        return MovementRules.Pawn(location, moves);
+                        return MovementRules.Pawn(location, moves, board);
 
                     case 3:
-                        return MovementRules.Knight(location, moves);
+                        return MovementRules.Knight(location, moves, board);
 
                     case 4:
-                        return MovementRules.Bishop(location, moves);
+                        return MovementRules.Bishop(location, moves, board);
 
                     case 5:
-                        return MovementRules.Rook(location, moves);
+                        return MovementRules.Rook(location, moves, board);
 
                     case 6:
-                        return MovementRules.Queen(location, moves);
+                        return MovementRules.Queen(location, moves, board);
 
                     default:
                         return moves;

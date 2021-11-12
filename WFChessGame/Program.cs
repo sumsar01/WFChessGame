@@ -12,10 +12,11 @@ namespace WFChessGame
         [STAThread]
         static void Main()
         {
-            GameSession.NewGame();
+            GameSession gameSession = new GameSession();
+            gameSession.NewGame();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form1(gameSession));
         }
     }
 }

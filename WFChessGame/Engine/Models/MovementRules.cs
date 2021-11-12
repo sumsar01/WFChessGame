@@ -106,11 +106,11 @@ namespace WFChessGame.Engine.Models
 
         public static List<int> Pawn(int location, List<int> moves, Board board)
         {
-            if (GameSession.playerTurn == "1000")
+            if (board.playerTurn == "1000")
             {
                 return MovementRules.WhitePawn(location, moves, board);
             }
-            if (GameSession.playerTurn == "10000")
+            if (board.playerTurn == "10000")
             {
                 return MovementRules.BlackPawn(location, moves, board);
             }

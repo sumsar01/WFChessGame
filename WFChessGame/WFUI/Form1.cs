@@ -2,17 +2,19 @@
 using System.Drawing;
 using System.Windows.Forms;
 using WFChessGame.Engine.Models;
+using WFChessGame.Engine.viewModels;
 using System.Collections.Generic;
 
 namespace WFChessGame
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        GameSession gameSession;
+        public Form1(GameSession gameSession)
         {
             InitializeComponent();
-            DisplayBoard();
-            Board.ValueChanged += UpdateSquare;
+            DisplayBoard(gameSession);
+            gameSession.board.ValueChanged += UpdateSquare;
         }
 
         private void tableLayoutPanel_CellPaint(object sender, TableLayoutCellPaintEventArgs e)
@@ -23,14 +25,14 @@ namespace WFChessGame
                 e.Graphics.FillRectangle(Brushes.Moccasin, e.CellBounds);
         }
 
-        private void DisplayBoard()
+        private void DisplayBoard(GameSession gameSession)
         {
             foreach (Control control in tableLayoutPanel1.Controls)
             {
                 Label label = control as Label;
                 if (label != null)
                 {
-                    Image i = Image.FromFile(Board.GetPieceImg(label.TabIndex));
+                    Image i = Image.FromFile(gameSession.board.GetPieceImg(label.TabIndex));
                     i = (Image)(new Bitmap(i, new Size(64, 64)));
                     label.Image = i;
                     label.BackColor = System.Drawing.Color.Transparent;
@@ -39,10 +41,10 @@ namespace WFChessGame
             }
         }
 
-        private void ShowPossibleMoves(int location)
+        private void ShowPossibleMoves(int location, Board board)
         {
-            int piece = Board.GetSquare(location);
-            List<int> moves = Engine.Models.Moves.GetLegalMoves(piece, location);
+            int piece = board.GetSquare(location);
+            List<int> moves = Engine.Models.Moves.GetLegalMoves(piece, location, board);
 
             foreach(Control control in tableLayoutPanel1.Controls)
             {
@@ -64,7 +66,7 @@ namespace WFChessGame
         public void UpdateSquare(object sender, EventArgs e)
         {
             // Rendering whole board when one move is inefficient. Refactor to something smarter.
-            DisplayBoard();
+            DisplayBoard(gameSession);
         }
 
         private int _oldLocation = -1;
@@ -73,14 +75,14 @@ namespace WFChessGame
         private void label_Click(object sender, EventArgs e)
         {
             Label label = (Label)sender;
-            List<int> moves = Engine.Models.Moves.GetLegalMoves(_pieceHolder, _oldLocation);
+            List<int> moves = Engine.Models.Moves.GetLegalMoves(_pieceHolder, _oldLocation, gameSession.board);
             // If no piece is selected select it, if square is empty do nothing
             // else move the piece and reset click
             if (_oldLocation == -1)
             {
                 _oldLocation = label.TabIndex;
-                _pieceHolder = Board.GetSquare(_oldLocation);
-                bool isTurn = BooleanChecks.CheckTurn(_pieceHolder);
+                _pieceHolder = gameSession.board.GetSquare(_oldLocation);
+                bool isTurn = BooleanChecks.CheckTurn(_pieceHolder, gameSession.board);
 
                 if (isTurn == false)
                 {
@@ -88,23 +90,23 @@ namespace WFChessGame
                     return;
                 }
 
-                ShowPossibleMoves(_oldLocation);
+                ShowPossibleMoves(_oldLocation, gameSession.board);
                 if (_pieceHolder == 0)
                 {
                     _oldLocation = -1;
-                    DisplayBoard();
+                    DisplayBoard(gameSession);
                 }
             }
             else if(moves.Contains(label.TabIndex))
             {
                 _newLocation = label.TabIndex;
-                Engine.Models.Moves.MakeMove(_newLocation, _oldLocation);
+                Engine.Models.Moves.MakeMove(_newLocation, _oldLocation, gameSession.board);
                 _oldLocation = -1;
             }
             else
             {
                 _oldLocation = -1;
-                DisplayBoard();
+                DisplayBoard(gameSession);
             }
         }
     }

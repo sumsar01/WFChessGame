@@ -9,6 +9,7 @@ namespace WFChessGame.Engine.Models
     {
         private int[] _square;
         private int intRep;
+        public string playerTurn { get; set; }
 
         public int GetSquare(int location)
         {
@@ -148,6 +149,20 @@ namespace WFChessGame.Engine.Models
             for(int i = 0; i < 64; ++i)
             {
                 _square[i] = 0;
+            }
+        }
+        public void ChangeTurn()
+        {
+            /// <summary>
+            /// Change turn players turn.
+            /// </summary>
+            if (playerTurn == "1000")
+            {
+                playerTurn = "10000";
+            }
+            else if (playerTurn == "10000")
+            {
+                playerTurn = "1000";
             }
         }
     }

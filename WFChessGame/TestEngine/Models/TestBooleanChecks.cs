@@ -10,12 +10,13 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestCheckIfEnemy1()
         {
-            Board.FreshBoard();
+            Board board = new Board();
+            board.FreshBoard();
 
             // Check if enemy is enemy
             int piecePos = 8;
             int enemyPos = 48;
-            bool isEnemy = BooleanChecks.CheckIfEnemy(piecePos, enemyPos);
+            bool isEnemy = BooleanChecks.CheckIfEnemy(piecePos, enemyPos, board);
 
             Assert.IsTrue(isEnemy, "CheckIfEnemy failed: Enemy is not enemy");
 
@@ -24,12 +25,13 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestCheckIfEnemy2()
         {
-            Board.FreshBoard();
+            Board board = new Board();
+            board.FreshBoard();
 
             // Check if friend is enemy
             int piecePos = 8;
             int enemyPos = 9;
-            bool isEnemy = BooleanChecks.CheckIfEnemy(piecePos, enemyPos);
+            bool isEnemy = BooleanChecks.CheckIfEnemy(piecePos, enemyPos, board);
 
             Assert.IsFalse(isEnemy, "CheckIfEnemy failed: Friend is enemy");
 
@@ -38,12 +40,13 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestCheckIfEnemy3()
         {
-            Board.FreshBoard();
+            Board board = new Board();
+            board.FreshBoard();
 
             // Check if empty square is enemy
             int piecePos = 8;
             int enemyPos = 16;
-            bool isEnemy = BooleanChecks.CheckIfEnemy(piecePos, enemyPos);
+            bool isEnemy = BooleanChecks.CheckIfEnemy(piecePos, enemyPos, board);
 
             Assert.IsFalse(isEnemy, "CheckIfEnemy failed: Friend is enemy");
         }
@@ -51,11 +54,13 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestIsBlackPiece()
         {
-            Board.SetSquare(5, 18);
-            Board.SetSquare(8, 19);
+            Board board = new Board();
+            board.FreshBoard();
+            board.SetSquare(5, 18);
+            board.SetSquare(8, 19);
 
-            bool isBlack1 = BooleanChecks.IsBlackPiece(2);
-            bool isBlack2 = BooleanChecks.IsBlackPiece(9);
+            bool isBlack1 = BooleanChecks.IsBlackPiece(2, board);
+            bool isBlack2 = BooleanChecks.IsBlackPiece(9, board);
 
             Assert.IsTrue(isBlack1);
             Assert.IsTrue(isBlack2);
@@ -65,11 +70,12 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestIsWhitePiece()
         {
-            Board.SetSquare(2, 9);
-            Board.SetSquare(9, 10);
+            Board board = new Board();
+            board.SetSquare(2, 9);
+            board.SetSquare(9, 10);
 
-            bool isWhite1 = BooleanChecks.IsWhitePiece(2);
-            bool isWhite2 = BooleanChecks.IsWhitePiece(9);
+            bool isWhite1 = BooleanChecks.IsWhitePiece(2, board);
+            bool isWhite2 = BooleanChecks.IsWhitePiece(9, board);
 
             Assert.IsTrue(isWhite1);
             Assert.IsTrue(isWhite2);
@@ -80,8 +86,9 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestIsKing()
         {
-            Board.SetSquare(1, 9);
-            int piece = Board.GetSquare(1);
+            Board board = new Board();
+            board.SetSquare(1, 9);
+            int piece = board.GetSquare(1);
 
             bool isKing = BooleanChecks.IsKing(piece);
             
@@ -91,11 +98,12 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestCheckTurn()
         {
-            GameSession.playerTurn = "1000";
-            Board.SetSquare(1, 9);
-            int piece = Board.GetSquare(1);
+            Board board = new Board();
+            board.playerTurn = "1000";
+            board.SetSquare(1, 9);
+            int piece = board.GetSquare(1);
 
-            bool isTurn = BooleanChecks.CheckTurn(piece);
+            bool isTurn = BooleanChecks.CheckTurn(piece, board);
 
             Assert.IsTrue(isTurn);
         }
