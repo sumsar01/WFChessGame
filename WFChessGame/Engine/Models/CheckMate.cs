@@ -10,16 +10,16 @@ namespace WFChessGame.Engine.Models
     /// </summary>
     public static class CheckMate
     {
-        public static bool Mate()
+        public static bool Mate(Board board)
         {
             List<int> allEnemyMoves = new List<int>();
             int piece;
 
-            allEnemyMoves = GenerateAllEnemyMoves();
+            allEnemyMoves = GenerateAllEnemyMoves(board);
 
             foreach (int move in allEnemyMoves)
             {
-                piece = Board.GetSquare(move);
+                piece = board.GetSquare(move);
 
                 if(BooleanChecks.CheckTurn(piece) && BooleanChecks.IsKing(piece))
                 {
@@ -30,12 +30,12 @@ namespace WFChessGame.Engine.Models
             return false;
         }
 
-        public static bool FutureMate()
+        public static bool FutureMate(Board board)
         {
             List<int> allEnemyMoves = new List<int>();
             int piece;
 
-            allEnemyMoves = GenerateAllEnemyMoves();
+            allEnemyMoves = GenerateAllEnemyMoves(board);
 
             foreach (int move in allEnemyMoves)
             {
@@ -53,13 +53,13 @@ namespace WFChessGame.Engine.Models
         /// <summary>
         /// Get location of all enemy pieces.
         /// </summary>
-        public static List<int> GenerateEnemyPositions(List<int> movesToGet)
+        public static List<int> GenerateEnemyPositions(List<int> movesToGet, Board board)
         {
             if (GameSession.playerTurn == "1000")
             {
                 for (int location = 0; location < 64; ++location)
                 {
-                    if (BooleanChecks.IsBlackPiece(location))
+                    if (BooleanChecks.IsBlackPiece(location, board))
                     {
                         movesToGet.Add(location);
                     }
@@ -70,7 +70,7 @@ namespace WFChessGame.Engine.Models
             {
                 for (int location = 0; location < 64; ++location)
                 {
-                    if (BooleanChecks.IsWhitePiece(location))
+                    if (BooleanChecks.IsWhitePiece(location, board))
                     {
                         movesToGet.Add(location);
                     }
@@ -83,18 +83,18 @@ namespace WFChessGame.Engine.Models
         /// <summary>
         /// Return all possible moves made by the enemy.
         /// </summary>
-        public static List<int> GenerateAllEnemyMoves()
+        public static List<int> GenerateAllEnemyMoves(Board board)
         {
             List<int> enemyMoves = new List<int>();
             List<int> movesToGet = new List<int>();
             List<int> moves = new List<int>();
             int piece;
 
-            movesToGet = GenerateEnemyPositions(movesToGet);
+            movesToGet = GenerateEnemyPositions(movesToGet, board);
 
             foreach(int location in movesToGet)
             {
-                piece = Board.GetSquare(location);
+                piece = board.GetSquare(location);
                 moves = Moves.GetEnemyMoves(piece, location);
 
                 foreach(int move in moves)

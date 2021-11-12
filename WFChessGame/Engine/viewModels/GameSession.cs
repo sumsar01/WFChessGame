@@ -11,7 +11,8 @@ namespace WFChessGame.Engine.viewModels
 
         public static void NewGame()
         {
-            Board.FreshBoard();
+            Board board = new Board();
+            board.FreshBoard();
             // Starting player white.
             // The turn is represented by the string value of the int representing the color.
             playerTurn = "1000";

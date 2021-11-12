@@ -14,15 +14,15 @@ namespace WFChessGame.Engine.Models
         ///<summary>
         /// Moves a piece and change turn.
         ///</summary>
-        public static void MakeMove(int newLoaction, int oldLocation)
+        public static void MakeMove(int newLoaction, int oldLocation, Board board)
         {
-            piece = Board.GetSquare(oldLocation);
+            piece = board.GetSquare(oldLocation);
             moves = GetLegalMoves(piece, oldLocation);
 
             if (moves.Contains(newLoaction))
             {
-                Board.SetSquare(newLoaction, piece);
-                Board.SetSquare(oldLocation, 0);
+                board.SetSquare(newLoaction, piece);
+                board.SetSquare(oldLocation, 0);
                 GameSession.ChangeTurn();
             }
         }

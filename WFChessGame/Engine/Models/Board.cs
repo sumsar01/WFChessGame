@@ -5,12 +5,12 @@ using System.ComponentModel;
 
 namespace WFChessGame.Engine.Models
 {
-    public static class Board
+    public class Board
     {
-        private static int[] _square;
-        static int intRep;
+        private int[] _square;
+        private int intRep;
 
-        public static int GetSquare(int location)
+        public int GetSquare(int location)
         {
             if(location >= 0 & 63 >= location)
             {
@@ -19,7 +19,7 @@ namespace WFChessGame.Engine.Models
 
             return -1;
         }
-        public static void SetSquare(int location, int piece)
+        public void SetSquare(int location, int piece)
         {
             if (piece != _square[location] & location >= 0 & 63 >= location)
             {
@@ -28,13 +28,13 @@ namespace WFChessGame.Engine.Models
             }
         }
 
-        static Board()
+        public Board()
         {
             _square = new int[64];
 
         }
 
-        public static void CopyBoard(int[] boardCopy)
+        public void CopyBoard(int[] boardCopy)
         {
             Array.Copy(_square, boardCopy, 64);
         }
@@ -42,16 +42,16 @@ namespace WFChessGame.Engine.Models
 
         [Category("Action")]
         [Description("Fires when the value is changed")]
-        public static event EventHandler ValueChanged;
-        static void OnValueChanged(EventArgs e)
+        public event EventHandler ValueChanged;
+        public void OnValueChanged(EventArgs e)
         {
             if(ValueChanged != null)
             {
-                ValueChanged(Board._square, e);
+                ValueChanged(_square, e);
             }
         }
 
-        public static string GetPieceImg(int piecePosition)
+        public string GetPieceImg(int piecePosition)
         {
             intRep = _square[piecePosition];
 
@@ -102,7 +102,7 @@ namespace WFChessGame.Engine.Models
             return EmptySquare;
         }
 
-        public static void FreshBoard()
+        public void FreshBoard()
         {
             // Black side first
             _square[0] = Piece.Black | Piece.Rook;
@@ -143,7 +143,7 @@ namespace WFChessGame.Engine.Models
             _square[63] = Piece.White | Piece.Rook;
         }
 
-        public static void ClearBoard()
+        public void ClearBoard()
         {
             for(int i = 0; i < 64; ++i)
             {

@@ -14,16 +14,16 @@ namespace WFChessGame.Engine.Models
         static int destination;
 
 
-        public static List<int> King(int location, List<int> moves)
+        public static List<int> King(int location, List<int> moves, Board board)
         {
             dX = new int[] { -1, 0, 1, 1, 1, 0, -1, -1 };
             dY = new int[] { -1, -1, -1, 0, 1, 1, 1, 0 };
 
-            return GenerateJumps(location, dX, dY, moves);
+            return GenerateJumps(location, dX, dY, moves, board);
         }
 
         // Potentially needs refactoring
-        private static List<int> WhitePawn(int location, List<int> moves)
+        private static List<int> WhitePawn(int location, List<int> moves, Board board)
         {
             // Chicking if white pawn has moved yet
             // If pawn has not moved allow two forward moves
@@ -31,32 +31,32 @@ namespace WFChessGame.Engine.Models
             {
                 dX = new int[] { 0, 0 };
                 dY = new int[] { -1, -2 };
-                moves = GenerateMoves(location, dX, dY, moves);
+                moves = GenerateMoves(location, dX, dY, moves, board);
             }
             else
             {
                 dX = new int[] { 0 };
                 dY = new int[] { -1 };
-                moves = GenerateMoves(location, dX, dY, moves);
+                moves = GenerateMoves(location, dX, dY, moves, board);
             }
 
-            moves = RemoveIfBlocked(moves);
+            moves = RemoveIfBlocked(moves, board);
 
             // If enemy in range allow attack move
-            bool enemyRight = BooleanChecks.CheckIfEnemy(location, location - 7);
-            bool enemyLeft = BooleanChecks.CheckIfEnemy(location, location - 9);
+            bool enemyRight = BooleanChecks.CheckIfEnemy(location, location - 7, board);
+            bool enemyLeft = BooleanChecks.CheckIfEnemy(location, location - 9, board);
 
             if (enemyRight == true)
             {
                 dX = new int[] { 1 };
                 dY = new int[] { -1 };
-                moves = GenerateMoves(location, dX, dY, moves);
+                moves = GenerateMoves(location, dX, dY, moves, board);
             }
             if (enemyLeft == true)
             {
                 dX = new int[] { -1 };
                 dY = new int[] { -1 };
-                moves = GenerateMoves(location, dX, dY, moves);
+                moves = GenerateMoves(location, dX, dY, moves, board);
             }
 
 
@@ -64,7 +64,7 @@ namespace WFChessGame.Engine.Models
         }
 
         // Potentially needs refactoring
-        private static List<int> BlackPawn(int location, List<int> moves)
+        private static List<int> BlackPawn(int location, List<int> moves, Board board)
         {
             // Chicking if black pawn has moved yet
             // If pawn has not moved allow two forward moves
@@ -72,144 +72,144 @@ namespace WFChessGame.Engine.Models
             {
                 dX = new int[] { 0, 0 };
                 dY = new int[] { 1, 2 };
-                moves = GenerateMoves(location, dX, dY, moves);
+                moves = GenerateMoves(location, dX, dY, moves, board);
             }
             else
             {
                 dX = new int[] { 0 };
                 dY = new int[] { 1 };
-                moves = GenerateMoves(location, dX, dY, moves);
+                moves = GenerateMoves(location, dX, dY, moves, board);
             }
 
-            moves = RemoveIfBlocked(moves);
+            moves = RemoveIfBlocked(moves, board);
 
             // If enemy in range allow attack move
-            bool enemyRight = BooleanChecks.CheckIfEnemy(location, location + 7);
-            bool enemyLeft = BooleanChecks.CheckIfEnemy(location, location + 9);
+            bool enemyRight = BooleanChecks.CheckIfEnemy(location, location + 7, board);
+            bool enemyLeft = BooleanChecks.CheckIfEnemy(location, location + 9, board);
 
             if (enemyRight == true)
             {
                 dX = new int[] { -1 };
                 dY = new int[] { 1  };
-                moves = GenerateMoves(location, dX, dY, moves);
+                moves = GenerateMoves(location, dX, dY, moves, board);
             }
 
             if (enemyLeft == true)
             {
                 dX = new int[] { 1 };
                 dY = new int[] { 1 };
-                moves = GenerateMoves(location, dX, dY, moves);
+                moves = GenerateMoves(location, dX, dY, moves, board);
             }
 
             return moves;
         }
 
-        public static List<int> Pawn(int location, List<int> moves)
+        public static List<int> Pawn(int location, List<int> moves, Board board)
         {
             if (GameSession.playerTurn == "1000")
             {
-                return MovementRules.WhitePawn(location, moves);
+                return MovementRules.WhitePawn(location, moves, board);
             }
             if (GameSession.playerTurn == "10000")
             {
-                return MovementRules.BlackPawn(location, moves);
+                return MovementRules.BlackPawn(location, moves, board);
             }
             return moves;
         }
 
-        public static List<int> Knight(int location, List<int> moves)
+        public static List<int> Knight(int location, List<int> moves, Board board)
         {
             dX = new int[] {-1, 1, 2, 2, 1, -1, -2, -2};
             dY = new int[] {-2, -2, -1, 1, 2, 2, 1, -1};
 
-            return GenerateJumps(location, dX, dY, moves);
+            return GenerateJumps(location, dX, dY, moves, board);
         }
 
-        public static List<int> Bishop(int location, List<int> moves)
+        public static List<int> Bishop(int location, List<int> moves, Board board)
         {
 
             // Generate moves for each of the four possible paths.
             // Allows tracking of blocked paths.
             dX = new int[] { -1, -2, -3, -4, -5, -6, -7 };
             dY = new int[] { -1, -2, -3, -4, -5, -6, -7 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             dX = new int[] { 1, 2, 3, 4, 5, 6, 7 };
             dY = new int[] { 1, 2, 3, 4, 5, 6, 7 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             dX = new int[] { -1, -2, -3, -4, -5, -6, -7 };
             dY = new int[] {  1,  2,  3,  4,  5,  6,  7 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             dX = new int[] {  1,  2,  3,  4,  5,  6,  7 };
             dY = new int[] { -1, -2, -3, -4, -5, -6, -7 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             return moves;
         }
 
-        public static List<int> Rook(int location, List<int> moves)
+        public static List<int> Rook(int location, List<int> moves, Board board)
         {
 
             // Generate moves for each of the four possible paths.
             // Allows tracking of blocked paths.
             dX = new int[] { -1, -2, -3, -4, -5, -6, -7 };
             dY = new int[] {  0,  0,  0,  0,  0,  0,  0 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             dX = new int[] { 1, 2, 3, 4, 5, 6, 7 };
             dY = new int[] { 0, 0, 0, 0, 0, 0, 0 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             dX = new int[] { 0, 0, 0, 0, 0, 0, 0 };
             dY = new int[] { 1, 2, 3, 4, 5, 6, 7 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             dX = new int[] {  0,  0,  0,  0,  0,  0,  0 };
             dY = new int[] { -1, -2, -3, -4, -5, -6, -7 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             return moves;
         }
 
-        public static List<int> Queen(int location, List<int> moves)
+        public static List<int> Queen(int location, List<int> moves, Board board)
         {
             // Generate moves for each of the four possible paths.
             // Allows tracking of blocked paths.
             // Bishop moves.
             dX = new int[] { -1, -2, -3, -4, -5, -6, -7 };
             dY = new int[] { -1, -2, -3, -4, -5, -6, -7 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             dX = new int[] { 1, 2, 3, 4, 5, 6, 7 };
             dY = new int[] { 1, 2, 3, 4, 5, 6, 7 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             dX = new int[] { -1, -2, -3, -4, -5, -6, -7 };
             dY = new int[] { 1, 2, 3, 4, 5, 6, 7 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             dX = new int[] { 1, 2, 3, 4, 5, 6, 7 };
             dY = new int[] { -1, -2, -3, -4, -5, -6, -7 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             // Rook moves
             dX = new int[] { -1, -2, -3, -4, -5, -6, -7 };
             dY = new int[] { 0, 0, 0, 0, 0, 0, 0 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             dX = new int[] { 1, 2, 3, 4, 5, 6, 7 };
             dY = new int[] { 0, 0, 0, 0, 0, 0, 0 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             dX = new int[] { 0, 0, 0, 0, 0, 0, 0 };
             dY = new int[] { 1, 2, 3, 4, 5, 6, 7 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             dX = new int[] { 0, 0, 0, 0, 0, 0, 0 };
             dY = new int[] { -1, -2, -3, -4, -5, -6, -7 };
-            moves = GenerateMoves(location, dX, dY, moves);
+            moves = GenerateMoves(location, dX, dY, moves, board);
 
             return moves;
         }
@@ -217,7 +217,7 @@ namespace WFChessGame.Engine.Models
         /// <summary>
         /// Auxiliary method that generates and returns a list of moves.
         /// </summary>
-        private static List<int> GenerateMoves(int location, int[] dX, int[] dY, List<int> moves)
+        private static List<int> GenerateMoves(int location, int[] dX, int[] dY, List<int> moves, Board board)
         {
             (X, Y) = Transformation.LineToXY(location);
             for (int i = 0; i < dX.Length; ++i)
@@ -227,15 +227,15 @@ namespace WFChessGame.Engine.Models
                 if (BooleanChecks.CheckOutOfBound(X1, Y1) == false)
                 {
                     destination = Transformation.XYToLine(X1, Y1);
-                    if (BooleanChecks.CheckIfOccupied(location, destination)) break;
+                    if (BooleanChecks.CheckIfOccupied(location, destination, board)) break;
 
                     moves.Add(destination);
 
-                    if (BooleanChecks.CheckIfEnemy(location, destination)) break;
+                    if (BooleanChecks.CheckIfEnemy(location, destination, board)) break;
                 }
             }
 
-            moves = RemoveIfOccupied(moves, location);
+            moves = RemoveIfOccupied(moves, location, board);
 
             return moves;
         }
@@ -243,7 +243,7 @@ namespace WFChessGame.Engine.Models
         /// <summary>
         /// Auxiliary method that generates and returns a list of moves for the knight and the king.
         /// </summary>
-        private static List<int> GenerateJumps(int location, int[] dX, int[] dY, List<int> moves)
+        private static List<int> GenerateJumps(int location, int[] dX, int[] dY, List<int> moves, Board board)
         {
             (X, Y) = Transformation.LineToXY(location);
             for (int i = 0; i < dX.Length; ++i)
@@ -257,7 +257,7 @@ namespace WFChessGame.Engine.Models
                 }
             }
 
-            moves = RemoveIfOccupied(moves, location);
+            moves = RemoveIfOccupied(moves, location, board);
 
             return moves;
         }
@@ -267,13 +267,13 @@ namespace WFChessGame.Engine.Models
         /// </summary>
         /// <param name="moves">List of possible moves</param>
         /// <param name="location">Location of the piece about to move</param>
-        private static List<int> RemoveIfOccupied(List<int> moves, int location)
+        private static List<int> RemoveIfOccupied(List<int> moves, int location, Board board)
         {
-            int piece = Board.GetSquare(location);
+            int piece = board.GetSquare(location);
             List<int> occupiedMoves = new List<int>();
             foreach (int move in moves)
             {
-                if (BooleanChecks.CheckIfOccupied(location, move))
+                if (BooleanChecks.CheckIfOccupied(location, move, board))
                 {
                     occupiedMoves.Add(move);
                 }
@@ -287,12 +287,12 @@ namespace WFChessGame.Engine.Models
             return moves;
         }
 
-        private static List<int> RemoveIfBlocked(List<int> moves)
+        private static List<int> RemoveIfBlocked(List<int> moves, Board board)
         {
             for(int i = 0; i < moves.Count; ++i)
             {
                 int move = moves[i];
-                if (BooleanChecks.IsBlocked(move))
+                if (BooleanChecks.IsBlocked(move, board))
                 {
                     moves.Remove(move);
                 }

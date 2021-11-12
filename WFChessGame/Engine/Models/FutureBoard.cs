@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WFChessGame.Engine.Models
 {
-    class FutureBoard
+    public class FutureBoard
     {
         public static int[] futureSquare;
 

@@ -46,5 +46,60 @@ namespace TestEngine.Models
 
             Assert.IsTrue(moves.Contains(17));
         }
+
+        [TestMethod]
+        public void TestGetLegalMoves2()
+        {
+            List<int> moves = new List<int>();
+            List<int> LegalMoves = new List<int>();
+            List<int> enemyMoves = new List<int>();
+            GameSession.playerTurn = "10000";
+            int piece = Piece.Black | Piece.Pawn;
+            int location = 9;
+
+            Board.FreshBoard();
+            Board.SetSquare(10, Piece.None);
+            Board.SetSquare(24, Piece.White | Piece.Queen);
+
+
+
+            moves.Add(17);
+
+
+            foreach (int move in moves)
+            {
+                Board.CopyBoard(FutureBoard.futureSquare);
+                FutureBoard.SetSquare(move, piece);
+                FutureBoard.SetSquare(location, 0);
+
+
+                enemyMoves = CheckMate.GenerateAllEnemyMoves();
+
+                for (int i = 0; i < 64; ++i)
+                {
+                    if (i % 8 == 0) Console.WriteLine("");
+                    if (enemyMoves.Contains(i)) Console.Write(String.Format("{0,2} ", 1));
+                    else Console.Write(String.Format("{0,2} ", FutureBoard.GetSquare(i)));
+                }
+
+                Console.WriteLine("");
+
+                for (int i = 0; i < 64; ++i)
+                {
+                    if (i % 8 == 0) Console.WriteLine("");
+                    if (Board.GetSquare(i) != 0) Console.Write(String.Format("{0,2} ", FutureBoard.GetSquare(i)));
+                    else if (enemyMoves.Contains(i)) Console.Write(String.Format("{0,2} ", 1));
+                    else Console.Write(String.Format("{0,2} ", FutureBoard.GetSquare(i)));
+                }
+
+                if (CheckMate.FutureMate() != true)
+                {
+                    LegalMoves.Add(move);
+                }
+            }
+
+
+            Assert.IsTrue(LegalMoves.Contains(17));
+        }
     }
 }
