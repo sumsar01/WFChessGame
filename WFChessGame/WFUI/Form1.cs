@@ -92,6 +92,12 @@ namespace WFChessGame
                 }
 
                 ShowPossibleMoves(_oldLocation, gameSession.board);
+                if (gameSession.turn.IsCheckMate(gameSession.board) == true)
+                {
+                    gameSession.board.FreshBoard();
+                    gameSession.board.playerTurn = "1000";
+                }
+
                 if (_pieceHolder == 0)
                 {
                     _oldLocation = -1;

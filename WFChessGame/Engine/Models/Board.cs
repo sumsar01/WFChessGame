@@ -110,6 +110,7 @@ namespace WFChessGame.Engine.Models
 
         public void FreshBoard()
         {
+            ClearBoard();
             // Black side first
             _square[0] = Piece.Black | Piece.Rook;
             _square[1] = Piece.Black | Piece.Knight;

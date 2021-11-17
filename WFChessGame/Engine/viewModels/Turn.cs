@@ -16,8 +16,8 @@ namespace WFChessGame.Engine.viewModels
         private CheckMate checkMate;
         public MoveGenerator moveGenerator;
         private List<int> LegalMoves;
-        private bool whiteIsMate;
-        private bool blackIsMate;
+        List<int> allLegalMoves;
+        List<int> movesToGet;
 
         public Turn()
         {
@@ -68,6 +68,45 @@ namespace WFChessGame.Engine.viewModels
             return LegalMoves;
         }
 
+
+        /// <summary>
+        /// Return all possible legal moves.
+        /// </summary>
+        public List<int> GenerateAllLegalMoves(Board board)
+        {
+            allLegalMoves = new List<int>();
+            movesToGet = new List<int>();
+            moves = new List<int>();
+
+            movesToGet = checkMate.GeneratePositions(movesToGet, board, "friend");
+
+            foreach (int location in movesToGet)
+            {
+                piece = board.GetSquare(location);
+                moves = GetLegalMoves(piece, location, board);
+
+                foreach (int move in moves)
+                {
+                    allLegalMoves.Add(move);
+                }
+            }
+
+            return allLegalMoves;
+        }
+
+        public bool IsCheckMate(Board board)
+        {
+            if (checkMate.Mate(board))
+            {
+                moves = new List<int>();
+                moves = GenerateAllLegalMoves(board);
+
+                if (moves.Count == 0) return true;
+            }
+
+            return false;
+        }
+
         public void ChangeTurn(Board board)
         {
             /// <summary>
@@ -75,12 +114,10 @@ namespace WFChessGame.Engine.viewModels
             /// </summary>
             if (board.playerTurn == "1000")
             {
-                whiteIsMate = checkMate.Mate(board);
                 board.playerTurn = "10000";
             }
             else if (board.playerTurn == "10000")
             {
-                blackIsMate = checkMate.Mate(board);
                 board.playerTurn = "1000";
             }
         }

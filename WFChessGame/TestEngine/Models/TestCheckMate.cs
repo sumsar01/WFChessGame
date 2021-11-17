@@ -47,7 +47,7 @@ namespace TestEngine.Models
             board.SetSquare(wrongpos1, 9);
             board.SetSquare(wrongpos2, 6);
 
-            movesToGet = checkMate.GenerateEnemyPositions(movesToGet, board);
+            movesToGet = checkMate.GeneratePositions(movesToGet, board);
 
             Assert.IsTrue(movesToGet.Contains(pos1));
             Assert.IsTrue(movesToGet.Contains(pos2));
@@ -78,7 +78,7 @@ namespace TestEngine.Models
             board.SetSquare(pos1, 9);
             board.SetSquare(pos2, 10);
 
-            movesToGet = checkMate.GenerateEnemyPositions(movesToGet, board);
+            movesToGet = checkMate.GeneratePositions(movesToGet, board);
 
             Assert.IsFalse(movesToGet.Contains(wrongpos1));
             Assert.IsFalse(movesToGet.Contains(wrongpos2));
