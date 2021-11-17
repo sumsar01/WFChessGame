@@ -92,9 +92,11 @@ namespace WFChessGame
                 }
 
                 ShowPossibleMoves(_oldLocation, gameSession.board);
-
-                //Shut down game if checkmate
-                if (gameSession.turn.IsCheckMate(gameSession.board) == true) System.Windows.Forms.Application.Exit();
+                if (gameSession.turn.IsCheckMate(gameSession.board) == true)
+                {
+                    gameSession.board.FreshBoard();
+                    gameSession.board.playerTurn = "1000";
+                }
 
                 if (_pieceHolder == 0)
                 {
