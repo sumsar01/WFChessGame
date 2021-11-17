@@ -14,20 +14,22 @@ namespace TestEngine.viewModels
         MoveGenerator moveGenerator;
         Turn turn;
         CheckMate checkMate;
+        List<int> moves;
 
-        TestTurn()
+        [TestInitialize]
+        public void Initalize()
         {
             board = new Board();
             futureBoard = new Board();
             moveGenerator = new MoveGenerator();
             turn = new Turn();
             checkMate = new CheckMate();
+            moves = new List<int>();
         }
 
         [TestMethod]
         public void TestGetLegalMoves1()
         {
-            List<int> moves = new List<int>();
             board.playerTurn = "10000";
 
             board.FreshBoard();
@@ -39,54 +41,88 @@ namespace TestEngine.viewModels
 
 
             Assert.IsTrue(moves.Contains(17));
+            Assert.IsFalse(moves.Contains(25));
         }
 
         [TestMethod]
         public void TestGetLegalMoves2()
         {
-            Board board = new Board();
-            List<int> moves = new List<int>();
+            board.playerTurn = "1000";
+
+            board.SetSquare(0, Piece.Black | Piece.Rook);
+            board.SetSquare(9, Piece.White | Piece.King);
+
+
+            moves = turn.GetLegalMoves(Piece.White | Piece.King, 9, board);
+
+
+            Assert.IsTrue(moves.Contains(0));
+            Assert.IsTrue(moves.Contains(10));
+            Assert.IsTrue(moves.Contains(18));
+            Assert.IsTrue(moves.Contains(17));
+            Assert.IsFalse(moves.Contains(1));
+            Assert.IsFalse(moves.Contains(2));
+            Assert.IsFalse(moves.Contains(8));
+            Assert.IsFalse(moves.Contains(16));
+        }
+
+        [TestMethod]
+        public void TestGetLegalMoves3()
+        {
+            board.playerTurn = "1000";
+
+            board.SetSquare(28, Piece.Black | Piece.Pawn);
+            board.SetSquare(44, Piece.White | Piece.King);
+
+
+            moves = turn.GetLegalMoves(Piece.White | Piece.King, 9, board);
+
+            Assert.IsFalse(moves.Contains(35));
+            Assert.IsFalse(moves.Contains(37));
+
+        }
+
+        [TestMethod]
+        public void TestGetLegalMovesExtra()
+        {
             List<int> LegalMoves = new List<int>();
             List<int> enemyMoves = new List<int>();
-            board.playerTurn = "10000";
-            int piece = Piece.Black | Piece.Pawn;
-            int location = 9;
+            board.playerTurn = "1000";
+            int piece = Piece.White | Piece.King;
+            int location = 44;
 
-            board.FreshBoard();
-            board.SetSquare(10, Piece.None);
-            board.SetSquare(24, Piece.White | Piece.Queen);
+            board.SetSquare(28, Piece.Black | Piece.Pawn);
+            board.SetSquare(location, piece);
 
+            moves.Add(35);
+            moves.Add(37);
 
-
-            moves.Add(17);
 
 
             foreach (int move in moves)
             {
-                board.FreshBoard();
+                futureBoard.ClearBoard();
                 futureBoard.CopyBoard(board);
                 futureBoard.SetSquare(move, piece);
                 futureBoard.SetSquare(location, 0);
 
 
-                enemyMoves = checkMate.GenerateAllEnemyMoves(board);
-
-                for (int i = 0; i < 64; ++i)
+                enemyMoves = checkMate.GenerateAllEnemyMoves(futureBoard);
+                //enemyMoves = moveGenerator.GetEnemyMoves(0, futureBoard);
+                
+                
+                for(int i = 0; i < 64; ++i)
                 {
                     if (i % 8 == 0) Console.WriteLine("");
-                    if (enemyMoves.Contains(i)) Console.Write(String.Format("{0,2} ", 1));
-                    else Console.Write(String.Format("{0,2} ", futureBoard.GetSquare(i)));
-                }
-
-                Console.WriteLine("");
-
-                for (int i = 0; i < 64; ++i)
-                {
-                    if (i % 8 == 0) Console.WriteLine("");
-                    if (board.GetSquare(i) != 0) Console.Write(String.Format("{0,2} ", futureBoard.GetSquare(i)));
+                    if(futureBoard.GetSquare(i) != 0) Console.Write(String.Format("{0,2} ", futureBoard.GetSquare(i)));
                     else if (enemyMoves.Contains(i)) Console.Write(String.Format("{0,2} ", 1));
-                    else Console.Write(String.Format("{0,2} ", futureBoard.GetSquare(i)));
+                    else Console.Write(String.Format("{0,2} ", 0));
+
                 }
+
+                Console.WriteLine(checkMate.Mate(futureBoard));
+                Console.WriteLine("");
+                
 
                 if (checkMate.Mate(futureBoard) != true)
                 {
@@ -95,7 +131,8 @@ namespace TestEngine.viewModels
             }
 
 
-            Assert.IsTrue(LegalMoves.Contains(17));
+            Assert.IsFalse(LegalMoves.Contains(35));
+            Assert.IsFalse(LegalMoves.Contains(37));
         }
     }
 }

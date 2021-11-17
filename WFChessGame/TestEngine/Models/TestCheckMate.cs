@@ -12,8 +12,14 @@ namespace TestEngine.Models
         Board board;
         CheckMate checkMate;
         MoveGenerator moveGenerator;
+        List<int> movesToGet;
+        List<int> enemy1;
+        List<int> enemy2;
+        List<int> enemy3;
+        List<int> enemyMoves;
 
-        TestCheckMate()
+        [TestInitialize]
+        public void Initalize()
         {
             board = new Board();
             checkMate = new CheckMate();
@@ -23,9 +29,8 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestGenerateEnemyPositions1()
         {
-            board.ClearBoard();
             board.playerTurn = "1000";
-            List<int> movesToGet = new List<int>();
+            movesToGet = new List<int>();
             int pos1 = 1;
             int pos2 = 5;
             int pos3 = 8;
@@ -34,13 +39,13 @@ namespace TestEngine.Models
             int wrongpos2 = 9;
 
             // Set black pieces
-            board.SetSquare(1, 17);
-            board.SetSquare(5, 18);
-            board.SetSquare(8, 19);
+            board.SetSquare(pos1, 17);
+            board.SetSquare(pos2, 18);
+            board.SetSquare(pos3, 19);
 
             // set white pieces
-            board.SetSquare(2, 9);
-            board.SetSquare(9, 6);
+            board.SetSquare(wrongpos1, 9);
+            board.SetSquare(wrongpos2, 6);
 
             movesToGet = checkMate.GenerateEnemyPositions(movesToGet, board);
 
@@ -55,9 +60,8 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestGenerateEnemyPositions2()
         {
-            board.ClearBoard();
             board.playerTurn = "10000";
-            List<int> movesToGet = new List<int>();
+            movesToGet = new List<int>();
             int wrongpos1 = 1;
             int wrongpos2 = 5;
             int wrongpos3 = 8;
@@ -66,13 +70,13 @@ namespace TestEngine.Models
             int pos2 = 9;
 
             // Set black pieces
-            board.SetSquare(1, 17);
-            board.SetSquare(5, 18);
-            board.SetSquare(8, 19);
+            board.SetSquare(wrongpos1, 17);
+            board.SetSquare(wrongpos2, 18);
+            board.SetSquare(wrongpos3, 19);
 
             // set white pieces
-            board.SetSquare(2, 9);
-            board.SetSquare(9, 10);
+            board.SetSquare(pos1, 9);
+            board.SetSquare(pos2, 10);
 
             movesToGet = checkMate.GenerateEnemyPositions(movesToGet, board);
 
@@ -87,12 +91,11 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestGenerateAllEnemyMoves1()
         {
-            board.ClearBoard();
             board.playerTurn = "1000";
-            List<int> enemyMoves = new List<int>();
-            List<int> enemy1 = new List<int>();
-            List<int> enemy2 = new List<int>();
-            List<int> enemy3 = new List<int>();
+            enemyMoves = new List<int>();
+            enemy1 = new List<int>();
+            enemy2 = new List<int>();
+            enemy3 = new List<int>();
 
             // Set black pieces
             board.SetSquare(9, 17);
@@ -125,12 +128,11 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestGenerateAllEnemyMoves2()
         {
-            board.ClearBoard();
             board.playerTurn = "10000";
-            List<int> enemyMoves = new List<int>();
-            List<int> enemy1 = new List<int>();
-            List<int> enemy2 = new List<int>();
-            List<int> enemy3 = new List<int>();
+            enemyMoves = new List<int>();
+            enemy1 = new List<int>();
+            enemy2 = new List<int>();
+            enemy3 = new List<int>();
 
             // Set black pieces
             board.SetSquare(9, 10);
@@ -141,13 +143,6 @@ namespace TestEngine.Models
             enemy3 = moveGenerator.GetPseudoLegalMoves(12, 13, board);
 
             enemyMoves = checkMate.GenerateAllEnemyMoves(board);
-
-            for (int i = 0; i < 64; ++i)
-            {
-                if (i % 8 == 0) Console.WriteLine("");
-                if (enemyMoves.Contains(i)) Console.Write(String.Format("{0,2} ", 1));
-                else Console.Write(String.Format("{0,2} ", board.GetSquare(i)));
-            }
 
             foreach (int move in enemy1)
             {
@@ -169,7 +164,6 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestMate1()
         {
-            board.ClearBoard();
             board.playerTurn = "1000";
 
             board.SetSquare(0, Piece.White | Piece.King);
@@ -184,7 +178,6 @@ namespace TestEngine.Models
         [TestMethod]
         public void TestMate2()
         {
-            board.ClearBoard();
             board.playerTurn = "10000";
 
             board.FreshBoard();
@@ -196,6 +189,19 @@ namespace TestEngine.Models
             bool isMate = checkMate.Mate(board);
 
             Assert.IsFalse(isMate);
+        }
+
+        [TestMethod]
+        public void TestMate3()
+        {
+            board.playerTurn = "1000";
+
+            board.SetSquare(0, Piece.Black | Piece.Rook);
+            board.SetSquare(1, Piece.White | Piece.King);
+
+            bool isMate = checkMate.Mate(board);
+
+            Assert.IsTrue(isMate);
         }
     }
 }

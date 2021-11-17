@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WFChessGame.Engine.Models;
-using WFChessGame.Engine.viewModels;
+using System;
 
 namespace TestEngine.Models
 {
@@ -10,10 +10,11 @@ namespace TestEngine.Models
         BooleanChecksBaseClass booleanChecksBaseClass;
         Board board;
 
-        TestBooleanChecks()
+        [TestInitialize]
+        public void Initalize()
         {
             booleanChecksBaseClass = new BooleanChecksBaseClass();
-            Board board = new Board();
+           board = new Board();
         }
 
         [TestMethod]

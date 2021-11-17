@@ -103,8 +103,21 @@ namespace WFChessGame.Engine.Models
             return moves;
         }
 
-        public List<int> Pawn(int location, List<int> moves, Board board)
+        public List<int> Pawn(int location, List<int> moves, Board board, string returnEnemy = "n")
         {
+            if(returnEnemy == "y")
+            {
+                if (board.playerTurn == "1000")
+                {
+                    return BlackPawn(location, moves, board);
+                }
+                if (board.playerTurn == "10000")
+                {
+                    return WhitePawn(location, moves, board);
+                }
+            }
+
+
             if (board.playerTurn == "1000")
             {
                 return WhitePawn(location, moves, board);

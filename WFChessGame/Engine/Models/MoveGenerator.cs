@@ -7,6 +7,7 @@ namespace WFChessGame.Engine.Models
         private List<int> moves;
         private bool _isTurn;
         private int pieceType;
+        private int piece;
 
         private MovementRules movementRules;
 
@@ -14,6 +15,9 @@ namespace WFChessGame.Engine.Models
         {
             movementRules = new MovementRules();
         }
+
+
+
 
         ///<summary>
         /// Generate the legal moves of a piece on a given position.
@@ -64,9 +68,10 @@ namespace WFChessGame.Engine.Models
         ///<returns>
         /// All possible moves for the piece.
         /// </returns>
-        public List<int> GetEnemyMoves(int piece, int location, Board board)
+        public List<int> GetEnemyMoves(int location, Board board)
         {
             moves = new List<int>();
+            piece = board.GetSquare(location);
             _isTurn = CheckTurn(piece, board);
             pieceType = piece % 8;
 
@@ -78,7 +83,7 @@ namespace WFChessGame.Engine.Models
                         return movementRules.King(location, moves, board);
 
                     case 2:
-                        return movementRules.Pawn(location, moves, board);
+                        return movementRules.Pawn(location, moves, board, "y");
 
                     case 3:
                         return movementRules.Knight(location, moves, board);

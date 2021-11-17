@@ -10,7 +10,8 @@ namespace TestEngine.Models
         Board board;
         MoveGenerator moveGenerator;
 
-        TestMove()
+        [TestInitialize]
+        public void Initalize()
         {
             board = new Board();
             moveGenerator = new MoveGenerator();
@@ -20,7 +21,6 @@ namespace TestEngine.Models
         public void GetPseudoLegalMoves1()
         {
             board.playerTurn = "1000";
-            board.ClearBoard();
             board.SetSquare(9, Piece.White | Piece.King);
 
             List<int> moves = moveGenerator.GetPseudoLegalMoves(Piece.White | Piece.King, 9, board);

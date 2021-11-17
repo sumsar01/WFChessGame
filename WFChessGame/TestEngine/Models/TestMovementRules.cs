@@ -12,7 +12,8 @@ namespace TestEngine.Models
         Board board;
         MoveGenerator moveGenerator;
 
-        TestMovementRules()
+        [TestInitialize]
+        public void Initalize()
         {
             board = new Board();
             moveGenerator = new MoveGenerator();
@@ -23,7 +24,6 @@ namespace TestEngine.Models
         public void TestKing()
         {
             board.playerTurn = "1000";
-            board.ClearBoard();
             board.SetSquare(9, Piece.White | Piece.King);
 
             List<int> moves = moveGenerator.GetPseudoLegalMoves(Piece.White | Piece.King, 9, board);
@@ -42,7 +42,6 @@ namespace TestEngine.Models
         public void TestPawn1()
         {
             board.playerTurn = "1000";
-            board.ClearBoard();
             board.SetSquare(9, Piece.White | Piece.Pawn);
             board.SetSquare(0, Piece.Black | Piece.Pawn);
             board.SetSquare(2, Piece.Black | Piece.Pawn);
@@ -56,7 +55,6 @@ namespace TestEngine.Models
         public void TestPawn2()
         {
             board.playerTurn = "1000";
-            board.ClearBoard();
             board.SetSquare(50, Piece.White | Piece.Pawn);
             board.SetSquare(10, Piece.Black | Piece.Pawn);
 
@@ -77,7 +75,6 @@ namespace TestEngine.Models
         public void Testknight()
         {
             board.playerTurn = "1000";
-            board.ClearBoard();
             board.SetSquare(29, Piece.White | Piece.Knight);
 
             List<int> moves = moveGenerator.GetPseudoLegalMoves(Piece.White | Piece.Knight, 29, board);
@@ -96,7 +93,6 @@ namespace TestEngine.Models
         public void TestBishop1()
         {
             board.playerTurn = "1000";
-            board.ClearBoard();
             board.SetSquare(29, Piece.White | Piece.Knight);
 
             List<int> moves = moveGenerator.GetPseudoLegalMoves(Piece.White | Piece.Bishop, 29, board);
@@ -118,7 +114,6 @@ namespace TestEngine.Models
         public void TestBishop2()
         {
             board.playerTurn = "1000";
-            board.ClearBoard();
             board.SetSquare(36, Piece.Black | Piece.Pawn);
             board.SetSquare(29, Piece.White | Piece.Bishop);
 
@@ -134,7 +129,6 @@ namespace TestEngine.Models
         public void TestBishop3()
         {
             board.playerTurn = "1000";
-            board.ClearBoard();
             board.SetSquare(36, Piece.White | Piece.Pawn);
             board.SetSquare(29, Piece.White | Piece.Bishop);
 

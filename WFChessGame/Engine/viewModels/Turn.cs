@@ -15,6 +15,9 @@ namespace WFChessGame.Engine.viewModels
         private Board futureBoard;
         private CheckMate checkMate;
         public MoveGenerator moveGenerator;
+        private List<int> LegalMoves;
+        private bool whiteIsMate;
+        private bool blackIsMate;
 
         public Turn()
         {
@@ -35,16 +38,21 @@ namespace WFChessGame.Engine.viewModels
             {
                 board.SetSquare(newLoaction, piece);
                 board.SetSquare(oldLocation, 0);
-                board.ChangeTurn();
+                ChangeTurn(board);
             }
         }
 
-
+        /// <summary>
+        /// Get all allowed moves for a given piece. This includes only moves that will not put you in mate.
+        /// </summary>
         public List<int> GetLegalMoves(int piece, int location, Board board)
         {
-            List<int> LegalMoves = new List<int>();
-            List<int> moves = moveGenerator.GetPseudoLegalMoves(piece, location, board);
+            LegalMoves = new List<int>();
+            moves = moveGenerator.GetPseudoLegalMoves(piece, location, board);
+            futureBoard = new Board();
 
+
+            // Checks if each move is legal.
             foreach (int move in moves)
             {
                 futureBoard.CopyBoard(board);
@@ -58,6 +66,23 @@ namespace WFChessGame.Engine.viewModels
             }
 
             return LegalMoves;
+        }
+
+        public void ChangeTurn(Board board)
+        {
+            /// <summary>
+            /// Change turn players turn.
+            /// </summary>
+            if (board.playerTurn == "1000")
+            {
+                whiteIsMate = checkMate.Mate(board);
+                board.playerTurn = "10000";
+            }
+            else if (board.playerTurn == "10000")
+            {
+                blackIsMate = checkMate.Mate(board);
+                board.playerTurn = "1000";
+            }
         }
     }
 }

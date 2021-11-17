@@ -41,6 +41,8 @@ namespace WFChessGame.Engine.Models
             {
                 SetSquare(i, boardToCopy.GetSquare(i));
             }
+
+            playerTurn = boardToCopy.playerTurn;
         }
 
 
@@ -154,19 +156,6 @@ namespace WFChessGame.Engine.Models
                 _square[i] = 0;
             }
         }
-        public void ChangeTurn()
-        {
-            /// <summary>
-            /// Change turn players turn.
-            /// </summary>
-            if (playerTurn == "1000")
-            {
-                playerTurn = "10000";
-            }
-            else if (playerTurn == "10000")
-            {
-                playerTurn = "1000";
-            }
-        }
+        
     }
 }
