@@ -92,6 +92,10 @@ namespace WFChessGame
                 }
 
                 ShowPossibleMoves(_oldLocation, gameSession.board);
+
+                //Shut down game if checkmate
+                if (gameSession.turn.IsCheckMate(gameSession.board) == true) System.Windows.Forms.Application.Exit();
+
                 if (_pieceHolder == 0)
                 {
                     _oldLocation = -1;

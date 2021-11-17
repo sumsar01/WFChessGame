@@ -40,7 +40,7 @@ namespace WFChessGame.Engine.Models
         /// <summary>
         /// Get location of all enemy pieces.
         /// </summary>
-        public List<int> GenerateEnemyPositions(List<int> movesToGet, Board board, string team = "enemy")
+        public List<int> GeneratePositions(List<int> movesToGet, Board board, string team = "enemy")
         {
             if(team == "friend")
             {
@@ -104,7 +104,7 @@ namespace WFChessGame.Engine.Models
             movesToGet = new List<int>();
             moves = new List<int>();
             
-            movesToGet = GenerateEnemyPositions(movesToGet, board);
+            movesToGet = GeneratePositions(movesToGet, board);
 
             foreach(int location in movesToGet)
             {

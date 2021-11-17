@@ -83,6 +83,38 @@ namespace TestEngine.viewModels
         }
 
         [TestMethod]
+        public void TestGenerateAllLegalMoves1()
+        {
+            board.playerTurn = "10000";
+            List<int> allLegalMoves = new List<int>();
+
+            board.FreshBoard();
+            board.SetSquare(10, Piece.None);
+            board.SetSquare(24, Piece.White | Piece.Queen);
+
+            allLegalMoves = turn.GenerateAllLegalMoves(board);
+
+            Assert.IsTrue(allLegalMoves.Contains(17));
+
+        }
+
+        [TestMethod]
+        public void TestIsCheckMate()
+        {
+            board.playerTurn = "10000";
+
+
+            board.SetSquare(0, Piece.Black | Piece.King);
+            board.SetSquare(17, Piece.White | Piece.Queen);
+            board.SetSquare(16, Piece.White | Piece.Queen);
+
+            bool isCheckMate = turn.IsCheckMate(board);
+
+            Assert.IsTrue(isCheckMate);
+
+        }
+
+        [TestMethod]
         public void TestGetLegalMovesExtra()
         {
             List<int> LegalMoves = new List<int>();
